@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The final lab of this workshop will guide you on how to set up a simple migration to ATP using Goldengate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. 
+The final lab of this workshop will guide you on how to set up a simple migration to ATP using GoldenGate Microservices. By using Oracle GoldenGate Microservices on Oracle Cloud Marketplace, replication from on-premises to cloud and cloud-to-cloud platforms can easily be established and managed. 
 This will allow you to deploy Oracle GoldenGate in an off-box architecture, which means you can run and manage your Oracle GoldenGate deployment from a single location.
 
 *Estimated lab time*: 30 minutes
@@ -19,7 +19,7 @@ For a technical overview of this lab step, please watch the following video:
 
 * This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
 
-## Task 1: Access to Goldengate Microservices Instance
+## Task 1: Access to GoldenGate Microservices Instance
 
 1. After successful creating three extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to Microservice. Copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
@@ -63,7 +63,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![GoldenGate service manager screen](/images/micro-oggadmin-0.png)
 
-## Task 6: Modify Goldengate Credentials
+## Task 6: Modify GoldenGate Credentials
 
 1. You should be seeing the empty Extracts and Replicats dashboard. Let's add Autonomous Database credentials. Open the hamburger menu on the top-left corner, choose **Configuration**
 
@@ -261,15 +261,15 @@ Here is a summary of resources which was created by Terraform script and used in
 
 2. [Compute Virtual Machines and Shapes, OS Images](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)
 - Source PostgreSQL database instance, 
-- Goldengate PostgreSQL instance
-- Goldengate Microservices instance
+- GoldenGate PostgreSQL instance
+- GoldenGate Microservices instance
 
 3. [Autonomous Database offerings](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 - Target ATP
 
 4. [Oracle Cloud Marketplace](https://docs.oracle.com/en-us/iaas/Content/Marketplace/Concepts/marketoverview.htm)
-- Goldengate non-oracle deployment 
-- Goldengate Microservices deployment
+- GoldenGate non-oracle deployment 
+- GoldenGate Microservices deployment
 
 ## **Rate this Workshop**
 

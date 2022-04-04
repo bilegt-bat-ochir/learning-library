@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this workshop, we will migrate a PostgreSQL database to an Autonomous Database in Oracle Cloud Infrastructure. Purpose of this workshop we will use Oracle Goldengate for the migration and designated resources in Oracle Cloud Infrastructure. This workshop consists of 5 labs. 
+In this workshop, we will migrate a PostgreSQL database to an Autonomous Database in Oracle Cloud Infrastructure. Purpose of this workshop we will use Oracle GoldenGate for the migration and designated resources in Oracle Cloud Infrastructure. This workshop consists of 5 labs. 
 
 *Estimated total Workshop Time*: 1.5 hours
 
@@ -33,8 +33,8 @@ In this workshop you will :
 - Virtual Cloud Network: we will create a VCN with a public sub-network and internet access to avoid complexity.
 - Source PostgreSQL database: we will create a PostgreSQL database in a Virtual Machine, which acts as our source on-premise database.
 - Target Autonomous database: we will provision Oracle Autonomous Database to act as our target database.
-- Goldengate for non-Oracle deployment: we will create a Goldengate classic for PostgreSQL to extract data from the source and ships trail files to the cloud.
-- Goldengate Microservices deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
+- GoldenGate for non-Oracle deployment: we will create a GoldenGate classic for PostgreSQL to extract data from the source and ships trail files to the cloud.
+- GoldenGate Microservices deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
 	![](/images/architecture.png)
 
@@ -53,7 +53,7 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 ## Learn More
 
 * [Terraform OCI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraform.htm)
-* [Oracle Goldengate](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/using-oracle-goldengate-microservices-oracle-cloud-marketplace.html)
+* [Oracle GoldenGate](https://docs.oracle.com/en/middleware/GoldenGate/core/19.1/oggmp/using-oracle-GoldenGate-microservices-oracle-cloud-marketplace.html)
 * [Oracle Autonomous Database](https://docs.oracle.com/solutions/?q=autonomous&cType=reference-architectures&sort=date-desc&lang=en)
 
 ## Acknowledgements

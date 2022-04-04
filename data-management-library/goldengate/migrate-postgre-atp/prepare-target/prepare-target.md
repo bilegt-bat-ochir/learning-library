@@ -59,11 +59,11 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Run the SQL query](/images/sql-dev-3.png)
 
-2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true. 
+2. Let's check whether the parameter `enable_GoldenGate_replicaton` is set to true. 
 
 	```
 	<copy>
-	select * from v$parameter where name = 'enable_goldengate_replication';
+	select * from v$parameter where name = 'enable_GoldenGate_replication';
 	</copy>
 	```
 
@@ -73,7 +73,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	```
 	<copy>
-	alter system set enable_goldengate_replication = true scope=both;
+	alter system set enable_GoldenGate_replication = true scope=both;
 	</copy>
 	```
 

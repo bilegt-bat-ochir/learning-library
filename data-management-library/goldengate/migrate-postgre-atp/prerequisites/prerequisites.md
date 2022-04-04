@@ -29,7 +29,7 @@ For a technical overview of this lab step, please watch the following video:
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
-	![Location of icon to open Cloud Shell](/images/0-prep-0.png)
+	![Location of icon to open Cloud Shell](/images/prereq-0.png)
 
 ## Task 2: Generate SSH keys 
 
@@ -52,17 +52,17 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Image showing steps to copy pem file from Cloud Shell](/images/0-prep-1.png)
+	![Image showing steps to copy pem file from Cloud Shell](/images/prereq-1.png)
 
 ## Task 3: Add Public API keys
 
 1. Click on the top right corner of your OCI web console and click on your **profile**. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
-	![Adding the API to OCI web console](/images/0-prep-2.png)
+	![Adding the API to OCI web console](/images/prereq-2.png)
 
 2. A small confirmation will show after you added an API key. **Copy** these values and open a notepad to keep these for a later use.
 
-	![Configuration file preview](/images/0-prep-3.png)
+	![Configuration file preview](/images/prereq-3.png)
 
 ## Task 4: Modify Bash Profile (Optional)
 
@@ -90,11 +90,11 @@ For a technical overview of this lab step, please watch the following video:
 
 	_**NOTE:** Editing a file uses **vi** editor, if you never used it before here is a tip. When you issue **`vi .bash_profile`** it will open a file. You have to press **i** key to enable editing, then "shift+insert" to paste from clipboard. When you are done editing press **esc** button and press **:wq** keys then hit enter for save & quit._
 
-	![Editing bash profile in Cloud Shell.](/images/0-prep-4.png)
+	![Editing bash profile in Cloud Shell](/images/prereq-4.png)
 
 3. Once you've set these values, **exit** from the cloud-shell terminal by clicking on exit "X" button on top right corner, then re-open the cloud-shell terminal to continue.
 
-	![Close and reopen Cloud Shell.](/images/0-prep-0.png)
+	![Close and reopen Cloud Shell](/images/prereq-0.png)
 
 Now your terminal knows your parameters and you'll not get any error in the next lab. **REMEMBER**, you must close the cloud-shell and re-open it!
 You've now completed the prerequisites.

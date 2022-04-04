@@ -44,7 +44,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Cloned directory in Cloud Shell Terminal](/images/1-git.png)
+	![Cloned directory in Cloud Shell Terminal](/images/git.png)
 
 ## Task 2: Create Terraform Variables
 
@@ -95,7 +95,7 @@ For a technical overview of this lab step, please watch the following video:
 	
 3. Make a copy of your output results in your notepad for later use.
 
-	![Copy and save output results](/images/1-git-1.png)
+	![Copy and save output results](/images/git-1.png)
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

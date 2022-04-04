@@ -22,11 +22,11 @@ For a technical overview of this lab step, please watch the following video:
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **HOL Target ATP** database.
 
-	![Available ATP workload databases](/images/2-atp.png)
+	![Available ATP workload databases](/images/atp.png)
 
 2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
 
-	![Open database actions](/images/2-atp-1.png)
+	![Open database actions](/images/atp-1.png)
 
 3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in the terraform output. Go and copy, then paste here.
 

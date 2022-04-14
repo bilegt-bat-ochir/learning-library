@@ -11,7 +11,7 @@ In this lab, you will:
 - Run the Forms configuration
 
 ### Prerequisites 
-F
+
 This lab assumes you have:
 * Followed the previous lab
 
@@ -25,20 +25,20 @@ The Forms and Database should be started. Let's provision the installation.
 
 1. SSH to the Forms Server
 
-Ideally, you should SSH to you Forms Server from your computer.
+   Ideally, you should SSH to you Forms Server from your computer.
 
-There are several ways to do this. For this tutorial, we will use a Bastion server.  However, for daily use it will likely be easier to use a VPN or Fastconnect. 
+   There are several ways to do this. For this tutorial, we will use a Bastion server.  However, for daily use it will likely be easier to use a VPN or Fastconnect. 
 
-```
-# Add the key to ssh-agent
-ssh-add &lt;ssh-private-key&gt;
-# Connect via the bastion
-ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt;
+    ```
+    # Add the key to ssh-agent
+    ssh-add &lt;ssh-private-key&gt;
+    # Connect via the bastion
+    ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt;
 
-Ex:
-ssh-add ssh-key-2022-03-21.key
-ssh -J opc@130.131.132.133 opc@10.0.1.130
-```
+    Ex:
+    ssh-add ssh-key-2022-03-21.key
+    ssh -J opc@130.131.132.133 opc@10.0.1.130
+    ```
 
 2. The provisioning will start. 
 
@@ -46,30 +46,31 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 
 1. Choose Local Database: **1** 
 
-![Local Provision](./images/forms-local-provision-start.png)
+   ![Local Provision](./images/forms-local-provision-start.png)
 
 2. Enter the passwords. By example:
-- Vnc Password: **LiveLab1**
-- FMW Repository Schema password: **LiveLab__123**
-- WLS Admin password: **LiveLab1**
-- Database System Password: **LiveLab__123**
+    
+    - Vnc Password: **LiveLab1**
+    - FMW Repository Schema password: **LiveLab__123**
+    - WLS Admin password: **LiveLab1**
+    - Database System Password: **LiveLab__123**
 
-![Local Provision Password](./images/forms-local-provision-password.png)
+    ![Local Provision Password](./images/forms-local-provision-password.png)
 
-3.. Run the provisioning
+3. Run the provisioning
 
-   ![Provisioning end](./images/forms-local-provision-end.png)
+    ![Provisioning end](./images/forms-local-provision-end.png)
 
 4. Answer 'y' to the next question
 
-````
-Exit and continue in the background? (y/N).
-```
+    ````
+    Exit and continue in the background? (y/N).
+    ```
 
-It is safer to run in the background. If the shell is remain open
-and the shell is terminated intentionally or unintentionally, the provisioning will fail.
+    It is safer to run in the background. If the shell is remain open
+    and the shell is terminated intentionally or unintentionally, the provisioning will fail.
   
-Wait that the provisioning finishes. Connect with ssh to see the status. It takes about 10 mins.
+    Wait that the provisioning finishes. Connect with ssh to see the status. It takes about 10 mins.
 
 ## Learn More
 

@@ -65,6 +65,10 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/rest-6.png)
 
+    Also select **Not Protected** with the **Protected By Privilege** select list.
+
+    ![Protected By Privilege** select list](./images/rest-6a.png)
+
 7. When the **Create Module** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Modules slider](./images/rest-7.png)

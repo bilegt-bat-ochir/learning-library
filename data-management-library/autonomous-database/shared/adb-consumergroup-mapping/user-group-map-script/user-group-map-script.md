@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the course of this Lab we will be creating a repository table in Autonomous database which maps the user with the consumer group, and a Function to validate the user session on connect.
+In this lab, we will be creating a repository table in an Autonomous database that maps the user to the consumer group and a PL/SQL function to validate the user session on connect.
 
 Estimated Time: 2 minutes
 
@@ -25,8 +25,8 @@ This lab assumes you have:
 
     ---
 
-    
-        CREATE TABLE "ADMIN"."USERS_CONS_GRP" 
+        
+        <copy>CREATE TABLE "ADMIN"."USERS_CONS_GRP" 
         ("USERNAME" VARCHAR2(200 BYTE) NOT NULL, 
         "CONS_GRP" VARCHAR2(20 BYTE) NOT NULL, 
         CONSTRAINT "USERS_CONS_GRP_CHK1" CHECK (cons_grp in ('HIGH','LOW','MEDIUM','TPURGENT','TP'))
@@ -40,7 +40,7 @@ This lab assumes you have:
     ---
 
 
-        Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('TOTO','LOW');
+        <copy>Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('TOTO','LOW');
         Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('SCOTT','TP');
 
 
@@ -48,7 +48,7 @@ This lab assumes you have:
 3. Lets check the repository table contents
 
     ---
-        Select * from USERS_CONS_GRP
+        <copy>Select * from USERS_CONS_GRP
 
     ![Repository table contents](./images/repo-table.png " ")
 
@@ -61,7 +61,7 @@ This lab assumes you have:
 1. Create function “USER\_GRP\_FN” to provide true value when session user fulfils mapped consumer group. We will use this function in database vault rule.
 
     ---
-        CREATE OR REPLACE FUNCTION USER_GRP_FN 
+        <copy>CREATE OR REPLACE FUNCTION USER_GRP_FN 
         RETURN number IS 
         usr number ; 
         BEGIN 
@@ -78,7 +78,7 @@ This lab assumes you have:
 2. Grant execute on the function to DVSYS user.
 
     ---
-        grant execute on ADMIN.USER_GRP_FN to dvsys;
+        <copy>grant execute on ADMIN.USER_GRP_FN to dvsys;
 
 You may now **proceed to the next lab**.
 
@@ -86,6 +86,7 @@ You may now **proceed to the next lab**.
 
 * [Oracle Autonomous Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
+
 
 
 ## Acknowledgements

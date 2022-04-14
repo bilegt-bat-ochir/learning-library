@@ -1,1 +1,0 @@
-Consumer Group drop-down menu showing HIGH highlighted.

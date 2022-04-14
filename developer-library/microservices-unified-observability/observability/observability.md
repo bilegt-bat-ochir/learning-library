@@ -28,14 +28,14 @@ Watch the video below for a quick walk through of the lab.
     <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
     ```
 
-2. Run the `/createMonitorsAndExporters.sh` script. This will do the following:
+2. Run the `createMonitorsAndDBAndLogExporters.sh` script. This will do the following:
    - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices.
    - Create Prometheus ServiceMonitors to scrape the Order PDB, and Inventory PDB metric exporter services.
    - Create configmpas, deployments, and services for PDB metrics exporters.
    - Create configmaps, deployments, and services for PDB log exporters.
 
     ```
-    <copy>cd $GRABDISH_HOME/observability;./createMonitorsAndExporters.sh</copy>
+    <copy>cd $GRABDISH_HOME/observability;./createMonitorsAndDBAndLogExporters.sh</copy>
     ```
 
 ## Task 2: Configure Grafana

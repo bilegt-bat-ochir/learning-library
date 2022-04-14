@@ -59,7 +59,11 @@ This lab assumes you have completed the following labs:
 
     ![Data Column Layout from uploaded file](./images/sdw-21.png)
 
-    **Click Next** on the bottom right of the modal when done looking at this step.
+    Set all the columns to be of VARCHAR2 with the length of 4000. This will provide a flawless data loading experience.
+    
+    ![Set Columns to VARCHAR2 4000](./images/sdw-21a.png)
+
+    When table and columns look like the below image, **Click Next** on the bottom right of the modal.
 
     ![Check out data then Click Next Button](./images/sdw-22.png)
 

@@ -29,8 +29,8 @@ This lab assumes you have:
 
 ## Task 1: Create Database Vault Policy in Autonomous Database
 
-1. For our scenario we want user “SCOTT” to be able to connect to database using only “TP” services and user “TOTO” to connect using “LOW” services.
-In such case we will have to setup the below Database vault policy from ‘ADMIN’ account or 'ADV_OWNER' account
+1. For our scenario we want user “SCOTT” to be able to connect to the database using only “TP” services and user “TOTO” to connect using “LOW” services.
+In such a case we will have to setup the below Database vault policy from ‘ADMIN’ account or 'ADV_OWNER' account
 
 2. Create Rule Set
 
@@ -38,7 +38,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
     ---
 
         
-        BEGIN
+        <copy>BEGIN
 
         DVSYS.DBMS_MACADM.CREATE_RULE_SET(
         rule_set_name => 'RULE_SET_USER_CONS',
@@ -61,7 +61,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 3. Create Rule
 
     ---
-        BEGIN
+        <copy>BEGIN
         DVSYS.DBMS_MACADM.CREATE_RULE(
         rule_name  => 'Check USER and Consumer group', 
         rule_expr  =>'ADMIN.USER_GRP_FN = 1');
@@ -73,7 +73,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 
 
     ---
-        BEGIN
+        <copy>BEGIN
         DBMS_MACADM.ADD_RULE_TO_RULE_SET(
         rule_set_name     => ' RULE_SET_USER_CONS',
         rule_name         => 'Check USER and Consumer group'
@@ -86,7 +86,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 
 
     ---
-        BEGIN
+        <copy>BEGIN
         DBMS_MACADM.CREATE_COMMAND_RULE(
         command            => 'CONNECT',
         rule_set_name      => ‘RULE_SET_USER_CONS’,
@@ -102,7 +102,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 
 
     ---
-        SELECT * FROM DVSYS.DBA_DV_RULE where name like '%Cons%';
+        <copy>SELECT * FROM DVSYS.DBA_DV_RULE where name like '%Cons%';
 
     ![Database Vault rule status](./images/database-vault-rule-status.png " ")
 
@@ -131,7 +131,7 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 
 * [Oracle Autonomous Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
-
+* [Oracle Database Vault with Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-database-vault.html#GUID-70F233AF-458F-44B7-9418-F9AF70CFDD15)
 
 ## Acknowledgements
 * **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering

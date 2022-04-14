@@ -25,14 +25,14 @@ In this lab, you:
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
+	![Navigation to Data Science service](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select a project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
 
 1. Click **Create Notebook Session**.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/create-notebook.png)
+    ![Create a notebook](./../speed-up-ds-with-the-ads-sdk/images/create-notebook.png)
 
 1. Confirm that the compartment that is selected is the compartment that is assigned to your account. The **Workshop Details** section at the top of the instructions page lists the compartment. If the compartment is different, change it to the one listed in the **Workshop Details** section.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
@@ -45,10 +45,10 @@ In this lab, you:
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
 1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**. 
 1. Click **Create**.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/create-ns.png)
+    ![Create a notebook session](./../speed-up-ds-with-the-ads-sdk/images/create-ns.png)
 
     While the notebook session is being created, you can navigate away from the current page.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/creating-ns.png)
+    ![creating a notebook session](./../speed-up-ds-with-the-ads-sdk/images/creating-ns.png)
 
 ## Task 2: Opening a Notebook Session
 
@@ -59,13 +59,13 @@ Once the notebook session has been created the notebook session page shows the n
 1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session. This will open the Projects page.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select a project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
 
 1. Click the name of the notebook session. This will open the Notebook Session page.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/click-ns.png)
+    ![Click on notebook session](./../speed-up-ds-with-the-ads-sdk/images/click-ns.png)
 
 1. If the notebook is in an **Active** state, then click **Open**.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/click-open.png)
+    ![Click open](./../speed-up-ds-with-the-ads-sdk/images/click-open.png)
 
 1. If the notebook is in an **Inactive** state, then:
     1. Click **Activate** to open the **Activate Notebook Session** dialog with the configuration from the last time the notebook session was activated or created.
@@ -78,11 +78,11 @@ Once the notebook session has been created the notebook session page shows the n
     1. Click **Activate** and the notebook session status changes to **Updating**.
     1. When the notebook session status changes to **Active**, click **Open**
 
-You can *proceed to the next lab*.
+You can **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
 

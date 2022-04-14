@@ -30,7 +30,7 @@ Database Vault enables separation of duties by implementing two dedicated databa
     ---
 
         
-        CREATE USER ADV_OWNER IDENTIFIED BY ######
+        <copy>CREATE USER ADV_OWNER IDENTIFIED BY ######
         DEFAULT TABLESPACE "DATA"
         TEMPORARY TABLESPACE "TEMP";
         GRANT "DV_OWNER" TO "ADV_OWNER" WITH ADMIN OPTION;
@@ -43,7 +43,7 @@ Database Vault enables separation of duties by implementing two dedicated databa
     ---
 
 
-        CREATE USER "ADV_ACCT_ADMIN" IDENTIFIED BY #######
+        <copy>CREATE USER "ADV_ACCT_ADMIN" IDENTIFIED BY #######
         DEFAULT TABLESPACE "DATA"
         TEMPORARY TABLESPACE "TEMP";
         GRANT "DV_ACCTMGR" TO "ADV_ACCT_ADMIN" WITH ADMIN OPTION;
@@ -62,21 +62,21 @@ Oracle Database Vault is disabled by default on Autonomous Database. To configur
 
 
     ---
-        EXEC DBMS_CLOUD_MACADM.CONFIGURE_DATABASE_VAULT('ADV_OWNER', 'ADV_ACCT_ADMIN');
+        <copy>EXEC DBMS_CLOUD_MACADM.CONFIGURE_DATABASE_VAULT('ADV_OWNER', 'ADV_ACCT_ADMIN');
 
 
 2. Enable Oracle Database Vault:
 
 
     ---
-        EXEC DBMS_CLOUD_MACADM.ENABLE_DATABASE_VAULT;
+        <copy>EXEC DBMS_CLOUD_MACADM.ENABLE_DATABASE_VAULT;
 3. Restart the Autonomous Transaction Processing instance from OCI console.
 ![ADB restart](./images/adb-restart.png " ")
 4. Use the following command to check if Oracle Database Vault is enabled or disabled:
 
     ---
 
-        SELECT * FROM DBA_DV_STATUS;
+        <copy>SELECT * FROM DBA_DV_STATUS;
 
 
     Output similar to the following appears:
@@ -99,6 +99,7 @@ You may now **proceed to the next lab**.
 
 * [Oracle Autonomous Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
+* [Oracle Database Vault with Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-database-vault.html#GUID-70F233AF-458F-44B7-9418-F9AF70CFDD15)
 
 
 ## Acknowledgements

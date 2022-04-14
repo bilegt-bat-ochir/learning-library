@@ -9,11 +9,11 @@
 [](youtube:f-fVabi1tRA)
  
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes.
 
 ### Objectives
 
-In this lab, you will:
+In this section, you will:
 
 - Create an instance of MySQL in Oracle Cloud.
 - Connect and create the Database.
@@ -21,11 +21,11 @@ In this lab, you will:
 
 ### Prerequisites
 
-- All previous labs have been successfully completed.
+- All previous sections have been successfully completed.
 
 ## Task 1: Create an Instance of MySQL in the Cloud
 
-1. Go to **Menu** > **Databases** > **DB Systems**.
+1. Go to **Menu**, **Databases** and then click **DB Systems**.
 
    ![](images/mysql_menu.png)
 
@@ -43,8 +43,8 @@ In this lab, you will:
    For Username and password:
 
       - Username: `root`
-      - Password: `R2d2&C3po!`
-      - Confirm Password: `R2d2&C3po!`
+      - Password: `<your_password>`
+      - Confirm Password: `<your_password>`
 
    ![](images/mysql_create_db_fields.png)
 
@@ -72,7 +72,7 @@ In this lab, you will:
 
    ![Active](images/mds-active.png)
 
-7. **Copy the private IP address** from the MySQL DB System Information page. It will look like `10.0.1.xxx`.
+7. **Copy the Private IP address** from the MySQL DB System Information page. It will look like `10.0.1.xxx`.
 
    ![](images/mysql_private_ip.png)
 
@@ -87,13 +87,13 @@ In this lab, you will:
       - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
-         <copy>curl -L https://bit.ly/3yoHvem | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
+         <copy>curl -sL https://bit.ly/3yoHvem | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
          ```
-   This command will download the SQL script, and pipe the content to MySQL Shell to be executed as SQL code. We also indicate with `--save-passwords=always` to save the password securely for future uses of MySQL Shell.
+   This command will download the SQL script, and pipe the content to MySQL Shell to be executed as SQL code. We also indicate with `--save-passwords=always` to save the password securely for future uses of MySQL Shell. It can take a few minutes, be patient.
 
 2. If the terminal asks for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
 
-      - Type the MySQL DB password: `R2d2&C3po!`
+      - Type the MySQL DB password: `<your_password>`
 
    If there is no error on the console, everything is ready to proceed.
 
@@ -131,6 +131,6 @@ Congratulations! You are ready to go to the next Lab!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

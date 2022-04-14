@@ -39,7 +39,7 @@ Review Policy:
 ![Data Integration VNC policy missing](images/di_error_vcn.png.png)
 
 ```
-Following VCN not found or user not authorized: ocid1.vcn.oc1.uk-london-1.aaaaasdlnsdfjnskjgndfkjbdkjfgbdkjfbgdjkf ,or there might be missing network policies, please refer this link for more information https://docs.cloud.oracle.com/en-us/iaas/data-integration/using/
+Following VCN not found or user not authorized: ocid1.vcn.oc1.uk-london-1...<unique_ID> ,or there might be missing network policies, please refer this link for more information https://docs.cloud.oracle.com/en-us/iaas/data-integration/using/
 ```
 
 You forgot to create the policy for Data Integration to use Virtual Cloud Network.
@@ -52,6 +52,6 @@ You forgot to create the policy for Data Integration to use Virtual Cloud Networ
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

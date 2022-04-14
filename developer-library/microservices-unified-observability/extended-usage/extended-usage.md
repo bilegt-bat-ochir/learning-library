@@ -19,7 +19,7 @@ Estimated Time:  5 minutes
 ## Task 1: Modify metrics exporter config
 
 1.    Modify and save  
-   `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml`
+   `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-orderpdb-exporter-metrics.toml`
    and/or 
    `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.`
    

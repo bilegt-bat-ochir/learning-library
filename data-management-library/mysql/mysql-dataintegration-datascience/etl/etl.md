@@ -4,18 +4,18 @@
 
 ## Introduction
 
-A data flow is a visual program representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
+A **data flow** is a visual program representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 
 The flow of data from source to target can undergo a series of transforms to aggregate, cleanse, and shape the data.
 
 Data engineers and ETL developers can then analyze or gather insights and use that data to make business decisions.
 
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes.
 
 ### Objectives
 
-In this lab, you will:
+In this section, you will:
 
 - Create the Data Flow.
 - Create the Integration Task.
@@ -24,7 +24,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- All previous labs have been successfully completed.
+- All previous sections have been successfully completed.
 
 ## Task 1: Create the Data Flow
 
@@ -34,32 +34,33 @@ In this lab, you will:
 
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
-      - Name: `CSV to MySQL`
+      - Name: `CSV to MySQL` 
+      - Project or Folder: click on the empty field and the projects that you have created will show up. Click on `My First Project` and **Select**.
       - Description: `Data Flow from CSV on Object Storage to MySQL Database`
 
-3. To select the **Project or Folder**, click on `My First Project` and **Select**.
-
-      - Project or Folder: `My First Project`
-
-   ![](images/dataflow_select_project.png)
+   ![](images/dataflow_select_project_new.png)
 
    It should look like this:
 
    ![](images/dataflow_properties.png)
 
-4. From the **Operators** panel, drag and drop the **Source** icon into the canvas.
+3. From the **Operators** panel, drag and drop the **Source** icon into the canvas.
 
    ![](images/dataflow_source_dnd.png)
+
+4. Click **right mouse bottom** on top of **Source_1** and select **Details**.
+
+   ![](images/dataflow_details.png)
 
 5. Set the **Identifier** as `FISH_SURVEY` in the **Details** tab from the Source **Properties** panel. Then go to **Data Asset** and click **Select**.
 
    ![](images/dataflow_source_id.png)
 
-6. From the **dropdown**, select `bucket-study`.
+6. From the **dropdown**, select `bucket-study` and click **Select**.
 
    ![](images/dataflow_source_data_asset_bucket.png)
 
-7. **Select** `Default Connection`. Then go to **Schema**, click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
+7. **Select** `Default Connection` in the Connection section. Select the **Compartment** that you have used to create for this workshop, `root`. Then go to **Schema**, click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
 
    ![](images/dataflow_source_data_entity.png)
 
@@ -87,7 +88,7 @@ In this lab, you will:
 
    ![](images/dataflow_source_data_entity_attributes.png)
 
-   **Confirm** you can see Attributes and Data.
+   **Confirm** you can see **Attributes** and **Data**.
 
    Let's move into the target for our **MySQL Database**.
 
@@ -125,7 +126,9 @@ In this lab, you will:
 
    ![](images/dataflow_source_to_target_linked.png)
 
-22. **Make sure** `MYSQL_DB` target is selected (green border) and click on the **Map** tab on the **Properties** panel and drag and drop the fields with NO `Auto` in the mapping column (from left to right). **Do it until they are all mapped**.
+22. **Make sure** `MYSQL_DB` target is selected (green border) and click on the **Map** tab on the **Properties** panel. 
+**Drag and drop** the fields with NO `Auto` in the mapping column (from left to right). **Do it until they are all mapped**. 
+You can **expand / shrink** the Properties canvas.
 
    ![](images/dataflow_source_to_target_map.png)
 
@@ -154,7 +157,7 @@ In this lab, you will:
 
    ![](images/integrationtask_fields.png)
 
-3. Wait for the **Validation** to be **Successful** on the Data Flow and click **Save and Close**.
+3. Wait for the **Validation** to be **Successful** on the Data Flow and click **Create and Close**.
 
    ![](images/integrationtask_save.png)
 
@@ -220,11 +223,7 @@ In this lab, you will:
    <copy>mysqlsh --sql root@PRIVATE_IP</copy>
    ```
 
-2. If requested, put the MySQL **Password**:
-
-   ```
-   <copy>R2d2&C3po!</copy>
-   ```
+2. If requested, write the MySQL **Password**.
 
 3. Set `nature` as the **Schema** in use.
 
@@ -254,6 +253,6 @@ Congratulations, you are ready for the next Lab!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

@@ -6,15 +6,18 @@
 
 A **virtual private network** closely resembles a traditional network, with firewall rules and specific types of communication gateways that you can choose to use. A VCN resides in a single Oracle Cloud Infrastructure region and covers one or more CIDR blocks (IPv4 and IPv6, if enabled).
 
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+You can find more information about VCN configuration for Oracle Data Integration in this [Blog](https://blogs.oracle.com/dataintegration/post/understanding-vcn-configuration-for-oracle-cloud-infrastructure-oci-data-integration).
+
+The **Oracle Cloud Infrastructure Object Storage service** is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+
 
 [](youtube:RHIfvO9aTQ0)
 
-Estimated Lab Time: 15 minutes
+Estimated time: 15 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this section, you will:
 
 - Create Virtual Cloud Network.
 - Create Bastion Host.
@@ -22,7 +25,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- This lab assumes you have logged into your to Oracle Cloud account.
+- This section assumes you have logged into your to Oracle Cloud account.
 
 ## Task 1: Create Virtual Cloud Network (VCN)
 
@@ -30,7 +33,7 @@ In this lab, you will:
 
    This **network** layout is interesting to protect those services that don't need to be exposed to the Internet (living in the Private subnet) meanwhile other services and virtual machines with **direct access from the internet**, like Bastion hosts or Web Servers (living in the Public Subnet).
 
-2. Go to **Menu** > **Networking** > **Virtual Cloud Networks**.
+2. Go to **Menu**, **Networking** and then click **Virtual Cloud Networks**.
 
    ![VCN menu](images/vcn_menu.png)
 
@@ -97,7 +100,7 @@ In this lab, you will:
 
 1. We are going to **create a compute instance** in the Public Subnet with a public IP; it will be our access point to public and private resources.
 
-2. Go to **Menu** > **Compute** > **Instances**.
+2. Go to **Menu**, **Compute** and then click **Instances**.
 
    ![Compute Instance Menu](images/compute_instance_menu.png)
 
@@ -109,14 +112,14 @@ In this lab, you will:
 
    Make sure the rest of the **properties** are like the following:
 
-      - Image: `Oracle Linux 7.9`
+      - Image: `Oracle Linux 7.9` or Superior - `Oracle Linux 8`
       - Shape for Always Free: `VM.Standard.E2.1.Micro`
       - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
       - Virtual cloud network: `nature`
       - Subnet: `Public Subnet-nature`
       - Assign a public IPv4 address: `Yes`
 
-   ![Instance Values](images/compute_create_values.png)
+   ![Instance Values](images/compute_create_values_new.png)
 
 5. On the section **Add SSH Keys**, make sure **Generate SSH Keypair** is checked.
 
@@ -150,7 +153,7 @@ In this lab, you will:
 
    ![Cloud Shell terminal](images/cloud_shell_upload.png)
 
-11. Click on **select from your computer**. And select the private key you downloaded for the compute instance.
+11. Click on **select from your computer**. And select the **private key** (`.key` file) you downloaded for the compute instance.
 
    > Note: You don't need to upload the public key (`.pub` file), but feel free to do it.
 
@@ -225,8 +228,9 @@ In this lab, you will:
       ```
 
       ```
-      <copy>sudo yum install mysql-shell mysql-community-client -y</copy>
+      <copy>sudo yum install mysql-shell</copy>
       ```
+   > Note: If you get any confirmation message, please write `y` and wait until the installation has been completed.
 
 21. Let's check the **version** of MySQL Shell:
 
@@ -236,7 +240,7 @@ In this lab, you will:
 
 ## Task 3: Create Object Storage and Upload Files
 
-1. Go to **Menu** > **Storage** > **Buckets**.
+1. Go to **Menu**, **Storage** and then click **Buckets**.
 
    ![Object Storage Menu](images/os_menu.png)
 
@@ -280,7 +284,7 @@ In this lab, you will:
 
    ![Object Details Menu](images/os_object_details_menu.png)
 
-12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use it in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use the **OCI Region** part (in our case eu-frankfurt-1) in the Lab number 3, Create Data Integration Instance.
 
    ![Object Details URL](images/os_object_details_url.png)
 
@@ -288,6 +292,6 @@ Congratulations! You are ready to go to the next Lab!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

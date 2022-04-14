@@ -38,11 +38,6 @@
       "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
     },
     {
-      "title": "Optional Lab 5: Add GitHub Hosted Labs and Workshops to OHC",
-      "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
-      "filename": "./../../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md"
-    },
-    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"

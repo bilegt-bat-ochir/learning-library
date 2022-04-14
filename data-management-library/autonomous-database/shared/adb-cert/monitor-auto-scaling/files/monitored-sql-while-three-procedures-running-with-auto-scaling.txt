@@ -1,1 +1,0 @@
-Monitored SQL shows three queries executing and consuming less database time.

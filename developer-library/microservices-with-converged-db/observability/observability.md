@@ -98,7 +98,11 @@ You will see some warning messages related to configmaps not existing as this is
 
       ![Select Jaeger](images/addjaegerdatasource.png " ")
 
-    Enter `http://jaeger-query.msdataworkshop:8086/jaeger` in the URL field.
+    Copy and paste the following address in the URL field
+    
+    ```
+    <copy>http://jaeger-query.msdataworkshop:8086/jaeger</copy>
+    ```
 
       ![Jaeger URL](images/jaegerdatasourceurl.png " ")
 
@@ -117,28 +121,55 @@ You will see some warning messages related to configmaps not existing as this is
 
       ![Loki Datasource](images/lokidatasource.png " ")
 
-    Enter `http://loki-stack.loki-stack:3100` in the URL field
+    Copy and paste the following address in the URL field
+    
+       ```
+       <copy>http://loki-stack.loki-stack:3100</copy>
+       ```
 
       ![Loki URL](images/lokidatasourceurl.png " ")
 
-    Create the two Derived Fields shown in the picture below.
-    The values are as follows:
+    Create the two Derived Fields as shown in the pictures below.
+    For each, first set `Internal link` to enabled and select `Jaeger` from the drop-down list.
+    Then copy and paste the following values for each field accordingly...
+    
+    ####First Derived Field (this is for Kubernetes microservice log to trace correlation)
 
-       ```
-       <copy>services
-        Name: traceIDFromSpanReported
-        Regex: Span reported: (\w+)
-        Query: ${__value.raw}
-        Internal link enabled and `Jaeger` selected from the drop-down list.
-        (Optional) Debug log message: Span reported: dfeda5242866aceb:b5de9f0883e2910e:ac6a4b699921e090:1
+    Name:
+    ```
+    <copy>traceIDFromSpanReported</copy>
+    ```
+    Regex:
+    ```
+    <copy>Span reported: (\w+)</copy>
+    ```
+    Query:
+    ```
+    <copy>${__value.raw}</copy>
+    ```
+    (Optionally to test) Debug log message::
+    ```
+    <copy>Span reported: dfeda5242866aceb:b5de9f0883e2910e:ac6a4b699921e090:1</copy>
+    ```
 
-        Name: traceIDFromECID
-        Regex: ECID=(\w+)
-        Query: ${__value.raw}
-        Internal link enabled and `Jaeger` selected from the drop-down list
-        (Optional) Debug log message: ECID=dfeda5242866aceb
-        </copy>
-       ```
+    ####Second Derived Field (this is for database/ECID log to trace correlation)
+
+    Name:
+    ```
+    <copy>traceIDFromECID</copy>
+    ```
+    Regex:
+    ```
+    <copy>ECID=(\w+)</copy>
+    ```
+    Query:
+    ```
+    <copy>${__value.raw}</copy>
+    ```
+    (Optionally to test) Debug log message::
+    ```
+    <copy>Debug log message: ECID=dfeda5242866aceb</copy>
+    ```
        
       ![Traceid from span](images/traceidfromspan.png " ")
 

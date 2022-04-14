@@ -32,18 +32,18 @@ Go to the Marketplace.
    ![Instance Name](./images/forms-instance-name.png)
 
 5. Then check that:
-- VCN: **forms-vcn**
-- Subnet: **Private subnet for forms-vcn**
-- Check the button **Upload the public key** and upload the public key that you got from the Bastion in Lab1 (##1##)
-- Click Create
+    - VCN: **forms-vcn**
+    - Subnet: **Private subnet for forms-vcn**
+    - Check the button **Upload the public key** and upload the public key that you got from the Bastion in  Lab1 (##1##)
+    - Click Create
 
-![Instance Network](./images/forms-instance-network.png), 
+   ![Instance Network](./images/forms-instance-network.png)
 
-5.. Get the Private IP
+6. Get the Private IP
 
    ![Instance Private IP](./images/forms-instance-private-ip.png)
 
-Write it down. (##3##)
+   Write it down. (##3##)
 
 ## Task 2: Decide your next step
 

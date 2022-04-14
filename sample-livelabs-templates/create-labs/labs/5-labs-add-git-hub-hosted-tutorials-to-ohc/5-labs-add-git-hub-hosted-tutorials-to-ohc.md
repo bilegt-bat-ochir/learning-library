@@ -25,7 +25,7 @@ You must have OLL administrator privileges to view and edit content entries in O
 6. Enter the **Content Entry Details**. A few entries are highlighted here:
     * **Link**: Enter the complete URL for the lab on GitHub, for example, https://oracle.github.io/learning-library/workshops/adwc4dev/?version=Self-Guided&page=L100.md.
 
-    ![](./images/content-entry-link.png " ")
+    ![Enter the content entry](./images/content-entry-link.png " ")
     * **Type**: Select **OBE**. (Older labs were called Oracle By Example or tutorials.)
 
 ## Task 2: Create the Target URL for a Lab

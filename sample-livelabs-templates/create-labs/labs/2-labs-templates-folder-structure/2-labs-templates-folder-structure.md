@@ -13,7 +13,7 @@ This lab describes the prescribed folder structure that we need to follow for de
 
 The following image shows a folder structure of the **sample-workshop** that is opened in the **Visual Studio Code** Editor, through the workshop folder **learning-library/sample-livelabs-templates**. You can see this structure at the following URL [https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/sample-workshop](https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/sample-workshop), or in the **sample-livelabs-templates/sample-workshop** folder of the clone on your machine. You can get started with workshop development by copying this sample workshop folder.
 
-![](./images/sample-workshop-structure.png " ")
+![Example of workshop structure.](./images/sample-workshop-structure.png " ")
 
 ## Task 2: Understand the Components of the Workshop and Lab Folders
   The following describes the components of the above example:
@@ -31,7 +31,7 @@ The following image shows a folder structure of the **sample-workshop** that is 
     * a `README.md` file (optional), which contains the summary of the entire workshop. You can view it from your git repository.
 
     The following screenshot shows a sample `manifest.json` file that is opened in the **Visual Studio Code** Editor. Ensure that the appropriate stakeholder email is listed by "help".
-    ![](./images/manifest.png " ")
+    ![Sample manifest json file.](./images/manifest.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
 

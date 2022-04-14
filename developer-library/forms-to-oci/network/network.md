@@ -70,17 +70,17 @@ You should be in the details of the Virtual Cloud Network.
 
    ![Ingress Rule](./images/forms-private-ingress-rule.png)
 
-- In Source CIDR, type **10.0.0.0/16**
-- In Destination port, **1521-1522**
-- Then Click **Add Ingress Rules.**
+    - In Source CIDR, type **10.0.0.0/16**
+    - In Destination port, **1521-1522**
+    - Then Click **Add Ingress Rules.**
 
-4.. Add a rule for Windows Remote Desktop. Click a second time **Add Ingress Rule**
+4. Add a rule for Windows Remote Desktop. Click a second time **Add Ingress Rule**
 
    ![Remote Desktop Rule](./images/forms-private-ingress-rule-remote-desktop.png)
 
-- In Source CIDR, type **10.0.0.0/16**
-- In Destination port, **3389**
-- Then Click **Add Ingress Rules.**
+    - In Source CIDR, type **10.0.0.0/16**
+    - In Destination port, **3389**
+    - Then Click **Add Ingress Rules.**
 
 ## Task 3: Install a Bastion   ##
 
@@ -88,6 +88,7 @@ In real usecase, it is more appropriate to have a VPN connection or Fastconnect 
 For this sample, we will use a Bastion host that is easier to set up. But for sure not ideal.
 
 1. In the Hamburger menu, choose **Compute / Instance**
+
 2. Then click **Create Instance**
 
    ![Forms Instance](./images/forms-instance.png)
@@ -97,17 +98,19 @@ For this sample, we will use a Bastion host that is easier to set up. But for su
    ![Bastion Name](./images/forms-bastion-name.png)
 
 4. In the network, check that :
-- VCN: **forms-vcn**
-- Subnet: **Public subnet for forms-vcn**
-- Save the public and private SSH keys (##1##)
-- Click **Create**
-![Bastion Network](./images/forms-bastion-network-ssh.png)
 
-5.. Get the Public IP
+    - VCN: **forms-vcn**
+    - Subnet: **Public subnet for forms-vcn**
+    - Save the public and private SSH keys (##1##)
+    - Click **Create**
+    
+   ![Bastion Network](./images/forms-bastion-network-ssh.png)
+
+5. Get the Public IP
 
    ![Bastion Public IP](./images/forms-bastion-public-ip.png)
 
-Write it down. (##2##)
+   Write it down. (##2##)
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA

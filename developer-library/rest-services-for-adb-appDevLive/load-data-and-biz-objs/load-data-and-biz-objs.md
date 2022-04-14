@@ -124,7 +124,7 @@ This lab assumes you have completed the following labs:
     "https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/batchload?batchRows=5000&errorsMax=20"
     ```
 
-    Here is a template command you can use. Just fill in **ADMIN_PASSWORD** and **ADB_URL** with your environment's values.
+    Here is a template command you can use. Just fill in **ADMIN\_PASSWORD** and **ADB\_URL** with your environment's values.
 
     ```
     curl --write-out '%{time_total}' -X POST --data-binary "@2M.csv" \

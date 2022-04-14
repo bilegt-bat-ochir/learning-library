@@ -24,22 +24,22 @@ Before you develop you should ensure you have the latest content from production
 
 1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
 
-  ![](./images/git-hub-sync-behind.png " ")
+  ![Sync GitHub with master repository.](./images/git-hub-sync-behind.png " ")
 
 2. Start your **GitHub Desktop** client.  Go to **Branch** -> **Merge into Current Branch**.
 
-  ![](./images/git-hub-merge-branch.png " ")
+  ![Merge into current branch.](./images/git-hub-merge-branch.png " ")
 
 3. Select the branch upstream/master (there may be a number of branches, search until you see *upstream/master*). Press the **merge upstream/master into master** button.
 
-  ![](./images/git-hub-merge-branch-2.png " ")
+  ![Merge upstream/master into master.](./images/git-hub-merge-branch-2.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Push origin.](./images/push-origin.png " ")
 
-4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+5. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Confirm on GitHub.](./images/git-hub-sync-ahead.png " ")
 
 
 ## Task 2: Commit your Changes in your Clone
@@ -49,13 +49,13 @@ To commit your changes:
 1. Start your **GitHub Desktop** client.
 2. In the **Summary (required)** text box on the left (next to your picture), enter a summary of your changes. You can optionally add a more detailed description of your changes in the **Description** text box.
 
-  ![](./images/git-hub-commit-to-master.png " ")
+  ![Enter a summary of your changes.](./images/git-hub-commit-to-master.png " ")
 
 3. Click **Commit to master**. This saves your changes in your local clone. **Fetch Origin** changes to **Push Origin**.
 
 4. Click **Push origin** (it should have an upward arrow with a number). This pushes the updated content from your clone into the origin of this clone, that is, your fork.
 
-  ![](./images/git-hub-commit-push-origin.png " ")
+  ![Push updated content to the origin.](./images/git-hub-commit-push-origin.png " ")
 
 
 ## Task 3: Set Up GitHub Pages for your Fork to Test your Content
@@ -67,21 +67,21 @@ The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** 
 To publish your GitHub Pages site:
 1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
-  ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
+  ![Display your fork on GitHub.](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
 2. Click **Settings**.
 
-   ![](./images/git-hub-stage-git-hub-pages-settings.png " ")
+   ![GitHub settings.](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
+  ![Select options.](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
 5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice.
 
   This may take a few minutes to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
-  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
+  ![Changes are published.](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 ## Task 4: Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
@@ -101,15 +101,15 @@ Note:  *Before executing a PR, make sure you have run Task 1 above and that your
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
 
-  ![](./images/git-hub-branch-pull-request.png " ")
+  ![Create a pull request.](./images/git-hub-branch-pull-request.png " ")
 
 2. Click **Create pull request** to display an **Open a pull request** page.
 
-  ![](./images/git-hub-branch-browser-create-pull-request.png " ")
+  ![Open a pull request.](./images/git-hub-branch-browser-create-pull-request.png " ")
 
 3. Enter the title for the pull request, **include your WMS ID** (you can find that by visiting the [WMS](http://bit.ly/oraclewms)) in the title.  PRs will not be approved without this ID.
 4. Click **Create pull request**.
-    ![](./images/git-hub-pull-request-title-comment.png " ")
+    ![Include WMS id in pull request title.](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
@@ -208,27 +208,27 @@ You have finish developing your workshop. In order to publish your workshop, you
 You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
-### Issue: Conflicts
-![](./images/behind.png " ")
+### Issue: Commits Behind oracle:master
+![Commits behind oracle master.](./images/behind.png " ")
 
 1. To fix this, in Github Desktop select **Fetch Origin**
-  ![](./images/fetch-origin.png " ")
+  ![Fetch origin.](./images/fetch-origin.png " ")
 
 2. Next, select **Branch -> Merge into Current Branch**
-  ![](./images/branch.png " ")
+  ![Select merge into current branch.](./images/branch.png " ")
 
 3. Then, click **Upstream/Master -> Merge Upstream/Master into Master**
-  ![](./images/merge.png " ")
+  ![Click upstream master.](./images/merge.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Select push origin.](./images/push-origin.png " ")
 
 4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Refresh your personal github repository.](./images/git-hub-sync-ahead.png " ")
 
 ### Issue: Clone failed
-  ![](./images/clone-failed.png " ")
+  ![Clone failed.](./images/clone-failed.png " ")
 
   1. Execute the following commands to make sure .gitconfig is updated:
 
@@ -240,7 +240,23 @@ You may now **proceed to the next lab**.
     <copy> git config --global core.ignorecase false </copy>
     ```
 
-This concludes this lab. You may now proceed to the next lab.
+### Issue: GitHub Merge Conflicts
+GitHub merge conflicts happen when you and some other contributors are changing the same content in the learning-library. Merge conflicts prevent you from pushing your changes to your learning-library GitHub repository.
+  ![Merge Conflicts](./images/merge-conflicts.png)
+
+1. When you fetch origin and merge changes into your current branch (as in Task 1), you may encounter merge conflicts, as shown in the screenshot above. In the screenshot, you have 3 files that have merge conflicts.
+
+2. Since you are changing the same content as other people, you need to manually decide which version of changes you want to keep. Open your text editor. Go to the files that have conflicts. Conflicts are highlighted by your text editor, and you will choose to use either your changes or other people's changes.
+  ![Resolve Conflicts](./images/resolve-conflicts.png)
+
+3. After you resolve all the conflicts and save your changes, you GitHub Desktop should look like the screenshot below. There will be a green checkmark beside each file, indicating there are no conflicts. Enter the **Summary** and click **Commit to master**. After commit finishes, you can click **Push origin**, and your changes are pushed to your GitHub repository.
+  ![Conflicts Resolved](./images/conflicts-resolved.png)
+
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![Refresh your personal GitHub repository.](./images/git-hub-sync-ahead.png " ")
+
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Want to Learn More?
 

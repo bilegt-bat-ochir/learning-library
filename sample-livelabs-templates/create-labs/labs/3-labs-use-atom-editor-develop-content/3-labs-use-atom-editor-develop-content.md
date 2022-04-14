@@ -26,7 +26,7 @@ To install Atom:
 
 1. Go to the [Atom](https://github.com/atom/atom/releases/tag/v1.51.0) URL.
 2. Click the zip file  for your operating system, save and extract the zip file.
-  ![](./images/use-atom-editor-download.png " ")
+  ![Installation of Atom.](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
 ### **Option 2: Install Visual Studio Code**
@@ -34,11 +34,11 @@ To install Atom:
 To install Visual Studio Code:
 
 1. Visit the [download](https://code.visualstudio.com/download) site and select the zip file for your operating system. In this case, we chose Mac OS.
-  ![](./images/vscode-os-options.png " ")
+  ![Downloading Visual Studio Code.](./images/vscode-os-options.png " ")
 3. Double-click the zip file to expand it. The VS Code application will then show in your downloads folder in Finder.
-  ![](./images/vscode-zip-expanded.png " ")
+  ![Install Visual Studio Code.](./images/vscode-zip-expanded.png " ")
 4. Drag it to the Applications folder and double-click it to launch the text editor.
-  ![](./images/vscode-drag.png " ")
+  ![Launch Visual Studio Code.](./images/vscode-drag.png " ")
 
 ## Task 2: Install Live Server
 
@@ -50,25 +50,25 @@ To install **atom-live-server**:
 1. In the **Atom** editor, click **Help**, and then select **Welcome Guide**.
 2. In the **Welcome Guide** screen, click **Install a Package**, and then click **Open Installer** to display the **Install Packages** window.
 
-  ![](./images/use-atom-editor-welcome-install-package.png " ")
+  ![Install a package on Atom.](./images/use-atom-editor-welcome-install-package.png " ")
 
 3. Enter **atom-live-server**, and then click **Install**.
 
-  ![](./images/use-atom-editor-welcome-install-package-atom-live-server.png " ")
+  ![Install live server.](./images/use-atom-editor-welcome-install-package-atom-live-server.png " ")
 
 4. When the installation is successfully completed, the **Install** button is replaced with the **Uninstall** and **Disable** buttons.
-  ![](./images/use-atom-editor-welcome-uninstall-disable.png " ")
+  ![Successful installation.](./images/use-atom-editor-welcome-uninstall-disable.png " ")
 The **atom-live-server** plugin is added to the **Packages** menu.
-  ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
+  ![Atom live server is installed.](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 ### **Option 2: Install Visual Studio Code's Live Server Extension**
 
 1. Launch VS Code and navigate to the Extensions bar.
-  ![](./images/extensions-tab.png " ")
+  ![Add extensions in visual studio code.](./images/extensions-tab.png " ")
 2. Type "Live Server" into the search bar and select the first entry, "Live Server 5.6.1".
-  ![](./images/ls-search.png " ")
+  ![Search for live server.](./images/ls-search.png " ")
 3. Click "Install".
-  ![](./images/ls-install.png " ")
+  ![Install live server.](./images/ls-install.png " ")
 
 ## Task 3: Merge Content from Git Before You Start Editing Your Content
   Everyday before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
@@ -78,24 +78,24 @@ The **atom-live-server** plugin is added to the **Packages** menu.
   1. Start your **GitHub Desktop** client.
   2. Select **Branch > Merge into current branch** to display the **Merge in Master** window.
 
-    ![](./images/git-hub-merge-current-branch.png " ")
+    ![Merge current branch.](./images/git-hub-merge-current-branch.png " ")
 
   3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
-    ![](./images/git-hub-merge-local-clone-default-branch.png " ")
+    ![Master branch is selected by default.](./images/git-hub-merge-local-clone-default-branch.png " ")
 
   4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the **upstream/master** into the clone on the local PC.
 
-    ![](./images/git-hub-merge-upstream-master.png " ")
+    ![Merge into upstream master.](./images/git-hub-merge-upstream-master.png " ")
 
   5. When the merge is successfully completed, a **"Successfully merged upstream/master into master"** message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
     > **Note:** To determine if your clone is up-to-date with **upstream/master** (production), repeat Steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with **upstream/master**".
 
-    ![](./images/git-hub-merge-branch-up-to-date.png " ")
+    ![This branch is up to date.](./images/git-hub-merge-branch-up-to-date.png " ")
 
   In the **GitHub Desktop** UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
 
-  ![](./images/git-hub-merge-fetch-origin.png " ")
+  ![Synchronized repositories.](./images/git-hub-merge-fetch-origin.png " ")
 
 ## Task 4: Create Your Labs and Workshop Content
 Leverage the content from the **learning-library\sample-livelabs-templates\sample-workshop** folder to start creating lab and workshop content for your project.
@@ -112,38 +112,38 @@ To create your lab and workshop content:
 5. Copy any lab folder, such as the **query** folder to your project folder. In your project folder, rename the folder **query** and the respective `.md` file within it as per your requirement.  Based on the sample **query** folder, you can create and rename as many labs (folders) and the respective `.md` files as per your requirement.
 
   > **Note:** The **files** folder within every sample lab folder is currently not required and is reserved for future use.
-  ![](./images/lab-files-folder-currently-not-nedded.png " ")
+  ![Files folder with sample labs.](./images/lab-files-folder-currently-not-nedded.png " ")
   After you copy the sample folder to your project folder, you can delete your copy of the **files** folder from your project folder.
   Your lab will look similar to this example:
-  ![](./images/lab-folder-structure.png " ")
+  ![Example of your lab files folder.](./images/lab-folder-structure.png " ")
 
 5. Similarly, copy the **workshops** folder along with its contents from **learning-library\sample-livelabs-templates\sample-workshop** to your project folder. For example, **GitHub\learning-library\sample-livelabs-templates\create-labs\labs**.
 6. To edit the `.md` file of your lab, open your text editor (in this case, we're using Atom), click **File > Open Folder** to display the **Open Folder** dialog box. In VS code, you would click **File > Open**.
-  ![](./images/use-atom-editor-open-folder.png " ")
+  ![Open project folder in Atom.](./images/use-atom-editor-open-folder.png " ")
 7. Navigate to **GitHub\learning-library\sample-livelabs-templates\create-labs\labs** and click **Select Folder** to open your project folder.
-  ![](./images/atom-editor-browse-select-lab.png " ")
+  ![Navigate to your project folder.](./images/atom-editor-browse-select-lab.png " ")
   The project folder along with the labs and **workshops** folder will then be displayed in your text editor.
-    ![](./images/atom-editor-project-folder-displayed.png " ")
+    ![Workshops folder displayed in text editor.](./images/atom-editor-project-folder-displayed.png " ")
 
 8. Select the `.md` file you want to edit, for example, select the `1-labs-git-hub-get-started-install-configure.md` file and edit your lab content. Similarly, edit the `.md` files of the rest of your labs.
-    ![](./images/atom-editor-browse-open-mdfile-editing.png " ")
+    ![Select markdown file to edit.](./images/atom-editor-browse-open-mdfile-editing.png " ")
 9. If you want to add images in your lab, then include them within the **images** folder. You can insert images in the respective `.md` file.
 10. Similarly to edit your workshop content, expand the **workshops\freetier** folder in your text editor, edit the `manifest.json` to list the labs you have added to your workshop (or plan to add) and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
-  ![](./images/use-atom-editor-manifest-json.png " ")
+  ![Edit manifest json file with Atom.](./images/use-atom-editor-manifest-json.png " ")
 11. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
-    ![](./images/use-atom-editor-readme-update.png " ")
+    ![Introduction markdown file.](./images/use-atom-editor-readme-update.png " ")
 
     In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
-    ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
+    ![Workshop folder structure in Atom.](./images/use-atom-editor-folder-structure-in-atom.png " ")
 
 ## Task 5: Security
 
 1. Blur all personal information (IP addresses, intranet URLs, email addresses, OCIDs, usernames, and passwords) from images.
-  ![](./images/blur-ip.png " ")
+  ![Blur all identifiable information.](./images/blur-ip.png " ")
 
 2. Every image must have a description: ![DESC] (…/…/name.png “ “)
 
-  ![](./images/image-desc.png " ")
+  ![Every image must have a description.](./images/image-desc.png " ")
 
 3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text. Do not provide a demo password. 
 
@@ -152,24 +152,24 @@ To create your lab and workshop content:
 ### **Option 1: Using Atom**
 
 1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
-  ![](./images/use-atom-editor-packages-start-live-server.png " ")
+  ![Start live server.](./images/use-atom-editor-packages-start-live-server.png " ")
 
   By default, the **atom-live-server** opens a browser window that displays the folders inside your project (**labs**) folder.
 2. Click the **workshops** folder and then click **freetier** folder that contains the workshop you want to view.
-  ![](./images/use-atom-editor-open-live-server.png " ")
+  ![Select the workshop you want to view.](./images/use-atom-editor-open-live-server.png " ")
 
   The Workshop is displayed along with the labs. You can make content changes in the **Atom** editor to the workshop and lab files, save the changes, and the updated content gets automatically refreshed in the browser window.
 
-  ![](./images/use-atom-editor-workshop-output.png " ")
+  ![Workshop view in Live Server.](./images/use-atom-editor-workshop-output.png " ")
 
 3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
 ### **Option 2: Using Visual Studio Code**
 
 1. Within the directory of any workshop you want to view, click the **workshops** folder and then click **freetier** folder.
-  ![](./images/folder-nav.png " ")
+  ![Navigate to freetier folder.](./images/folder-nav.png " ")
 2. Right-click on the index.html file and select "Open with Live Server".
-  ![](./images/right-click.png " ")
+  ![Right click and select open with live server.](./images/right-click.png " ")
 3. The local version of your workshop will then be launched in your web browser.
 
 ## Task 7: (Optional) Helpful resources and extensions for Visual Studio Code

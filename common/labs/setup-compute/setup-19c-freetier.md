@@ -50,7 +50,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 8. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
    ![Create a stack](images/workshop-002.png " ")
 9. Paste the SSH key you created in the previous lab.
-   ![Create a stack](images/workshop-003.png " ")
+   ![Create a stack](images/paste-ssh-key.png " ")
 10. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
     ![Create a stack](images/workshop-004.png " ")
 11. Accept the network and click **Next**.
@@ -78,7 +78,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2. Look for the instance you just created and jot down the public IP address.
-    
+
     <if type="freetier">
     If you are running the workshop on your own tenancy, the instance you just created is *Workshop*.
     ![Instance Public IP](images/instance-public-ip.png " ")
@@ -114,7 +114,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     >**Note:** The angle brackets <> should not appear in your code.
 5.  When prompted, answer **yes** to continue connecting.
 
-    ![Create a stack](images/workshop-013.png " ")
+    ![Create a stack](images/ssh.png " ")
 
 6.  Continue to the *next Step* on the left hand menu.
 
@@ -133,7 +133,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/cloudshelllogin.png " ")
 
-    *Note: The angle brackets <> should not appear in your code.*
+    >**Note:** The angle brackets <> should not appear in your code.
 
 4.  After successfully logging in, proceed to the *next Step* on the left hand menu.
 
@@ -231,18 +231,18 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
 7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
 
-    ```` 
+    ````
     SQL> <copy>exit
     </copy>
     ````
 
-    ```` 
+    ````
     [oracle@workshop ~]$ <copy>exit
     whoami
     </copy>
     ````
     ![](./images/whoami.png " ")
-    
+
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
 You may now **proceed to the next lab**.
@@ -343,4 +343,4 @@ Reload your browser
 ## Acknowledgements
 - **Author** - LiveLabs Team
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Kamryn Vinson, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Arabella Yao, March 2022
+- **Last Updated By/Date** - Arabella Yao, April 2022

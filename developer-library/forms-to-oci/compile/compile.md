@@ -2,7 +2,7 @@
 
 In this lab, you will install a database schema and compile Oracle Forms samples.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 

@@ -61,8 +61,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
  
      ```
      <copy>
-     source microservices-datadriven/workshops/dcms-oci/source.env
-     <setup
+     source microservices-datadriven/workshops/dcms-oci/source.env ;  setup
      </copy>
      ```
 

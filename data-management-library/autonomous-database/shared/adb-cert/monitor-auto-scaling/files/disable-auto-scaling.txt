@@ -1,1 +1,0 @@
-Remove the checkbox for OCPU auto scaling.

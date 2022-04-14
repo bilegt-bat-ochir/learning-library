@@ -75,7 +75,7 @@ Estimated Time:  10 minutes
 1.  Execute a load test using the load testing tool you have installed.  
 
     ```
-    <copy>cd $GRABDISH_HOME/k6; test40usersFor5Minutes.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test40usersFor5Minutes.sh</copy>
     ```
     
     *Note that you can adjust the alert rule condition(s) (as defined in task 1) as well as the number of users and duration of the load test conducted here as desired.

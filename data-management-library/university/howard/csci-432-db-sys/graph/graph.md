@@ -126,18 +126,7 @@ Learn how to
 
    The newly created user will now be listed.
 
-   ![ALT text is not available for this image](./images/db-actions-user-created.png " ")   
-
-## Task 3: Graph Studio: Load data from CSV files into tables
-
-### Introduction
-
-In this task you will load two CSV files into corresponding tables using the Database Actions interface of your 
-Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
-
-Watch the video below for a quick walk through of the task.
-
-[](youtube:wkKKO-RO0lA)
+   ![ALT text is not available for this image](./images/db-actions-user-created.png " ") 
 
 **Login as the graph-enabled user**
 
@@ -151,6 +140,18 @@ Watch the video below for a quick walk through of the task.
 3. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
+ 
+
+## Task 3: Graph Studio: Load data from CSV files into tables
+
+### Introduction
+
+In this task you will load two CSV files into corresponding tables using the Database Actions interface of your 
+Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
+
+Watch the video below for a quick walk through of the task.
+
+[](youtube:wkKKO-RO0lA)
 
 **Download the sample datasets from the ObjectStore**
 
@@ -199,7 +200,9 @@ Watch the video below for a quick walk through of the task.
 
    ![ALT text is not available for this image](images/dbactions-click-done.png " ")
 
-6. Now open the **SQL** Worksheet.
+6. Now open the **SQL** Worksheet by clicking **Database Actions** and selecting **SQL**. 
+   
+   ![ALT text is not available for this image](images/db-actions-select-sql.png " ")
   
 7. Copy and paste the following code into the worksheet  and run it by clicking on the “Run Script” arrow on top. 
    
@@ -230,10 +233,10 @@ Watch the video below for a quick walk through of the task.
       - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts.acct_id` 
       - Helps you verify that the addition of a `txn_id` column and the constraints
 
-8. Execute the `fixup.sql` script in the SQL worksheet.  
+8.  Execute the `fixup.sql` script in the SQL worksheet.  
    ![ALT text is not available for this image](./images/db-actions-sql-execute-fixup.png " ")  
    
-9. The script output should look as follows:
+11. The script output should look as follows:
    
    ![ALT text is not available for this image](./images/db-actions-sql-script-output.png " ")
   
@@ -254,9 +257,7 @@ Learn how to
 
 **Connect to your Autonomous Database using Graph Studio**
 
-1. If you have the Graph Studio URL then proceed to step 4. 
-
-    Log in to the Oracle Cloud Console, choose the Autonomous Database instance, then Click the **Tools** tab on the details page menu on the left. 
+1. On your browser tab where you have your Autonomous Database main page Click the **Tools** tab on the details page menu on the left. If you no longer have a browser page open to the main database page, you need to log back into your cloud account as done in Task 1. 
 
    ![Oracle Cloud Console](./images/adw-console-tools-tab.png)
 
@@ -457,7 +458,10 @@ First **import** the sample notebook and then execute the relevant paragraph for
 	See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
 	The Getting Started notebook folder also has a tutorial on PGQL.  
 
-3. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.  
+3. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.
+
+   ![ALT text is no available for this image](images/selected-graph-layout.png " ")  
+  
 
 4. Next let's use PGQL to find the top 10 accounts in terms of number of transfers.  
 	PGQL has built-in functions `IN_DEGREE` and `OUT_DEGREE` which return the number of incoming and outgoing edges of a node. So we can use them in this query.   

@@ -67,7 +67,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
   ![](images/oci-console-home-page.png " ")
 
-You may now **proceed to the next lab**
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

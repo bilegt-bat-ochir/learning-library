@@ -108,11 +108,13 @@ Use the Oracle Integration dashboard to see the data flow resulting from the cre
 
 1. In the Integration navigation pane, click **Home** > **Monitoring** > **Integrations** > **Tracking**
 
-2. Find our corresponding Integration Instance, by matching the PO number which was generated in ERP Cloud. This should be under the columns *Primary Identifier* or *Business Identifiers*.
-
-3. Click on your **Order Number** link to open the corresponding integration instance.
+2. Find our corresponding Integration Instance, by matching the *PO Header Id* or *Document Description* from the Purchase Order in ERP Cloud. This should be under the columns *Primary Identifier* or *Business Identifiers*.
 
    ![Find the Integration Instance](images/integration-instance-run.png)
+
+3. Click on your **PO Header Id** link to open the corresponding integration instance.
+
+   ![Open the Integration Instance](images/integration-instance-open.png)
 
     The flow ran successfully if it is displayed with a green line.
 
@@ -164,7 +166,7 @@ Follow these steps to view the PO record in the designated DB table.
 
     This opens the *ADMIN.PURCHASEORDER* table window. 
 
-8. Click on **Data** in the left menu to display the table data. Verify the PO record is available. 
+8. Click on **Data** in the left menu to display the table data. Verify your PO record is available. 
    ![Show PO data](images/show-po-data.png)
 
 
@@ -172,5 +174,5 @@ You have completed the final step of this workshop. Thank you!
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
-* **Last Updated By/Date** - Ravi Chablani, March 2022
+* **Last Updated By/Date** - Ravi Chablani, April 2022
 

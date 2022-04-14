@@ -6,7 +6,7 @@ Autonomous Database can leverage the Data Catalog metadata to dramatically simpl
 
 Estimated Time: 30 minutes
 
-<!-- Comments -->
+<!-- Comments: Freetier conditional code ends on line 332. -->
 
 ### Objectives
 
@@ -179,9 +179,12 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
 
     ![The result of running the query in the code section of the worksheet is displayed in the Script Output tab at the bottom of the worksheet. ](./images/ll-log-output.png " ")
 
-> **Note:** Make sure that the log displays the highlighted output about resetting the password before you proceed to the next step. Once your output is displayed, you can close the new browser tab.
+    >**Note:** Make sure that the log displays the above highlighted output (at the end of the log) about resetting the password before you proceed to the next step. Once your output is displayed, you can close the new browser tab. In addition, the prerequisites to initialize the lab is complete only when you see the following highlighted message _You can not log in until you set a password ..._ in the **Script Output** tab of the first SQL worksheet as follows:
 
-4. Return to the original browser tab. Set the password for the **`MOVIESTREAM`** user. You will log in as this user to run queries. Click the **Run Script (F5)** icon in the Worksheet toolbar.
+    ![](./images/code-execution-complete.png " ")
+
+
+4. In the original browser tab, set the password for the **`MOVIESTREAM`** user. You will log in as this user to run queries. Click the **Run Script (F5)** icon in the Worksheet toolbar.
 
     >**Note:** Substitute **``<secure password``>** with your own secured password that you will remember for later use such as **`Training4ADB`**.
 
@@ -243,6 +246,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
 
     ![The moviestream_sandbox public Oracle Object Storage bucket details are displayed in the Bucket Information tab. The potential_churners folder is displayed in the Objects section.](./images/sandbox-bucket-storage.png " ")    
 
+4. Set the credentials to use with Data Catalog and Object Storage. The **`set_data_catalog_credential`** procedure sets the Data Catalog access credential that is used for all access to the Data Catalog. The **`set_object_store_credential`** procedure sets the credential that is used by the external tables for accessing the Object Storage. Changing the Object Storage access credential alters all existing synced tables to use the new credential. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -509,6 +513,8 @@ In this task (in a later step), you will create a connection to your Data Catalo
 
     ![The partial result of running the query in the code section of the worksheet is displayed in the Query Result tab. The display_name and folder_name columns along with their values are highlighted.](./images/view-entities.png " ")
 
+    >**Note:** The **`moviestream_sandbox`** bucket contains a **`potential_churners`** data set and potentially several other data sets created by data scientists. This bucket is used by multiple workshops that capture the results of experiments; therefore, your results might not precisely match the above screen capture.
+
     You can use the `describe` SQL*Plus command to get familiar with the columns in the `all_dcat_entities` Data Catalog table:
 
     ```
@@ -543,7 +549,9 @@ In this task (in a later step), you will create a connection to your Data Catalo
 
     > **Note:** In later steps, you will synchronize all of the available Object Storage buckets.
 
-2. Copy and paste the following code into your SQL Worksheet. Replace the **`asset_id`** key value shown with your `data_asset_key` value and the **`folder_list`** key value with your `folder_key` value that you copied in the previous step. Click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+2. Copy and paste the following code into your SQL Worksheet. Replace the **`asset_id`** key value shown with your `data_asset_key` value and the **`folder_list`** key value with your `folder_key` value that you copied in the previous step.     
+
+    The **`grant_read`** parameter lists the users or roles that are automatically granted **`READ`** privileges on all external tables processed when you invoke the **`run_sync`** procedure. All users/roles in the **`grant_read`** list are given **`READ`** privileges on all new or already existing external tables that correspond to entities specified by the **`synced_objects`** parameter. Autonomous Databases come with a predefined database role named **`DWROLE`**. This role provides the common privileges such as select on tables for a database developer or data scientist to perform real-time analytics. In our example, we are granting **`READ`** access on the Data Catalog sourced tables to the `dwrole` role. See [Manage User Privileges on Autonomous Database - Connecting with a Client Tool](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-privileges.html#GUID-50450FAD-9769-4CF7-B0D1-EC14B465B873)Click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
 
     ```
@@ -553,11 +561,9 @@ In this task (in a later step), you will create a connection to your Data Catalo
         '{"asset_list": [
             {
                 "asset_id":"509c3c9f-79f9-42e9-9320-2e02e2e177b7",
-                "folder_list":[
-                    "7023125c-5dfb-4d28-ad6f-d184a508cee2"
-               ]
+                "folder_list":["7023125c-5dfb-4d28-ad6f-d184a508cee2"]
             }   
-        ]}');                    
+        ]}', grant_read => 'dwrole');                    
     end;
     /
     </copy>
@@ -701,27 +707,29 @@ You will do one last customization to shorten the generated schemas' names a bit
 
 ## Task 7: Synchronize All Data Assets in Data Catalog
 
-So far in this lab, you synchronized only the **`moviestream_sandbox`** Object Storage Bucket. In this task, you will synchronize all of the data asset folders.
+So far in this lab, you synchronized only the **`moviestream_sandbox`** Object Storage Bucket. In this task, you will synchronize all of the data asset folders and grant **`READ`** access on the Data Catalog sourced tables to the **`dwrole`** role. See [RUN_SYNC Procedure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/ref-running-synchronizations.html#GUID-C94171B4-6C57-4707-B2D4-51BE0100F967).
 
 1. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar.
 
     ```
     <copy>
     begin
-      dbms_dcat.run_sync('{"asset_list":["*"]}');
+      dbms_dcat.run_sync('{"asset_list":["*"]}',
+      grant_read => 'dwrole');
     end;  
     /
     </copy>
     ```
 
+    ![The copied full sync code is displayed in the worksheet. The F5 icon is highlighted.](./images/sync-code.png " ")
+
     The synchronization process can take up to two or more minutes to complete. <!-- When it is completed successfully, the output is displayed at the bottom of the SQL Worksheet.-->
 
     >**Note:** When the script execution completes, if you see a Code Execution Failed message on the Status bar at the bottom of the SQL Worksheet, ignore it. You will check the script execution status and results using a logfile in the next two steps.
 
-    <!--  comment -->
+    When the full sync is completed successfully, a **PL/SQL procedure successfully completed** message is displayed in the **Script Output** tab. If you are using a LiveLabs environment, the output might look different. 
 
-    <!--![](./images/synch-output.png " ")-->
-
+    ![The result of running the sync code is displayed.](./images/synch-result.png " ")
 
 2.  Copy and paste the following code into your SQL Worksheet to query the **`user_load_operations`** table to find the name of the logfile table name that contains information about the sync operation. Click the **Run Script (F5)** icon in the Worksheet toolbar. Note the name of the **`logfile_table`**. The **`order by 1`** clause displays the most recent **DCAT_SYNC** operation if there were more than one performed. In our example, the most recent logfile table name is **`DBMS_DCAT$1_LOG`**
 
@@ -761,18 +769,7 @@ So far in this lab, you synchronized only the **`moviestream_sandbox`** Object S
     /
     ```
 
-4. Access to the automatically generated tables by the synchronization process is secure.  You need to grant access to users/roles. Autonomous Databases come with a predefined database role named **`DWROLE`**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Grant the select on tables privilege to the data warehouse role using the `grant_select_on_dcat_tables` custom procedure. This procedure grants READ access on the Data Catalog sourced tables to the `dwrole` role. See [Manage User Privileges on Autonomous Database - Connecting with a Client Tool](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-privileges.html#GUID-50450FAD-9769-4CF7-B0D1-EC14B465B873)
-
-
-    ```
-    <copy>
-    exec grant_select_on_dcat_tables('dwrole');
-    </copy>
-    ```
-
-    ![The result of running the code is displayed in the Script Output tab. At the end of the output, the message "PL/SQL procedure successfully completed" is displayed.](./images/grant-to-dwrole.png " ")
-
-3. Query the generated schemas and external tables after your synchronization. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+4. Query the generated schemas and external tables after your synchronization. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
@@ -790,9 +787,10 @@ You may now proceed to the next lab.
 
 ## Learn More
 
+* [DBMS_DCAT Package](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-dbms_dcat-package.html#GUID-4D927F21-E856-437B-B42F-727A2C02BE8D)
+* [RUN_SYNC Procedure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/ref-running-synchronizations.html#GUID-C94171B4-6C57-4707-B2D4-51BE0100F967)
 * [Using Oracle Autonomous Database on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/index.html)
 * [Connect with Built-in Oracle Database Actions](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql-developer-web.html#GUID-102845D9-6855-4944-8937-5C688939610F)
-* [DBMS_DCAT Package](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-dbms_dcat-package.html#GUID-4D927F21-E856-437B-B42F-727A2C02BE8D)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
 * [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
@@ -802,7 +800,7 @@ You may now proceed to the next lab.
 
 * **Author:** Lauran Serhal, Consulting User Assistance Developer, Oracle Autonomous Database and Big Data     
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies
-* **Last Updated By/Date:** Lauran Serhal, February 2022
+* **Last Updated By/Date:** Lauran Serhal, April 2022
 
 Data about movies in this workshop were sourced from Wikipedia.
 

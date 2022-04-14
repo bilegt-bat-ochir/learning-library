@@ -35,17 +35,17 @@
             "filename": "../../machine-learning/machine-learning.md"
         },
         {
-            "title": "Need Help?",
-            "filename":"../../need-help/need-help.md"
-        },
-        {
             "title": "Lab 7: Intro to Graph Database",
             "filename": "../../graph/graph.md"
-        },
+        }, 
         {
             "title": "Lab 8: Intro to Spatial",
             "filename": "../../spatial/spatial.md"
-        },       
+        },  
+        {
+            "title": "Need Help?",
+            "filename":"../../need-help/need-help.md"
+        },
         {
             "title": "Acknowledgements",
             "filename":"../../acknowledgements/acknowledgements.md"

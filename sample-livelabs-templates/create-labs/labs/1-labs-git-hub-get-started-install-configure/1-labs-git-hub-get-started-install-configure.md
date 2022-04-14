@@ -65,7 +65,7 @@ In this Step, you will create and set up your GitHub account.
 
 5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
-    ![](./images/git-2-factor-authentication.png " ")
+    ![Set up 2 factor authentication.](./images/git-2-factor-authentication.png " ")
 
 If you are an Oracle employee working on GitHub projects, you must be a member of the **Oracle GitHub organization (OGHO)** at [github.com/oracle](github.com/oracle), and be successfully listed under the **People** tab. To request access as a contributor to existing repository such as the **Oracle** project and its **learning-library** repo where your LiveLabs workshop will be stored, your GitHub account must be in accordance to the OGHO requirements. Once you complete the above steps, request membership to the **OGHO** as follows:
 
@@ -113,7 +113,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
 2. When the software is successfully installed, open the **GitHub Desktop**.
 
-  ![](./images/git-hub-desktop-login-screen.png " ")
+  ![GitHub desktop login screen.](./images/git-hub-desktop-login-screen.png " ")
 
 3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**. You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
 
@@ -121,7 +121,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
   You are now logged in to **GitHub Desktop**.
 
-  ![](./images/get-started-git-hub-desktop.png " ")
+  ![GitHub desktop main screen.](./images/get-started-git-hub-desktop.png " ")
 
 ## Task 5: Fork the learning-library Repository on Your GitHub Account
 
@@ -137,12 +137,12 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
 3. Click **Fork** to display the following message: **How are you planning to use this fork?**.
 
-  ![](./images/get-started-git-hub-webUI-fork.png " ")
+  ![Fork instruction dialog box.](./images/get-started-git-hub-webUI-fork.png " ")
 
 4. Select the option that indicates your local repository.
 In the following example, user achepuri has forked the **learning-library** repository.
 
-  ![](./images/get-started-git-hub-webui-forked-library.png " ")
+  ![Local repository to fork.](./images/get-started-git-hub-webui-forked-library.png " ")
 
 In the next Step, you will clone this forked repository.
 
@@ -153,17 +153,17 @@ To clone the forked repository:
 1. Open your **GitHub Desktop** application and log in using your GitHub account.
 2. Click **File > Clone repository** to display the **Clone a repository** dialog box.
 
-    ![](./images/git-hub-desktop-clone-repository.png " ")
+    ![Clone repository.](./images/git-hub-desktop-clone-repository.png " ")
 
 3. Select your own repository such as **your account/learning-library** from **Your repositories**. In this example, there is only one repository displayed named **achepuri/learning-library**. Under **Local path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the project files get copied to your local file system. In this example, the local path is **C:\Users\achepuri.ORADEV\Documents\GitHub**.  
 
-    ![](./images/git-hub-desktop-clone-repository_dialog.png " ")
+    ![Available repositories dialog box.](./images/git-hub-desktop-clone-repository_dialog.png " ")
 
 4. Click **Clone**.
 
   The **learning-library** repository files appear in the local path you just specified. You can now start working on your labs and workshops!
 
-  ![](./images/git-hub-my-cloned-repository.png " ")
+  ![Successfully cloned repository.](./images/git-hub-my-cloned-repository.png " ")
 
   > **Note:** The local cloned repository is connected to the remote fork version. You can push your local clone changes to the remote fork version when you are online to keep them in sync.
 
@@ -173,11 +173,11 @@ To clone the forked repository:
 
 5. You can also use Github Desktop to Synchronize the changes that you have made in your local file system to the forked content on your github repo, more details on using Github Desktop in Lab 4 of this workshop and also on Otube [Working with GitHub Desktop](https://otube.oracle.com/media/t/1_bxj0cfqf).
 
-  ![](./images/github-desktop-sync.png " ")
+  ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
 
 6. When asked how you plan to use the fork select **To contribute to the parent project**.
 
-  ![](./images/contribute-to-parent.png " ")
+  ![Contribute to parent project.](./images/contribute-to-parent.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
 

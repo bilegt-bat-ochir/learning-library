@@ -1,8 +1,13 @@
 # Explore the Forms Environment
 
-Estimated Lab Time: 10 minutes
+## Introduction
+
+Let's check what has been installed.
+
+Estimated Time: 10 minutes
 
 ### About Forms
+
 Oracle Forms is an application development technology used for creating screens that interact with an Oracle database. The source form or module (.fmb) is compiled into a platform-specific "executable" (.fmx) that is run (interpreted) by the Forms runtime server. The running form is used to view and edit data in database-driven applications. 
 
 ### Objectives
@@ -15,7 +20,6 @@ In this lab, you will:
 
 This lab assumes you have:
 * All previous labs successfully completed
-
 
 ## Task 1: Port Forwarding
 

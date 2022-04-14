@@ -9,11 +9,11 @@
 [](youtube:_Z5PdpdEklI)
 
 
-Estimated Lab Time: 15 minutes.
+Estimated Time: 15 minutes.
 
 ### Objectives
 
-In this lab, you will:
+In this section, you will:
 
 - Create Policies.
 - Create Policies for Data Science.
@@ -23,12 +23,14 @@ In this lab, you will:
 
 ### Prerequisites
 
-- All previous labs have been successfully completed.
+- All previous sections have been successfully completed.
 
 ## Task 1: Create Policies
 
-1. Create **Dynamic Group**, go to **Menu** > **Identity & Security** > **Dynamic Groups**.
+1. Create **Dynamic Group**, go to **Menu**, **Identity & Security** and then click **Dynamic Groups**.
 
+> Note: If you can't see **Dynamic Groups** under **Identity & Security** section, please select **Domains**, **Default (Current domain)** and then click **Dinamycs Group**.
+ 
    ![](images/ds_dynamic_group_menu.png)
 
 2. Click **Create Dynamic Group**.
@@ -56,7 +58,7 @@ In this lab, you will:
 
 ## Task 2: Create Policies for Data Science
 
-1. Go to **Menu** > **Identity & Security** > **Policies**.
+1. Go to **Menu**, **Identity & Security** and then click **Policies**.
 
    ![](images/identity_policies_menu.png)
 
@@ -105,7 +107,7 @@ In this lab, you will:
 
 ## Task 3: Create a Data Science Project
 
-1. Go to **Menu** > **Analytics & AI** > **Data Science**.
+1. Go to **Menu**, **Analytics & AI** and then click **Data Science**.
 
    ![](images/ds_menu.png)
 
@@ -131,6 +133,7 @@ In this lab, you will:
       - Name: `Fish Survey`
       - Compute Instance Shape (but other compatible shapes would work as well): `VM.Standard.E2.2`
       - Block Storage Size: `50`
+      - Networking resources > Custom networking
       - VCN: `nature`
       - Subnet: `Private Subnet-nature`
 
@@ -156,9 +159,9 @@ In this lab, you will:
 
 ## Task 4: Install Libraries
 
-1. Welcome to your Jupyter Notebook, click **Terminal**.
+1. Welcome to your **Jupyter Notebook**. Click **Terminal**.
 
-   ![](images/ds_notebook_terminal.png)
+   ![](images/ds_notebook_terminal_launcher_new.png)
 
 2. Type the following command:
 
@@ -188,13 +191,13 @@ In this lab, you will:
 
 5. **Double click** on **mds-di-ds-FishSurvey.ipynb**.
 
-6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database Service**.
+6. Make sure you **modify** `PRIVATE_IP` and **passwd** on the following code in the **Notebook** with the **Private IP and Password from MySQL Database Service**.
 
    ```
    cnx = mysql.connector.connect(
       host="PRIVATE_IP",
       user="root",
-      passwd="R2d2&C3po!",
+      passwd="<your_password>",
       database="nature"
    )
    ```
@@ -217,6 +220,6 @@ Continue to the Next Steps for more information!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

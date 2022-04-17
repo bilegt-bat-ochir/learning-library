@@ -167,7 +167,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 * **Author** - Didi Han, Database Product Management
 * **Contributors**:
-    * Kay Malcolm & Tom McGinn, Database Product Management
+    * Kay Malcolm, Database Product Management
     * Didi Han
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 

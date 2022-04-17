@@ -9,6 +9,12 @@
          "filename": "./../sprint-provision-dcat-instance/sprint-provision-dcat-instance.md"
       },
       {
+         "title": "How do I find a Data Catalog instance OCID?",
+         "type": "freetier",
+         "description": " ",
+         "filename": "./../../oci/sprint-find-data-catalog-ocid/sprint-find-data-catalog-ocid.md"
+      },
+      {
          "title": "How do I create an OCI compartment?",
          "type": "freetier",
          "description": "This lab walks you through how to create a new OCI compartment.",
@@ -19,6 +25,12 @@
          "type": "freetier",
          "description": "This lab walks you through how to create a new OCI compartment.",
          "filename": "./../../oci/sprint-find-compartment-ocid/sprint-find-compartment-ocid.md"
+      },
+      {
+         "title": "How do I find a region identifier?",
+         "type": "freetier",
+         "description": "This lab walks you through how to create a new OCI compartment.",
+         "filename": "./../../oci/sprint-find-region-identifier/sprint-find-region-identifier.md"
       },
       {
          "title": "How do I grant users access to a Data Catalog instance?",

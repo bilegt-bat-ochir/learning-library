@@ -206,4 +206,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Tom McGinn, July 2021
+- **Last Updated By/Date** - Madhusudhan Rao, Apr 2022

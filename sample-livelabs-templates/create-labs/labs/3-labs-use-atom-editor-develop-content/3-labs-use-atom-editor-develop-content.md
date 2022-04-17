@@ -237,7 +237,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 * **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Kay Malcolm, Database Product Management
     * Brianna Ambler
 
 * **Last Updated By/Date:** Andres Quintana, March 2022

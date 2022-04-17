@@ -270,35 +270,55 @@ In this task (in a later step), you will create a connection to your Data Catalo
     </copy>
     ```
 
-    There are several ways to find out the region identifier (that you will use in the above command) which is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed.
+    You will need to find your **Data Catalog instance region identifier** and **OCID** values that you paste in the **`region`** and **`catalog_id`** lines in the above command. Your region identifier is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed. You will review two methods to get the region identifier and OCID. The first method involves querying the **`all_dcat_global_accessible_catalogs`** data dictionary view using SQL. The second method uses the UI.
 
-    * Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is **US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
+### **Find the Data Catalog Instance Region Identifier and OCID Using a Data Dictionary View**
+1. Query the **`all_dcat_global_accessible_catalogs`** data dictionary view to find your Data Catalog instance region identifier and OCID. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
-      ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method.png " ")
+    ```
+    <copy>
+    select *
+    from all_dcat_global_accessible_catalogs;
+    </copy>
+    ```
 
-    * Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
+    ![The result of running the query in the code section of the worksheet is displayed in the Query Result tab. Some of the columns displayed are the catalog_id and catalog_region.](./images/query-region-id-ocid.png " ")
 
-      ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
+2.  To copy the **`catalog_id`** (OCID) or the **`catalog_region`** (region identifier) values, double-click the appropriate cell to highlight the value, and then copy it using **[Ctrl+C]** in MS-Windows. You can also click the pencil icon to copy the value in a cell. Paste the copied value into a text editor of your choice or wherever you need it.
 
-      > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+### **Find the Data Catalog Instance Region Identifier and OCID Using the UI**
 
-      ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
+There are several ways to find the region identifier that is associated with your region name using the UI.
 
-      Paste your copied _Region Identifier_ in the _`region => 'enter region id where your data catalog is deployed'`_ line in the above command in your SQL Worksheet.
+* Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is
+**US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
 
-    * To find your _Data Catalog OCID_, from the **Oracle Cloud Console**, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. On the **Data Catalog Overview** page, click **Go to Data Catalogs**. On the **Data Catalogs** page, in the row for your **training-dcat-instance** Data Catalog instance, click the **Actions** button (three vertical dots), and then select **Copy OCID** from the context menu.
+    ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method-ll.png " ")
 
-      ![On the Data Catalogs page, the Data Catalog instance is highlighted and labeled as 1. The Actions button, labeled as 2, is clicked to display the context menu. The Copy OCID menu option, labeled as 3, is selected.](./images/ll-dcat-ocid.png " ")
+* Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
 
-      Paste your copied Data Catalog OCID value in the _`catalog_id => 'enter data catalog ocid'`_ line in the above command in your SQL Worksheet.
+    ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
 
-      ![The copied code is displayed in the code section of the Worksheet.](./images/ll-populated-connect.png " ")
+    > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+
+    ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
+
+You can now paste your copied region identifier anywhere you need it.    
+
+### **Find the Data Catalog Instance OCID Using the UI**
+
+From the **Oracle Cloud Console**, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. On the **Data Catalog Overview** page, click **Go to Data Catalogs**. On the **Data Catalogs** page, in the row for your **training-dcat-instance** Data Catalog instance, click the **Actions** button (three vertical dots), and then select **Copy OCID** from the context menu.
 
 
-5. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+![On the Data Catalogs page, the Data Catalog instance is highlighted and labeled as 1. The Actions button, labeled as 2, is clicked to display the context menu. The Copy OCID menu option, labeled as 3, is selected.](./images/ll-dcat-ocid.png " ")
 
-    ![The result of running the code in the code section of the worksheet is displayed in the Script Output tab.](./images/region-dcat-ocid.png " ")
+6. Paste your region identifier and Data Catalog OCID that you copied in the _`region`_ and _`catalog_id`_ arguments respectively.
 
+    ![The pasted code is displayed in the code section of the Worksheet.](./images/ll-populated-connect.png " ")
+
+7. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+
+    ![The result of running the code in the code section of the worksheet is displayed in the Script Output tab with the message "PL/SQL procedure successfully completed."](./images/ll-connect-dcat.png " ")
 
     >**Note:** If you are already have a connection and would like to start over, you must disconnect (initialize) from Data Catalog by using the **`dbms_dcat.unset_data_catalog_conn`** PL/SQL package procedure. This procedure removes an existing Data Catalog connection. It drops all of the protected schemas and external tables that were created as part of your previous synchronizations; however, it does not remove the metadata in Data Catalog. You should perform this action only when you no longer plan on using Data Catalog and the external tables that are derived, or if you want to start the entire process from the beginning.
 
@@ -306,7 +326,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     exec dbms_dcat.unset_data_catalog_conn;
     ```
 
-6. Query your current Data Catalog connections and review the the DCAT ocid, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
+8. Query your current Data Catalog connections and review the the DCAT ocid, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
 
     ```
     <copy>
@@ -403,31 +423,57 @@ In this task (in a later step), you will create a connection to your Data Catalo
     </copy>
     ```
 
-    There are several ways to find out the region identifier (that you will use in the above command) which is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed.
+    You will need to find your **Data Catalog instance region identifier** and **OCID** values that you paste in the **`region`** and **`catalog_id`** lines in the above command. Your region identifier is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed. You will review two methods to get the region identifier and OCID. The first method involves querying the **`all_dcat_global_accessible_catalogs`** data dictionary view using SQL. The second method uses the UI.
 
-    * Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is **US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
+### **Find the Data Catalog Instance Region Identifier and OCID Using a Data Dictionary View**
+1. Query the **`all_dcat_global_accessible_catalogs`** data dictionary view to find your Data Catalog instance region identifier and OCID. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
-      ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method-ll.png " ")
+    ```
+    <copy>
+    select *
+    from all_dcat_global_accessible_catalogs;
+    </copy>
+    ```
 
-    * Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
+    ![The result of running the query in the code section of the worksheet is displayed in the Query Result tab. Some of the columns displayed are the catalog_id and catalog_region.](./images/query-region-id-ocid.png " ")
 
-      ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
+2.  To copy the **`catalog_id`** (OCID) or the **`catalog_region`** (region identifier) values, double-click the appropriate cell to highlight the value, and then copy it using **[Ctrl+C]** in MS-Windows. You can also click the pencil icon to copy the value in a cell. Paste the copied value into a text editor of your choice or wherever you need it.
 
-      > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+### **Find the Data Catalog Instance Region Identifier Using the UI**
 
-      ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
+There are several ways to find the region identifier that is associated with your region name using the UI.
 
-      Paste your region identifier in the _`region => 'enter region id where your data catalog is deployed'`_ line in the above command in your SQL Worksheet.
+* Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is
+**US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
 
-    * To find your _Data Catalog OCID_, from the **Oracle Cloud Console**, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. On the **Data Catalog Overview** page, click **Go to Data Catalogs**. On the **Data Catalogs** page, in the row for your **training-dcat-instance** Data Catalog instance, click the **Actions** button (three vertical dots), and then select **Copy OCID** from the context menu.
+    ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method-ll.png " ")
 
-      ![On the Data Catalogs page, the Data Catalog instance is highlighted and labeled as 1. The Actions button, labeled as 2, is clicked to display the context menu. The Copy OCID menu option, labeled as 3, is selected.](./images/ll-dcat-ocid.png " ")
+* Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
 
-      Paste your catalog id in the _`catalog_id => 'enter data catalog ocid'`_ line in the above command in your SQL Worksheet.
+    ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
 
-      ![The pasted code is displayed in the code section of the Worksheet.](./images/ll-populated-connect.png " ")
+    > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
-6. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+    ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
+
+* If you are running your workshop using a LiveLabs reservation, on the **Launch _workshop name_ Workshop** page, in the **Workshop Details** section, the **Region** row lists your region name and identifier. Copy the region identifier next to your assigned region name, **us-phoenix-1** in the following example.
+
+    ![On the Launch workshop name page, the Workshop Details section, region name, and region identifier are highlighted.](./images/ll-region-id.png " ")
+
+You can now paste your copied region identifier anywhere you need it.    
+
+### **Find the Data Catalog Instance OCID Using the UI**
+
+From the **Oracle Cloud Console**, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. On the **Data Catalog Overview** page, click **Go to Data Catalogs**. On the **Data Catalogs** page, in the row for your **training-dcat-instance** Data Catalog instance, click the **Actions** button (three vertical dots), and then select **Copy OCID** from the context menu.
+
+
+![On the Data Catalogs page, the Data Catalog instance is highlighted and labeled as 1. The Actions button, labeled as 2, is clicked to display the context menu. The Copy OCID menu option, labeled as 3, is selected.](./images/ll-dcat-ocid.png " ")
+
+6. Paste your region identifier and Data Catalog OCID that you copied in the _`region`_ and _`catalog_id`_ arguments respectively.
+
+    ![The pasted code is displayed in the code section of the Worksheet.](./images/ll-populated-connect.png " ")
+
+7. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
 
     ![The result of running the code in the code section of the worksheet is displayed in the Script Output tab with the message "PL/SQL procedure successfully completed."](./images/ll-connect-dcat.png " ")
 
@@ -437,7 +483,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     exec dbms_dcat.unset_data_catalog_conn;
     ```
 
-7. Query your current Data Catalog connections and review the DCAT OCID, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
+8. Query your current Data Catalog connections and review the DCAT OCID, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
 
     ```
     <copy>
@@ -727,7 +773,7 @@ So far in this lab, you synchronized only the **`moviestream_sandbox`** Object S
 
     >**Note:** When the script execution completes, if you see a Code Execution Failed message on the Status bar at the bottom of the SQL Worksheet, ignore it. You will check the script execution status and results using a logfile in the next two steps.
 
-    When the full sync is completed successfully, a **PL/SQL procedure successfully completed** message is displayed in the **Script Output** tab. If you are using a LiveLabs environment, the output might look different. 
+    When the full sync is completed successfully, a **PL/SQL procedure successfully completed** message is displayed in the **Script Output** tab. If you are using a LiveLabs environment, the output might look different.
 
     ![The result of running the sync code is displayed.](./images/synch-result.png " ")
 

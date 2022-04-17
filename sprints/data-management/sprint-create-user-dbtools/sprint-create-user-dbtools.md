@@ -62,7 +62,7 @@ When you create a new data warehouse, you automatically get an account called AD
 
 10. Finally, click the **Create User** button at the bottom of the form to create the new database user.
 
-11. Let's verify if you can access the database as a new user. TYou need to log into the database as the new user to do that. Find the card for the user you created under All users and click on the upward-pointing arrow at the bottom of the card.
+11. Let's verify if you can access the database as a new user. You need to log into the database as the new user to do that. Find the card for the user you created under All users and click on the upward-pointing arrow at the bottom of the card.
 
     ![Click on the upward pointing arrow for the user you created](images/click-qteam.png)
 

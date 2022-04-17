@@ -71,6 +71,6 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
+- **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
 - **Contributors** - John Peach
-- **Last Updated By/Date** - LiveLabs Team, October 2020
+- **Last Updated By/Date** - Madhusudhan Rao, Apr 2022

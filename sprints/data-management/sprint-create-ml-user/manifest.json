@@ -1,0 +1,22 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How can I create a new Machine Learning user in Oracle Autonomous Database?",
+         "description": "",
+         "filename": "sprint-create-ml-user.md"
+      },
+      {
+         "title": "How can I grant privileges to my new Machine Learning user to access ADB Data Tools?",
+         "description": "",
+         "filename": "../sprint-grant-ml-user-priv-dbtools/sprint-grant-ml-user-priv-dbtools.md"
+      },
+      {
+         "title": "How can I load data from local files to my Oracle ADB instance using Database Tools?",
+         "description": "",
+         "filename": "../sprint-adb-load-files-local-dbtools/sprint-adb-load-files-local-dbtools.md"
+      }
+   ],
+   "task_type": "Sections"
+}

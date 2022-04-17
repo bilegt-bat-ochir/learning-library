@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How can I define paragraphs using the md, SQL, PL/SQL, and Python interpreters in Oracle Machine Learning Notebook?",
+         "description": "",
+         "filename": "sprint-define-paragraphs-ml-notebook.md"
+      }
+   ],
+   "task_type": "Sections"
+}

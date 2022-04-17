@@ -112,8 +112,7 @@ In this lab, you will:
 
 ## Acknowledgements
 
-- **Author** - Flavio Pereira, Larry Beausoleil
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar
 - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021
 

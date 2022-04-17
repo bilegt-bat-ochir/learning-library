@@ -269,8 +269,7 @@ This concludes this lab. You may now **proceed to the next lab**.
 * **Contributors:**
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
     * Arabella Yao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, March 2022
+* **Last Updated By/Date:** Madhusudhan Rao, Apr 2022

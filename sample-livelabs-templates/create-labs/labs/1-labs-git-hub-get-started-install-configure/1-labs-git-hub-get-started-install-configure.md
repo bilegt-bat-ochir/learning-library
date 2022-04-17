@@ -194,7 +194,7 @@ This concludes this lab. You may now proceed to the next lab.
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributors:**
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Kay Malcolm, Database Product Management
     * Madhusudhan Rao, Principal Product Manager, Database
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
 

@@ -35,8 +35,7 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Flavio Pereira, Larry Beausoleil
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Arabella Yao, Prasenjit Sarkar, Rajeswari Rai
 - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021
 

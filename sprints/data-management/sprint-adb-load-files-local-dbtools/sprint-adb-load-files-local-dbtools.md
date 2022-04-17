@@ -4,7 +4,7 @@ Let's explore how to load data from spreadsheets stored on your local computer i
 
 Duration: 5 minutes
 
-## Load data from Oracle Object Storage to your Oracle ADB instance using Data Tools
+## Load data from local files to your Oracle ADB instance using Data Tools
 
 1. On the Oracle Cloud Console, make sure you are in the region where your ADB instance is provisioned. Click the navigation menu, search **Oracle Database**, and click on **Autonomous Database**.
 

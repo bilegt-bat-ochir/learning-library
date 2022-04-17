@@ -47,6 +47,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Created By/Date** - Tom McGinn, Database Product Management, March 2020
+- **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
 - **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli
 - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022

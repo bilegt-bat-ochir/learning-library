@@ -85,49 +85,51 @@ To deploy WebLogic domain, you need to create a domain resource definition which
 
 5. In order to access any application or the Administration Console deployed on WebLogic, you have to configure a *Traefik* Ingress. An OCI load balancer is already assigned during the *Traefik* install in the previous step. As a simple solution, it's best to configure path routing, which will route external traffic through *Traefik* to the domain cluster address or the Administration Server Console. Execute the following Ingress resource definition:
     ```bash
-    <copy>cat <<EOF | kubectl apply -f -
-      apiVersion: traefik.containo.us/v1alpha1
-      kind: IngressRoute
-      metadata:
-        name: console
-        namespace: sample-domain1-ns
-      spec:
-        routes:
-          - kind: Rule
-            match: PathPrefix(\`/console\`)
-            services:
-              - kind: Service
-                name: sample-domain1-admin-server
-                port: 7001
-      ---
-      apiVersion: traefik.containo.us/v1alpha1
-      kind: IngressRoute
-      metadata:
-        name: opdemo
-        namespace: sample-domain1-ns
-      spec:
-        routes:
-          - kind: Rule
-            match: PathPrefix(\`/opdemo\`)
-            services:
-              - kind: Service
-                name: sample-domain1-cluster-cluster-1
-                port: 8001
-      ---
-      apiVersion: traefik.containo.us/v1alpha1
-      kind: IngressRoute
-      metadata:
-        name: remote-console
-        namespace: sample-domain1-ns
-      spec:
-        routes:
-          - kind: Rule
-            match: PathPrefix(\`/\`)
-            services:
-              - kind: Service
-                name: sample-domain1-admin-server
-                port: 7001
-      EOF</copy>
+    <copy>
+    cat <<EOF | kubectl apply -f -
+    apiVersion: traefik.containo.us/v1alpha1
+    kind: IngressRoute
+    metadata:
+      name: console
+      namespace: sample-domain1-ns
+    spec:
+      routes:
+        - kind: Rule
+          match: PathPrefix(\`/console\`)
+          services:
+            - kind: Service
+              name: sample-domain1-admin-server
+              port: 7001
+    ---
+    apiVersion: traefik.containo.us/v1alpha1
+    kind: IngressRoute
+    metadata:
+      name: opdemo
+      namespace: sample-domain1-ns
+    spec:
+      routes:
+        - kind: Rule
+          match: PathPrefix(\`/opdemo\`)
+          services:
+            - kind: Service
+              name: sample-domain1-cluster-cluster-1
+              port: 8001
+    ---
+    apiVersion: traefik.containo.us/v1alpha1
+    kind: IngressRoute
+    metadata:
+      name: remote-console
+      namespace: sample-domain1-ns
+    spec:
+      routes:
+        - kind: Rule
+          match: PathPrefix(\`/\`)
+          services:
+            - kind: Service
+              name: sample-domain1-admin-server
+              port: 7001
+    EOF
+    </copy>
     ```
 
     > You can ignore the warning.Please note the two backends and the namespace, `serviceName`, `servicePort` definitions. The first backend is the domain cluster service to reach the application at the root context path. The second is for the admin console which is a different service.

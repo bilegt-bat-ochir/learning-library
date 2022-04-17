@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How can I change my Machine Learning Notebook interpreter binding settings in Oracle Autonomous Database?",
+         "description": "",
+         "filename": "sprint-change-ml-nb-interpreter-binding-settings.md"
+      }
+   ],
+   "task_type": "Sections"
+}

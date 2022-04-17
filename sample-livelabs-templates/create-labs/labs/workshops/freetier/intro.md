@@ -112,8 +112,7 @@ The following diagram shows the general workflow process that your need to follo
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributors:**
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ 
     * Arabella Yao, Product Manager, Database Product Management
 * **Last Updated By/Date:**
     * Arabella Yao, March 2022

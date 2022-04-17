@@ -189,7 +189,6 @@ You have completed this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Rajeshwari Rai, Prasenjit Sarkar
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
 - **Last Updated By/Date** - Arabella Yao, March 2022

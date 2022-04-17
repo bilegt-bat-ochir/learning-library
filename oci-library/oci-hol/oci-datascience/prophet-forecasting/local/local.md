@@ -90,6 +90,6 @@ Congratulations on completing this lab!
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** - Simon Weisser - Cloud Engineer, Tom McGinn - Database Innovations Architect, Database Product Management
+* **Authors** - Simon Weisser - Cloud Engineer 
 * **Last Updated By/Date** - Simon Weisser, Dec 2021
 

@@ -60,5 +60,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author for LiveLabs** - Daniel Tarudji
-* **Contributors** - Rene Fontcha, Meghana Banka, Tom McGinn, Kamryn Vinson, Sahaana Manavalan
+* **Contributors** - Rene Fontcha, Meghana Banka, Kamryn Vinson, Sahaana Manavalan
 * **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022

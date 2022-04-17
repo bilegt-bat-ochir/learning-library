@@ -31,17 +31,17 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
 - The source database can be any Oracle database version 11.2.0.4 or higher with atleast one application schema that you wish to replicate to an autonomous database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source. 
 
-- The ATP Dedicated database instance you provisioned in [Lab 7](?lab=lab-7-provisioning-databases) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target atp-d instance using sql*plus or sql developer client. Refer [Lab 8](?lab=lab-8-configuring-development-system) or [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp) to setup a jump server or setup VPN respectively. 
+- The ATP Dedicated database instance you provisioned can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target atp-d instance using sql*plus or sql developer client. 
 
-    *Note: You cannot complete this lab without setting up access to your ATPD instance. Therefore, [Lab 8](?lab=lab-8-configuring-development-system) or [Lab 9](?lab=lab-9-configuring-vpn-into-private-atpp) are a pre-requisite to completing this lab as instructed.*
+    *Note: You cannot complete this lab without setting up access to your ATPD instance. Therefore, setup a jump server or setup VPN [Configure VPN Connectivity](?lab=lab-9-configuring-vpn-into-private-atpp).*
 
     - The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
 
 ## Task 1: Provision a Goldengate Microservice from OCI Marketplace
 
-- Connect to your OCI tenancy and select *Marketplace* from top left menu.
+- Connect to your OCI tenancy and select *Marketplace* and click on *All Applications* from top left menu.
 
-  - Browse for *Oracle Goldengate 19c for Oracle*. You may set a filter on Type on the left. Select *Stack* from the dropdown and the image should be easier to find. The image is a terraform orchestration that deploys Goldengate on a compute image along with required resources.
+  - Browse for *Oracle Goldengate for Oracle*. The image is a terraform orchestration that deploys Goldengate on a compute image along with required resources.
 
 - Click on 'Image' and choose your compartment to deploy the goldengate instance. For example, as a workshop user with assigned compartment userX-Compartment, pick userX-Compartment from the drop down.
 
@@ -52,17 +52,17 @@ Data Replication is a essential part of your efforts and tasks when you are migr
     Hit *Next*. The rest of the items are filled in or optional.
 
 - Enter the following network setting. This is essentially to select the network you wish to deploy your goldengate image.
-    ![](./images/network1.png " ")
+    ![This image shows the result of performing the above step.](./images/network1.png " ")
 
 - Hit 'Next'. For instance details, pick an AD with sufficient compute capacity. *Note this deployment needs a minimum 2 ocpu instance*.
 
     Make sure you check the 'public IP' checkbox. We will use this later to ssh into the instance and also connect to the Goldengate admin console.
-    ![](./images/network2.png " ")
+    ![This image shows the result of performing the above step.](./images/network2.png " ")
 
-- Next, under *Create OGG deployments* choose your source and target deployment names and versions. Note that you may select one or two deployments (the second deployment is optional). This simply tells Goldengate admin server the location of relevant artifacts for source and target DB connections. 
+- Next, under *Create OGG deployments* check *Deployment - Autonomous database* choose your deployment compartment and deployment Autonomous Database Instance. 
 
-- In this lab, we choose a single deployment called Databases. Therefore, under *Deployment 1 -Name*, type *Databases* and leave Deployment 2- Name blank. We keep this simple by using a single deployment folder for both source and target configurations.
-    ![](./images/source-target.png " ")
+- In this lab, we choose a single deployment called Databases. 
+    ![This image shows the result of performing the above step.](./images/source-target.png " ")
 
 - Next, paste your public key and hit *Create*.
 
@@ -156,7 +156,7 @@ That is it! Your target DB is now ready.
 - By now, your Goldengate service instance must be deployed. On your OCI console navigate to *Compute* from top left menu and *choose your compartment*.
 
 - Click on your Goldengate compute instance to get to the details page that looks as follows.
-    ![](./images/ggcompute.png " ")
+    ![This image shows the result of performing the above step.](./images/ggcompute.png " ")
 
     *Note down the public IP address of your instance. We will use this IP to ssh into the virtual machine.*
 
@@ -205,7 +205,7 @@ That is it! Your target DB is now ready.
 - Next we edit the tnsnames.ora file and add entries for the source common user and the source appschema user. This single tnsnames.ora will serve to connect to both source and target.
 
 - Open tnsnames.ora in vi and add TNS connection entries as shown in the example screen shot below. Note the 2 new TNS entries added at th bottom for the source DB in addition to the pre-existing entries for target.
-    ![](./images/tns-entries.png " ")
+    ![This image shows the result of performing the above step.](./images/tns-entries.png " ")
 
     - Also, source DB is in a public network in this example hence hostname is the public IP address. 
 
@@ -229,63 +229,63 @@ That is it! Your target DB is now ready.
     *Open a browser and navigate to https://(ip\_address\_of\_goldengate\_image)*.
 
     If you have browser issues or get Unicode warning, try using Firefox browser. Fixing browser issues is beyond scope for this lab guide.
-    ![](./images/ogg1.png " ")
+    ![This image shows the result of performing the above step.](./images/ogg1.png " ")
 
 - Once logged on, click on the port # for Admin server to get into configurtion mode as shown below.
-    ![](./images/ogg2.png " ")
+    ![This image shows the result of performing the above step.](./images/ogg2.png " ")
 
     If prompted, login with the same credentials one more time.
 
 - From the top left hamberger menu, select 'Configuration' as shown below:
-    ![](./images/ogg3.png " ")
+    ![This image shows the result of performing the above step.](./images/ogg3.png " ")
 
     Here we configure connectivity to our source and target databases. We will setup 3 connections - The Source DB common user, Source DB appschema user and Target DB ggadmin user. 
-    ![](./images/creds1.png " ")
+    ![This image shows the result of performing the above step.](./images/creds1.png " ")
 
 - Add the first credential for C##user01 you created earlier in the lab in the source DB.
-    ![](./images/creds2.png " ")
+    ![This image shows the result of performing the above step.](./images/creds2.png " ")
 
     *Note the userid format is userid@connectString. The connect string is how it knows which database to connect to. It looks for this connect string in /u02/deployments/Databases/etc/tnsnames.ora*
 
 - Submit credentials and test connectivity as shown in screenshot below.
-    ![](./images/creds3.png " ")
+    ![This image shows the result of performing the above step.](./images/creds3.png " ")
 
 - Similarly, add credentials for source DB appschema and target ATPD ggadmin schema as shown below. Note the ggadmin user connects using the same tns enty as 'admin' user.
-    ![](./images/creds4.png " ")
+    ![This image shows the result of performing the above step.](./images/creds4.png " ")
 
     *Make sure you test connectivity for each credential.*
 
 - Next, we **create checkpoint tables** in source and target databases. Checkpoint tables keep track of changes in the database. We need one in the appschema in source and another in the ggadmin schema in target.
 
     - Lets start with appschema in source. Connect and click + sign to add a checkpoint table as shown below.
-        ![](./images/chkpt1.png " ")
-        ![](./images/chkpt2.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt1.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt2.png " ")
 
     - We also specify the schema we want to replicate here. In the Transaction Information section below checkpoint, add the schema first by clicking the + sign and hit Submit.
-        ![](./images/chkpt3.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt3.png " ")
 
     - Now when you enter the schema name and search for it, it shows up as shown below with 3 tables. 2 checkpoint tables and one 'comments' table we created earlier.
-        ![](./images/chkpt4.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt4.png " ")
 
 
 - Next, we **add a checkpoint table** to the target instance and also set the heartbeat.
 
     - Connect to the target DB from the goldengate admin console just like you did for the source DB. Lets also add a checkpoint table here.
-        ![](./images/chkpt5.png " ")
-        ![](./images/chkpt6.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt5.png " ")
+        ![This image shows the result of performing the above step.](./images/chkpt6.png " ")
 
     - Scroll down and set the hearbeat for target. Use default configuration for the purpose of this lab.
-        ![](./images/heartbeat.png " ")
+        ![This image shows the result of performing the above step.](./images/heartbeat.png " ")
 
 - As a final step, we now **create an 'extract' and a 'replicate' process** to conduct the replication from source to target.
 
     - Navigate back to the Goldengate Admin server dashboard so you can see both the extract and replicat setup as shown below.
-        ![](./images/extract1.png " ")
+        ![This image shows the result of performing the above step.](./images/extract1.png " ")
 
     - Choose *Integrated Extract* on the next screen and hit next.
 
     - Entries on the following screen may be entered as follows,
-        ![](./images/extract2.png " ")
+        ![This image shows the result of performing the above step.](./images/extract2.png " ")
 
         *Process Name:* Provide any name of choice
 
@@ -296,7 +296,7 @@ That is it! Your target DB is now ready.
         *Trail Name:* Any 2 character name
 
     - Scroll down and click in the text box Register to PDBs. PDB1 should popup as shown.
-        ![](./images/extract3.png " ")
+        ![This image shows the result of performing the above step.](./images/extract3.png " ")
 
         *If you do not see Register to PDBs text box, make sure you have picked the 'Common User' alias and provided all mandatory entries.*
 
@@ -311,18 +311,18 @@ That is it! Your target DB is now ready.
         </copy>
         ````
 
-        ![](./images/extract4.png " ")
+        ![This image shows the result of performing the above step.](./images/extract4.png " ")
 
         This tells Goldengate to capture changes on all tables in pdb1.appschema.
 
     - Hit 'Create and Run'. If all goes well you should now see the extract running on source.
-        ![](./images/extract5.png " ")
+        ![This image shows the result of performing the above step.](./images/extract5.png " ")
 
 
 - Next, we configure a replicat on the target. On the same screen hit the *+* sign on the *Replicats* side to start configuring one.
 
     - Pick *Non-Integrated Replicat*
-        ![](./images/rep1.png " ")
+        ![This image shows the result of performing the above step.](./images/rep1.png " ")
 
 - Fill out the mandatory items in *Basic Information* on the next screen as follows. You may leave the rest at default values.
 
@@ -338,17 +338,17 @@ That is it! Your target DB is now ready.
 
     Hit *Next*.
 
-    ![](./images/rep2.png " ")
-    ![](./images/rep3.png " ")
+    ![This image shows the result of performing the above step.](./images/rep2.png " ")
+    ![This image shows the result of performing the above step.](./images/rep3.png " ")
 
 - On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below. 
   
     *Note: Please remove the original line MAP \*.\*, TARGET \*.\*;*
 
-    ![](./images/rep4.png " ")
+    ![This image shows the result of performing the above step.](./images/rep4.png " ")
 
 - Hit *Create and Run*. If all goes well, you should now see both extract and replicat processes running on the dashboard.
-    ![](./images/rep5.png " ")
+    ![This image shows the result of performing the above step.](./images/rep5.png " ")
 
 Hurray! You have completed the replication setup. To test, simply connect to your source database, insert and commit some rows. Then check your corresponding target table and in a few secs you should see the data appear.
 
@@ -365,6 +365,8 @@ Hurray! You have completed the replication setup. To test, simply connect to you
 *Great work!*
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Yaisah Granillo, April 2022
 
 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

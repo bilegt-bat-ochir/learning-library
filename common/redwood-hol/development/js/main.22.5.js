@@ -1,6 +1,6 @@
 /*
 Author: Ashwin Agarwal
-Contributors: Tom McGinn, Kaylien Phan
+Contributors:  Kaylien Phan
 Version: 22.5
 
 Version     Date             Author          Summary

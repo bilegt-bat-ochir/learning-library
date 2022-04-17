@@ -239,6 +239,5 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 ## Acknowledgements
 
-* **Author:** Anoosha Pilli, Product Manager, Database Product Management
-* **Reviewed by:** Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, April 2022
+* **Author:** Anoosha Pilli, Product Manager, Database Product Management 
+* **Last Updated By/Date:** Madhusudhan Rao, Apr 2022

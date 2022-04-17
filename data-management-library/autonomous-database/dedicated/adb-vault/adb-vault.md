@@ -25,7 +25,7 @@ Oracle Database vault comes pre-installed with your Autonomous database on dedic
 
 Our implementation scenario looks as follow,
 
-![](./images/DVarchitecture.png " ")
+![This image shows the result of performing the above step.](./images/DVarchitecture.png " ")
 
 The HR schema contains multiple tables. The employees table contains sensitive information such as employee names, SSN, pay-scales etc. and needs to be protected from priviledged users such as the schema owner (user HR) and admin (DBA).
 
@@ -86,7 +86,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
     </copy>
     ````
-    ![](./images/valueFalse.png " ")
+    ![This image shows the result of performing the above step.](./images/valueFalse.png " ")
 
     *As you can see, DV isn't enabled yet.*
 
@@ -100,8 +100,8 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     ````
 
 - You must “restart” the database to complete the Database Vault registration process. You may restart the database from the console as shown.
-    ![](./images/stopdb.png " ")
-    ![](./images/startdb.png " ")
+    ![This image shows the result of performing the above step.](./images/stopdb.png " ")
+    ![This image shows the result of performing the above step.](./images/startdb.png " ")
 
 - Once restart completes, log in as Database Vault owner and verify DV is enabled.
 
@@ -110,7 +110,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     select value from v$option where parameter = 'Oracle Database Vault';
     </copy>
     ````
-    ![](./images/verifyDV.png " ")
+    ![This image shows the result of performing the above step.](./images/verifyDV.png " ")
 
 ## Task 3: Create security Realms and add schema objects
 Next we create a 'Realm', add objects to it and define access rules for the realm.
@@ -145,8 +145,9 @@ As Database Vault Owner, execute the following PL/SQL statements:
     / 
     </copy>
     ````
-    ![](./images/realm1.png " ")
-    ![](./images/realm2.png " ")
+   ![This image shows the result of performing the above step.](./images/realm1.png " ")
+
+   ![This image shows the result of performing the above step.](./images/realm2.png " ")
 
 ## Task 4: Create Audit Policy to Capture Realm Violations
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Autonomous Database includes Unified Auditing, we will create a policy to audit database vault activities. For more information on Unified Auditing, refer to the [Database Security Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/introduction-to-auditing.html).
@@ -162,12 +163,12 @@ You may also want to capture an audit trail of unauthorized access attempts to y
     </copy>
     ````
 
-    ![](./images/audit1.png " ")
+    ![This image shows the result of performing the above step.](./images/audit1.png " ")
 
     Finally, let's test how this all works.
 
 - To test the realm, try to access the EMPLOYEES table as HR, ADMIN and then APPUSER, you can test with a combination of SELECT and DML statements.
-    ![](./images/audit2.png " ")
+    ![This image shows the result of performing the above step.](./images/audit2.png " ")
 
     *Note: The default 'admin' account in ADB has access to all objects in the database, but realm objects are now protected from admin access. In fact, even the table owner HR does not have access to this table. Only APPUSER has access.*
 
@@ -184,7 +185,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
     from UNIFIED_AUDIT_TRAIL where DV_ACTION_NAME='Realm Violation Audit';
     </copy>
     ````
-    [](./images/audit3.png " ")
+    ![This image shows the result of performing the above step.](./images/audit3.png " ")
 
 - You can see the access attempts from HR and Admin.
 
@@ -212,3 +213,5 @@ As Database Vault owner, execute:
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

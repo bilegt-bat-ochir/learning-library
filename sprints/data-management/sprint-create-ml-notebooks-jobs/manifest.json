@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How can I create jobs to schedule a Machine Learning Notebook run in Oracle Autonomous Database?",
+         "description": "",
+         "filename": "sprint-create-ml-notebooks-jobs.md"
+      }
+   ],
+   "task_type": "Sections"
+}

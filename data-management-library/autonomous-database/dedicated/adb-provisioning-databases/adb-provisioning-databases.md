@@ -5,6 +5,8 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Transaction Processing Database on Oracle dedicated Autonomous Infrastructure. You will provision a new database.
 
+Estimated Time: 10 minutes
+
 ### Objectives
 
 As a database user, DBA or application developer:
@@ -24,15 +26,15 @@ In this section you will be provisioning a dedicated autonomous database using t
 
 -  Click the hamburger menu icon on the top left of the screen.
 
-    ![This image shows the result of performing the above step.](./images/Picture100-20.jpeg " ")
+    ![This image shows the result of performing the above step.](./images/picture100-20.jpeg " ")
 
 -  Click **Autonomous Transaction Processing** from the menu.
 
-    ![This image shows the result of performing the above step.](./images/Picture100-21.jpeg " ")
+    ![This image shows the result of performing the above step.](./images/picture100-21.jpeg " ")
 
 - Select **userXX-Compartment under the Workshop Compartment** and click on **Create Autonomous Database** button to start instance creation process.
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-Dname1.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-dname1.png " ")
 
     *Note: Oracle Cloud Infrastructure allows logical isolation of users within a tenancy through Compartments. This allows multiple users and business units to share an OCI tenancy while being isolated from each other.*
 
@@ -43,22 +45,22 @@ In this section you will be provisioning a dedicated autonomous database using t
 
 -  This will bring up the **Create Autonomous Database** screen where you specify the configuration of the instance.
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-D.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-d.png " ")
 
 -  Choose workload type **Transaction Processing** and deployment type **Dedicated Infrastructure**.
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-Dworkloads.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-dworkloads.png " ")
 
 - Choose the right **Compartment** under Autonomous Container Database and select the right **Autonomous Container Database** from the dropdown.
  
      *Note this would be the fleetCompartment*
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-ACD.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-acd.png " ")
 
 
 -  You can choose an instance shape, specified by the CPU count and storage size. Default CPU count is 1 and storage is 32 GB. You can also enable **OCPU auto scaling** option.
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-DCPU.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-dcpu.png " ")
 
 -  Specify the password for the instance.
 
@@ -70,12 +72,12 @@ In this section you will be provisioning a dedicated autonomous database using t
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Picture100-29.jpeg " ")
+    ![This image shows the result of performing the above step.](./images/picture100-29.jpeg " ")
 
 
 - You can Configure Database-level network access by clicking **Modify Access Control** button.
 
-    ![This image shows the result of performing the above step.](./images/Picture100-29-MAC.jpeg " ")
+    ![This image shows the result of performing the above step.](./images/picture100-29-mac.jpeg " ")
 
 -  Click **Create Autonomous Database** to start provisioning the instance.
 
@@ -104,6 +106,8 @@ There are a few other things you can do as an administrator of your autonomous d
         ![This image shows the result of performing the above step.](./images/restore.png " ")
 
         ![This image shows the result of performing the above step.](./images/restore2.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

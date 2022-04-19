@@ -8,6 +8,8 @@ The Autonomous Database on dedicated infrastructure cloud service in OCI runs on
 
 ![Diagram showing a circle of 5 connected steps: Capture, Identify, Verify, Decide, Monitor](./images/auto-indexing.png " ")
 
+Estimated Time: 30 minutes
+
 ### Objectives
 
 As a database user, DBA or application developer,
@@ -118,11 +120,11 @@ You may also manage Auto Indexing setting from Enterprise Manager 13.4 or higher
 
 - Once you've successfully installed EM and added your autonomous database as a 'target' you can manage Auto Indexing under Performance --> Automatic Indexing Menu item as shown in the screenshot below.
 
-    ![Image showing Automatic Indexing selected from the Performance drop-down menu](./images/EM1.png " ")
+    ![Image showing Automatic Indexing selected from the Performance drop-down menu](./images/em1.png " ")
 
 - Simply select 'Settings' as shown in the screen shot above, provide an admin username/password and select a TNS Service from the drop down.
 
-    ![This image shows the result of performing the above step.](./images/EM2.png " ")
+    ![This image shows the result of performing the above step.](./images/em2.png " ")
 
 - The Automatic Indexing Settings page is where you can:
 
@@ -130,7 +132,7 @@ You may also manage Auto Indexing setting from Enterprise Manager 13.4 or higher
 2. Specify retention periods.
 3. Include or Exclude Schemas.
 
-    ![This image shows the result of performing the above step.](./images/EM3.png " ")
+    ![This image shows the result of performing the above step.](./images/em3.png " ")
 
 ## Task 4: Run workload and observe automatic index creation
 
@@ -145,7 +147,7 @@ Next, let's fire up swingbench and simulate an OLTP order-entry workload.
 
 - Now open a VNC Viewer client on your local laptop and connect to localhost:1 as shown below.
 
-    ![This image shows the result of performing the above step.](./images/VNC.png " ")
+    ![This image shows the result of performing the above step.](./images/vnc.png " ")
 
 - Open a terminal window once you are connected to the developer client over VNC. Navigate to /home/opc/swingbench/bin and start up swingbench workload generator application. Detailed instructions on configuring swingbench are provided in the lab **Build Apex Application** in the *Autonomous Database Dedicated for Developers and Database Users* workshop.
 
@@ -171,6 +173,8 @@ Next, let's fire up swingbench and simulate an OLTP order-entry workload.
     ![This image shows the result of performing the above step.](./images/auto-ind-actions.png " ")
 
 This view shows all auto indexing activities including statements used for index creation, rebuilds and visibility.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

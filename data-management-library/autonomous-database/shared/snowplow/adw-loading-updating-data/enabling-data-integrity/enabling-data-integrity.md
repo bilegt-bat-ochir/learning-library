@@ -24,9 +24,9 @@ This lab assumes you have:
 
 ## Task 1: Add Constraints
 
-1. Navigate to **SQL** in the Development section of Database Actions to launch SQL Developer Web.
+1. Navigate to **SQL** in the Development section of Database Actions menu to launch SQL Developer Web.
 
-2. Check that the **Consumer Group** setting in the top right is set to **HIGH**.
+2. Check that the **Consumer Group** setting in the top right and set it to **HIGH**.
 
 3. Run the following command in the SQL worksheet to enable a data integrity check on the fact table:
 

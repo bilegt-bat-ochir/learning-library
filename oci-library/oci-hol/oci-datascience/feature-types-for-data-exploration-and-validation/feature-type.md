@@ -138,12 +138,15 @@ A conda environment is a collection of libraries, programs, components and metad
 1. Open the notebook by clicking on it.
 1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3`
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-![Running-cell has an asterisk ](./../feature-types-for-data-exploration-and-validation/images/running-cell.png)
-![Executed shell has a number in it](./../feature-types-for-data-exploration-and-validations/images/finished-cell.png)
+
+![Running-cell has an asterisk ](./../common/images/running-cell.png)
+
+![Executed shell has a number in it](./../common/images/jlab-executed-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-![Restart kernel](./../feature-types-for-data-exploration-and-validation/images/restart-kernel.png)
-![Restart](./../feature-types-for-data-exploration-and-validation/images/restart.png)
+![Restart](./../common/images/restart-kernel-button.png)
+
+![Restart kernel](./../common/images/restart-kernel-confirmation.png)
 
 1. Step through the lab and look at the tools that are provided by the feature type module in the Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes. Validate your data and quickly explore it, with minimal code.
 

@@ -40,4 +40,4 @@ Verrazzano includes the following capabilities:
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, January 2022
+* **Last Updated By/Date** - Ankit Pandey, April 2022

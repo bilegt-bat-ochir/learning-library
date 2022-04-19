@@ -28,15 +28,15 @@ Before deactivating a notebook session, save all your work to the attached block
 1. Under **Data and AI** and click **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session to open the Projects page.
-    ![Select a project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select a project](./../common/images/select-project.png)
 1. Click the name of the notebook session to open the Notebook Session page.
-    ![Click notebook session](./../speed-up-ds-with-the-ads-sdk/images/click-ns.png)
+    ![Click notebook session](./../common/images/click-notebook-session.png)
 1. Click **Deactivate**.
-    ![Deactivate button](./../speed-up-ds-with-the-ads-sdk/images/deactivate.png)
+    ![Deactivate button](./../common/images/deactivate-notebook-session.png)
 
 1. Click **Deactivate** to confirm the deactivation. The status changes to **Updating** and then **Inactive**.
 
-    ![Click deactivate](./../speed-up-ds-with-the-ads-sdk/images/deactivate2.png)
+    ![Click deactivate](./../common/images/deactivate-notebook-session-confirmation.png)
 
 ## Terminating Notebook Sessions
 
@@ -47,17 +47,17 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session and open the Projects page.
-    ![Select a project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select a project](./../common/images/select-project.png)
 
 1. Click the name of the notebook session and open the Notebook Session page.
-    ![Click on Notebook Session](./../speed-up-ds-with-the-ads-sdk/images/click-ns.png)
+    ![Click on Notebook Session](./../common/images/click-notebook-session.png)
 
 1. Click **Terminate**.
-    ![Terminate button](./../speed-up-ds-with-the-ads-sdk/images/terminate.png)
+    ![Terminate button](./../common/images/terminate-notebook-session.png)
 
 1. Click **Terminate** to confirm the termination. The status changes to **Deleting** and then **Deleted**.
 
-    ![Click terminate](./../speed-up-ds-with-the-ads-sdk/images/terminate2.png)
+    ![Click terminate](./../common/images/terminate-notebook-session-confirmation.png)
 
 ## Acknowledgements
 

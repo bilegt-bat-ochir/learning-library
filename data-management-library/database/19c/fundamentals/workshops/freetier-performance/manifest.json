@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle Database 19c New Features - Performance Enhancements",
+    "workshoptitle": "Discover new performance features in Oracle Database 19c",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
@@ -46,7 +46,7 @@
           "filename": "./../../wait-for-in-memory-objects-to-be-populated/wait-for-in-memory-objects-to-be-populated.md"
       },
       {
-          "title": "Lab 5: Configure and Use Database Replay at the PDB Level",
+          "title": "Lab 5: Configure and use Database Replay at the PDB level",
           "description": "Observe how Database Replay works at the PDB level.",
           "filename": "./../../configure-and-use-database-replay-at-the-pdb-level/configure-and-use-database-replay-at-the-pdb-level.md"
       },

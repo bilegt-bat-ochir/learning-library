@@ -8,6 +8,8 @@ For a complete list of features, and preinstalled components click [this documen
 
 ***NOTE: The Oracle Linux Cloud Developer Image is supported on all Compute shapes, except the GPU shapes. A minimum of 8 GB of memory is required for this image for all standard and flexible shapes. The one exception is the VM.Standard.E2.1.Micro shape, which only has 1 GB of memory allocated to it. Because of the small memory size in the VM.Standard.E2.1.Micro shape, some graphical intensive programs are not installed in the image. For more information, see x86_64 Notices.***
 
+Estimated Time: 30 minutes
+
 ### Objectives
 
 As a database user, DBA or application developer,
@@ -93,8 +95,8 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Picture200-3.png " ")
-    ![This image shows the result of performing the above step.](./images/Picture200-3-1.png " ")
+    ![This image shows the result of performing the above step.](./images/picture200-3.png " ")
+    ![This image shows the result of performing the above step.](./images/picture200-3-1.png " ")
 
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications.
 
@@ -168,7 +170,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
   *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
   Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
-      ![This image shows the result of performing the above step.](./images/vncViewer.png " ")
+      ![This image shows the result of performing the above step.](./images/vncviewer.png " ")
 
   - Note how the connect string for VNC Server is simply **localhost:1**.  That is because the default port 5901 on your local machine is forwarded to 5901 on your OCI dev client over an ssh tunnel.
 
@@ -262,6 +264,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
     Provide your admin password when prompted and you should be in!
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

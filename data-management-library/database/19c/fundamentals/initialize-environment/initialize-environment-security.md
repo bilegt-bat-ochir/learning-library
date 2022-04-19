@@ -193,5 +193,5 @@ To restore one or more of your lab files on your `workshop-installed` compute in
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Author**- Matthew McDaniel, Austin Specialist Hub
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialist Hub, December 13 2021

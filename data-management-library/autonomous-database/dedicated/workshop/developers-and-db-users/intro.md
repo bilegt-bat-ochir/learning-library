@@ -9,6 +9,8 @@ Watch the video below for an overview of Autonomous Database Dedicated.
 
 [](youtube:fOKSNzDz1pk)
 
+Estimated Workshop Time: 350 minutes
+
 ## Workshop Objectives
 This set of hands-on-labs is designed to assist developers and database users with setting up and using various features of the **Autonomous Database on Dedicated Exadata Infrastructure Service**. The labs in this workshop address provisioning, application development, monitoring, tuning of autonomous databases, as well as recovery from user errors.
 

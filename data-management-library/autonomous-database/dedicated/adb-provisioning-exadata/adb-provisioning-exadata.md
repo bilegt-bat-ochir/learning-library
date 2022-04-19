@@ -4,6 +4,9 @@
 ## Introduction
 A Cloud Exadata Infrastructure resource is the top-level (parent) resource for Autonomous Database on Dedicated Infrastructure. At the infrastructure level, you control the number of database and storage servers. You also control Exadata system maintenance scheduling at the Exadata infrastructure level. You must create at least one Exadata Infrastructure resource before you can create any of the other kinds of dedicated infrastructure resources such as Autonomous Container Databases or simply an Autonomous Database instance.
 
+
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As a fleet administrator:
@@ -45,21 +48,23 @@ Your tenancy has limits on the maximum number of resources you're allowed to use
 
 - Navigate to the **Autonomous Dedicated Infrastructure** option in the top left hamburger menu from your OCI home screen.
 
-    ![This image shows the result of performing the above step.](./images/create_cei1.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cei1.png " ")
 
 - Select **Exadata Infrastructure** and ensure you pick the fleet compartment as shown above. Click the blue **Create Exadata Infrastructure** button.
 
-    ![This image shows the result of performing the above step.](./images/create_cei2.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cei2.png " ")
 
 - Enter a name for the Exadata Infrastructure and select the Availability Domain in which you want the CEI to be created. Based on the Exadata System model that you select, you will have options to select different Exadata shapes.  
 
 - You can also modify the exadata maintenance schedules at this time. Click the **Modify Maintenance** button and specify the quarter, week, day and time you would like to schedule automatic maintenance for your exadata hardware.
 
-    ![This image shows the result of performing the above step.](./images/create_cei3.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cei3.png " ")
 
 - After you add the contact emails for operational notifications and announcements, click **Create Exadata Infrastructure**. Your CEI will soon be ready to deploy autonomous container databases.
 
 *All Done! You have successfully deployed your Autonomous Exadata Infrastructure and it should be available shortly.*
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

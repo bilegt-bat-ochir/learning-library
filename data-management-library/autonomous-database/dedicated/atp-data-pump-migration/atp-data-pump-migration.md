@@ -7,6 +7,7 @@ Data Pump Import lets you import data from Data Pump files residing on the Oracl
 
 This lab walks you through the steps to migrate a sample application schema using datapump import into your dedicated ATP database.
 
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -31,7 +32,7 @@ As a database admin or user,
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8fcg4NskCWAIMvRpLE_ivj-a7baylei6XFF5_B1knzw/n/atpdpreview11/b/adb-data-pump/o/nodeapp.dmp
     </copy>
     ```
-    
+
 ## Task 2: Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials.
@@ -98,7 +99,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 
-    *Windows users may connect to the dev client using Putty.*       
+    *Windows users may connect to the dev client using Putty.*
 
     ```
     <copy>
@@ -157,6 +158,7 @@ All Done! Your application schema was successfully imported. Note that once uplo
 
 You may now connect to your autonomous database using a SQL client and validate import.
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
@@ -167,5 +169,5 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Last Updated By/Date** - Kris Bhanushali, April 2022
 
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

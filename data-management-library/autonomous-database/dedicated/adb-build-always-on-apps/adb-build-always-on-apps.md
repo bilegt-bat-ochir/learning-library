@@ -8,6 +8,7 @@ TAC uses a combination of Oracle RAC, Oracle Notification Service (ONS), Transpa
 
 In this lab we will install and configure a workload generation tool called Swingbench, configure it for TAC and demonstrate the high availability features of the service while simulating a planned maintenance operation.
 
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -205,11 +206,11 @@ There are at least 2 options to run your swingbench workload.
         ```
       - Specify the location of credentials wallet.
 
-      ![This image shows the result of performing the above step.](./images/TAC1.png " ")
+      ![This image shows the result of performing the above step.](./images/tac1.png " ")
 
 - On the **Configuration** --> **Connection Pooling** tab, setup connection pooling as shown below.
 
-    ![This image shows the result of performing the above step.](./images/TAC2.png " ")
+    ![This image shows the result of performing the above step.](./images/tac2.png " ")
 
 - On the **Configuration** --> **Properties** tab, set the following parameter.
 
@@ -219,7 +220,7 @@ There are at least 2 options to run your swingbench workload.
     FastFailover  True
     OnsConfiguration nodes=10.0.0.7:6200,10.0.0.8:6200
 
-    ![This image shows the result of performing the above step.](./images/TAC3.png " ")
+    ![This image shows the result of performing the above step.](./images/tac3.png " ")
 
     *Note: For the OnsConfiguration parameter, you will need to provide the private IP address of the RAC nodes in your Autonomous Exadata Infrastructure. For instructions on obtained node private IP, refer to Appendix.*
 
@@ -233,7 +234,7 @@ That is it. You are now ready to start up your transactional workload.
 
 - Start up your workload and confirm all users are connected. Wait a few seconds while the charts load up.
 
-    ![This image shows the result of performing the above step.](./images/TAC4.png " ")
+    ![This image shows the result of performing the above step.](./images/tac4.png " ")
 
 - To monitor client connections on each RAC node, open a terminal window, connect to your database instance using SQL*Plus, SQLcl or SQL Developer and run the following SQL command:
 
@@ -255,11 +256,11 @@ That is it. You are now ready to start up your transactional workload.
 
 - Navigate to your ADB details page on the OCI console to locate the container database as shown:
 
-    ![This image shows the result of performing the above step.](./images/TAC5.png " ")
+    ![This image shows the result of performing the above step.](./images/tac5.png " ")
 
 - When ready, restart the container database.
 
-    ![This image shows the result of performing the above step.](./images/TAC6.png " ")
+    ![This image shows the result of performing the above step.](./images/tac6.png " ")
 
 - Notice how the swingbench workload continues to run unaffected.
 
@@ -268,6 +269,8 @@ That is it. You are now ready to start up your transactional workload.
 - Re-run the SQL. This time your client has connected to instance 2. Once node 1 restart completes, the service will repeat the sequence on node 2 but draining all connections back to instance 1 and restarting node 2.
 
 - All this time, your swingbench workload should continue to run. In case you notice application connection issues, failures, and so on, re-check your configuration parameter and make sure your application is using 18c jdbc drivers.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Congratulations! You successfully configured the swingbench java application with Transparent Application Continuity and tested it with a simulated planned maintenance scenario.*

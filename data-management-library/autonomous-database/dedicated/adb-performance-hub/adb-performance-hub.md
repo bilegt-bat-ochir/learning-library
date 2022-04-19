@@ -4,6 +4,8 @@
 ## Introduction
 In this lab we will simulate a production workload using Swingbench tool and monitor performance using the OCI native Performance Hub console.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As an adminstrator:
@@ -94,6 +96,9 @@ The main Performance Hub page should display. This page has 3 sections.
 - **SQL Monitoring** also allows administrators to kill specific sessions if necessary. Highlight the session and a **Kill Session** button appears on top. If you click this button, the session will be terminated.
 
     ![This image shows the result of performing the above step.](./images/sqlmonitoring.jpeg " ")
+
+You may now **proceed to the next lab**.
+
 
 ## Acknowledgements
 *Congratulations! You successfully completed setting up the swingbench workload generator for use in subsequent labs.*

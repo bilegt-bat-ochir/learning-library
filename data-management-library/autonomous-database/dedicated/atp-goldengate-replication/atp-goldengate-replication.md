@@ -12,6 +12,7 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
     [Learn More about Golden Gate](http://www.oracle.com/us/products/middleware/data-integration/oracle-goldengate-realtime-access-2031152.pdf).
 
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -61,12 +62,12 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
 - Next, under *Create OGG deployments* check *Deployment - Autonomous database* choose your deployment compartment and deployment Autonomous Database Instance. 
 
-- In this lab, we choose a single deployment called Databases. 
+- In this lab, we choose a single deployment called Databases.
     ![This image shows the result of performing the above step.](./images/source-target.png " ")
 
 - Next, paste your public key and hit *Create*.
 
-- Your Goldengate instance should be ready in a few minutes and we will come back to configure it. 
+- Your Goldengate instance should be ready in a few minutes and we will come back to configure it.
 
 ## Task 2: Configure the source database
 
@@ -74,7 +75,7 @@ It is assumed that you either have an Oracle 12c database configured as source o
 
 [This Medium blog provides step by step directions to deploying a DBCS instance in OCI.](https://medium.com/@fathi.ria/oracle-database-on-oci-cloud-ee144b86648c)
 
-The source database requires a Common (CDB) user that has DBA privileges over all PDBs in that database. 
+The source database requires a Common (CDB) user that has DBA privileges over all PDBs in that database.
 
 Lets also assume that the schema we wish to replicate with Goldengate is the 'appschema' in PDB1. So for a freshly provisioned DBCS instance as source, we create the common user and application schema as follows.
 
@@ -172,7 +173,7 @@ That is it! Your target DB is now ready.
     </copy>
     ```
 
-- Also get your ATPD wallet zip file ready to upload / SCP to the goldengate instance. 
+- Also get your ATPD wallet zip file ready to upload / SCP to the goldengate instance.
 
     *This file needs to go into the folder /u02/deployments/Databases/etc.*
 
@@ -341,7 +342,7 @@ That is it! Your target DB is now ready.
     ![This image shows the result of performing the above step.](./images/rep2.png " ")
     ![This image shows the result of performing the above step.](./images/rep3.png " ")
 
-- On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below. 
+- On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below.
   
     *Note: Please remove the original line MAP \*.\*, TARGET \*.\*;*
 
@@ -361,6 +362,8 @@ Hurray! You have completed the replication setup. To test, simply connect to you
     </copy>
     ````
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 *Great work!*
 - **Author** - Tejus S. & Kris Bhanushali
@@ -368,5 +371,5 @@ Hurray! You have completed the replication setup. To test, simply connect to you
 - **Last Updated By/Date** - Yaisah Granillo, April 2022
 
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

@@ -7,6 +7,8 @@ Each autonomous container database (ACD) and each autonomous database (ADB) with
 
 [This is an introductory YouTube video.](youtube:JoAJ7lAgdkA)
 
+Estimated Time: 40 minutes
+
 ### Objectives
 
 As a database security administrator:

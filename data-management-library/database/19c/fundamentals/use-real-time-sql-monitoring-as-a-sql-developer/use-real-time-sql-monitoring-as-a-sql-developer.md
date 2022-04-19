@@ -24,7 +24,7 @@ This lab assumes you have:
 * Obtained and signed in to your `workshop-installed` compute instance.
 
 
-## Task 1: Prepare Your Environment in Session 1
+## Task 1: Prepare your environment in session 1
 
 > **NOTE:** Unless otherwise stated, all passwords will be `Ora4U_1234`. When copying and pasting a command that includes a password, please replace the word `password` with `Ora4U_1234`. This only applies to instances created through OCI Resource Manager with our provided terraform scripts.
 
@@ -38,9 +38,10 @@ This lab assumes you have:
     ```
 
 3.	Execute the $HOME/labs/19cnf/RTMonitor.sh SQL script in **session 1**. The script completes the following operations:
-  * Creates the MONI user and MONI_TEST table, and loads the table with thousands of rows
-  * Creates a developer user.
-  * Grants the developer user CREATE SESSION and SELECT on the MONI.MONI_TEST table.
+
+     * Creates the MONI user and MONI_TEST table, and loads the table with thousands of rows
+     * Creates a developer user.
+     * Grants the developer user CREATE SESSION and SELECT on the MONI.MONI_TEST table.
 
     ```
     $ <copy>$HOME/labs/19cnf/RTMonitor.sh</copy>
@@ -77,7 +78,7 @@ This lab assumes you have:
 
     As you can see, SQLDEV has not been granted the SELECT CATALOG ROLE role. 
 
-## Task 2: Prepare Your Environment in Session 2
+## Task 2: Prepare your environment in session 2
 
 1. Open up new terminal window for **session 2**.
 
@@ -128,20 +129,21 @@ This lab assumes you have:
 
     Note that the SQLDEV user is not granted the SELECT\_CATALOG\_ROLE role nor the SELECT privilege on the V$SQL_MONITOR view.**
 
-1. Generate the SQL monitor report from the command line, run the `REPORT_SQL_MONITOR` function in the `DBMS_SQLTUNE` package.
+3. Generate the SQL monitor report from the command line, run the `REPORT_SQL_MONITOR` function in the `DBMS_SQLTUNE` package.
 
     ```
     SQL> <copy>VARIABLE my_rept CLOB</copy>
     SQL> <copy>BEGIN
             :my_rept :=DBMS_SQLTUNE.REPORT_SQL_MONITOR();
-    END;/
+    END;
+    /
     </copy>
       2    3    4
 
     PL/SQL procedure successfully completed.
     ```
 
-2. Print the report.
+4. Print the report.
 
     ```
     SQL> <copy>SET LONG 10000</copy>
@@ -210,18 +212,9 @@ This lab assumes you have:
     $
     ```
 
-4.	In **session 2**, interrupt the long-running query. First, press CTRL + C.
+5.	In **session 2**, interrupt the long-running query. Press CTRL + C.
 
-    ```
-    CTRL C
-
-    SQL> <copy>SELECT count(*) FROM moni.moni_test t1, moni.moni_test t2;</copy>
-                              *
-    ERROR at line 1:
-    ORA-01013: user requested cancel of current operation
-    ```
-
-1. Exit SQL*Plus.
+6. Exit SQL*Plus.
 
     ```
     SQL> <copy>EXIT</copy>

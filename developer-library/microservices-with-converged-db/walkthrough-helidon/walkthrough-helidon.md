@@ -203,6 +203,15 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
     > **Note:** This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
 
+6. (Optional) Undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior
+
+    Optionally, for example if you want to run the scaling lab later, you can undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior by issuing the following.
+
+    ```
+    <copy>cd $GRABDISH_HOME/foodwinepairing-python;./undeploy.sh ; cd $GRABDISH_HOME/inventory-helidon;./deploy.sh</copy>
+    ```
+
+
 ## Task 6: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java

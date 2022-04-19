@@ -130,7 +130,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    git clone -b 22.4.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -185,21 +185,27 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ![Obtain Oracle Cloud Infrastructure Compartment OCID](images/compartment-ocid.png " ")
 
-4. The setup will ask for you to enter your user's OCID.  
+4. The setup will ask for you to enter your user's OCID.
 
-    Be sure to provide the user OCID and not the user name or tenancy OCID. The user OCID will look something like:
+	Be sure to provide the user OCID and not the user name or tenancy OCID. The user OCID will look something like:
 
-    `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`
+	`ocid1.user.oc1....<unique_ID>`
 
-    > **Note:** Notice the format of "ocid1.user" prefix.
+	> **Note:** Notice the format of "ocid1.user" prefix.
 
-    Locate your menu bar in the Cloud Console and click the person icon at the far upper right. From the drop-down menu, select your user's name. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
+	Locate your menu bar in the Cloud Console and click the person icon at the far upper right. 
+	
+	From the drop-down menu, select your user's name or My Profile. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
 
-    ![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
+	![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
 
-    Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
+	Alternative:
 
-    ![Oracle Cloud Infrastructure User OCID Example](images/example-user-ocid.png " ")
+	![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid-iam.png " ")
+
+	Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
+
+	![Oracle Cloud Infrastructure User OCID Example](images/example-user-ocid.png " ")
 
 5. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room. This is done through the Oracle Cloud Console.
 

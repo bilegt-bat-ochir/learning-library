@@ -2,6 +2,8 @@
 ## Introduction
 Using Data Safe, perform data discovery and data masking in one flow, configure a variety of masking formats, such as random number, fixed string, group shuffle, regular expression, and conditional and pre-defined custom mask.
 
+Estimated Time: 40 minutes
+
 ### Objectives
 In this lab, you learn how to do the following:
 - Perform data discovery and data masking in one flow.
@@ -40,7 +42,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - In Oracle Data Safe, click the **Home** tab, and then click **Data Masking**. The **Data Masking** wizard is displayed.
 - On the **Select Target for Data Masking** page, select your target database, and then click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img91.png " ")
+    ![This image shows the result of performing the above step.](./images/img91.png " ")
 
 - The **Select Masking Policy** page is displayed.
 - For **Masking Policy**, leave **Create** selected.
@@ -51,31 +53,31 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - Select your resource group.
 - Click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img92.png " ")
+    ![This image shows the result of performing the above step.](./images/img92.png " ")
 
 - The **Select Target for Sensitive Data Discovery** page is displayed.
 - Select your target database, and then click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img93.png " ")
+    ![This image shows the result of performing the above step.](./images/img93.png " ")
 
 - The **Select Schemas for Sensitive Data Discovery** page is displayed.
 - Select the `HCM1` schema, and then click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img94.png " ")
+    ![This image shows the result of performing the above step.](./images/img94.png " ")
 
 - The **Select Sensitive Types for Sensitive Data Discovery** page is displayed.
 - Select **Select All**.
 - To start the data discovery job, click **Continue**.
 - When the data discovery job is completed, click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img95.png " ")
+    ![This image shows the result of performing the above step.](./images/img95.png " ")
 
 - The **Sensitive Data Discovery Result** page is displayed.
 - Click **Save and Continue**. The **Masking Policy** page is displayed.
 - Clear the selected columns by deselecting **Select All**. In this example, you select specific sensitive columns to mask.
 - Expand all of the nodes.
 
-    ![This image shows the result of performing the above step.](./images/Img96.png " ")
+    ![This image shows the result of performing the above step.](./images/img96.png " ")
 
 ## Task 2: Configure a variety of masking formats
 
@@ -83,13 +85,13 @@ Launch the Data Masking wizard and discover Sensitive Data.
 
 - Search for `EMP_EXTENDED.TAXPAYERID`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img97.png " ")
+    ![This image shows the result of performing the above step.](./images/img97.png " ")
 
 - Select **Random Number**.
 - Set **Start Number** equal to **100,000,000**. Leave out the commas in the numbers. Commas are automatically added.
 - Set **End Number** equal to **899,999,999**.
 
-    ![This image shows the result of performing the above step.](./images/Img98.png " ")
+    ![This image shows the result of performing the above step.](./images/img98.png " ")
 
 - Click **Save**.
 
@@ -100,13 +102,13 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - Enter the string `***-**-****`.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img99.png " ")
+    ![This image shows the result of performing the above step.](./images/img99.png " ")
 
 **Configure a masking format for `LOCATIONS.POSTAL_CODE` to generate 5-digit random numbers between 10000 and 99999**
 
 - Search for `LOCATIONS.POSTAL_CODE`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img100.png " ")
+    ![This image shows the result of performing the above step.](./images/img100.png " ")
 
 - Select **Random Number**.
 - Set **Start Number** equal to **10000**.
@@ -114,7 +116,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - You want 5-digit numbers only.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img101.png " ")
+    ![This image shows the result of performing the above step.](./images/img101.png " ")
 
 **Configure a masking format for `COUNTRIES.COUNTRY_NAME` to shuffle values within each `REGION_ID`**
 
@@ -123,7 +125,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - Enter the grouping column `REGION_ID`, and press **Enter**.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img102.png " ")
+    ![This image shows the result of performing the above step.](./images/img102.png " ")
 
 **Configure a masking format that masks columns with email addresses that contain `@ORACLE.COM`**
 
@@ -134,7 +136,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - Enter the replacement expression `@EXAMPLE.COM`.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img103.png " ")
+    ![This image shows the result of performing the above step.](./images/img103.png " ")
 
 **Configure a masking format for `JOB_HISTORY.DATE_OF_TERMINATION` that generates dates from two years ago to the present**
 
@@ -144,13 +146,13 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - For **End Date**, configure the current date by using the calendar.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img104.png " ")
+    ![This image shows the result of performing the above step.](./images/img104.png " ")
 
 **Configure a masking format for `EMPLOYEES.SALARY` that masks values greater than 10,000 with the fixed number 10,000**
 
 - Search for `EMPLOYEES.SALARY`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img105.png " ")
+    ![This image shows the result of performing the above step.](./images/img105.png " ")
 
 - Move the Conditional Masking slider to the right.
 - In the first field, replace **1** with `HCM1.EMPLOYEES.SALARY`.
@@ -169,7 +171,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - Click **Save**.
 - Notice that the masking format is marked as **Complex Format**.
 
-    ![This image shows the result of performing the above step.](./images/Img106.png " ")
+    ![This image shows the result of performing the above step.](./images/img106.png " ")
 
 **Configure a masking format for `SUPPLEMENTAL_DATA.BONUS_AMOUNT` that generates a random list of values, including 1000, 1500, 2000, 2500, and 3000**.
 
@@ -179,7 +181,7 @@ Launch the Data Masking wizard and discover Sensitive Data.
 - For **List Of Values**, enter the following random numbers, pressing **Enter** after each one: **1000**, **1500**, **2000**, **2500**, **3000**.
 - Click **Save**.
 
-    ![This image shows the result of performing the above step.](./images/Img107.png " ")
+    ![This image shows the result of performing the above step.](./images/img107.png " ")
 
 ## Task 3: Schedule the masking job
 
@@ -187,15 +189,15 @@ Schedule the data masking job to run immediately and then view the masking repor
 
 - **Select all** the sensitive columns and click **Confirm Policy**.
 
-    ![This image shows the result of performing the above step.](./images/Img108.png " ")
+    ![This image shows the result of performing the above step.](./images/img108.png " ")
 
 - Schedule the data masking job to run immediately and then view the masking report.
 
-    ![This image shows the result of performing the above step.](./images/Img109.png " ")
+    ![This image shows the result of performing the above step.](./images/img109.png " ")
 
 - Click **Review**. Now you are ready to run the data masking job.
 
-    ![This image shows the result of performing the above step.](./images/Img110.png " ")
+    ![This image shows the result of performing the above step.](./images/img110.png " ")
 
 - Click **Submit**
   - How many values are masked?
@@ -258,6 +260,8 @@ Because many of the masking formats use random formulas, your results are probab
 - View the masked data for the following columns.
   - `TAXPAYER_ID`: Sample data before masking: `406-12-9866`. Sample data after masking: `***-**-****`
   - `BONUS_AMOUNT`: Sample data before masking: `40396`. Sample data after masking: `2500`
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

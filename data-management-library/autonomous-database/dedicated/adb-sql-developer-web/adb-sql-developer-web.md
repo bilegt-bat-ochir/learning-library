@@ -7,6 +7,8 @@ On the Performance Hub page of the Database Actions console, you can monitor you
 
 This page allows you to view all the performance data available for a specific period. Once a period is selected, the database performance is displayed.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As a developer or DBA:
@@ -28,9 +30,9 @@ As a developer or DBA:
 
 - Navigate to the **Database Details** page. Click the **Database Actions** button that leads you to the Database Actions access URL as shown below.
 
-    ![This image shows the result of performing the above step.](./images/DBActionsButton.png " ")
+    ![This image shows the result of performing the above step.](./images/dbactionsbutton.png " ")
 
-    ![This image shows the result of performing the above step.](./images/DBActionsURL.png " ")
+    ![This image shows the result of performing the above step.](./images/dbactionsurl.png " ")
 
 - Click **Copy** to save the URL to the clipboard, while working on the next step to access your developer client machine over VNC.
 
@@ -66,7 +68,7 @@ As a developer or DBA:
 
 - Provide the **ADMIN** username and password you created at the time of provisioning your database.
 
-    ![This image shows the result of performing the above step.](./images/DBActionsLogin.png " ")
+    ![This image shows the result of performing the above step.](./images/dbactionslogin.png " ")
 
 - Click **Sign in**, and you should now be looking at your Database Actions Console.
 
@@ -111,6 +113,8 @@ As a developer or DBA:
 
     Note that SQL statements are only monitored if they've been running for at least five seconds or if they're run in parallel.
     ![This image shows the result of performing the above step.](./images/sql_monitoring_details.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

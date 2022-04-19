@@ -22,6 +22,9 @@ In this lab, you will:
 
 ### Prerequisites
 
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance.
+
 ## Task 1: Prepare your environment
 
 > **NOTE:** Unless otherwise stated, all passwords will be `Ora4U_1234`. When copying and pasting a command that includes a password, please replace the word `password` with `Ora4U_1234`. This only applies to instances created through OCI Resource Manager with our provided terraform scripts.
@@ -88,7 +91,7 @@ Create the HR.MEMOPTWRITES table in PDB1 to have rows inserted as deferred inser
     with deferred storage.
     ```
 
-By default, an object created like a table does not have a segment created until a first row is inserted. `MEMOPTIMIZE FOR WRITE` tables require a segment created before the first row is inserted.
+    By default, an object created like a table does not have a segment created until a first row is inserted. `MEMOPTIMIZE FOR WRITE` tables require a segment created before the first row is inserted.
 
 ## Task 3: Observe how space is allocated for fast ingest writes
 
@@ -149,7 +152,7 @@ By default, an object created like a table does not have a segment created until
 
     ```
 
-The space has not been initialized yet, it will be once we insert something into the table.
+    The space has not been initialized yet, it will be once we insert something into the table.
 
 6. Insert a row into the table so that the row goes to the space allocated for fast ingest writes in the large pool.
 

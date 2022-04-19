@@ -19,7 +19,7 @@ In this lab, you:
 ### Prerequisites
 
 * A tenancy that is configured to work with the Data Science service.
-* A configured project, VCN, and subnet.
+* A configured project.
 * An account that has permission to create a Data Science notebook session.
 
 ## Task 1: Creating a Notebook Session
@@ -29,26 +29,23 @@ In this lab, you:
 1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session.
-    ![Select project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select project](./../common/images/select-project.png)
 
 1. Click **Create Notebook Session**.
-    ![Create a notebook](./../speed-up-ds-with-the-ads-sdk/images/create-notebook.png)
+    ![Create a notebook](./../common/images/create-notebook.png)
 
 1. Select the compartment that you want to contain the notebook session.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
-1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
+1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard2.4. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard2.4**, and finally click **Select**.
 1. Enter the block volume in GB. The suggested size is 100 Gb or larger.
-1. Select the VCN compartment that contains the VCN that you want to use.
-1. Select the VCN to use.
-1. Select the subnet compartment that contains the subnet you want to use.
-1. Select the subnet to use. Using a private subnet is recommended.
+1. In the networking resources section, select the default networking option.
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
 1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**.
 1. Click **Create**.
-    ![Create a notebook session](./../speed-up-ds-with-the-ads-sdk/images/create-ns.png)
+    ![Create a notebook session](./../common/images/create-notebook-session-vm-standard24.png)
 
     While the notebook session is being created, you can navigate away from the current page.
-    ![creating a notebook session](./../speed-up-ds-with-the-ads-sdk/images/creating-ns.png)
+    ![creating a notebook session](./../common/images/creating-notebook-session.png)
 
 ## Task 2: Opening a Notebook Session
 
@@ -59,22 +56,21 @@ Once the notebook session has been created the notebook session page shows the n
 1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session. This will open the Projects page.
-    ![Select a project](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
+    ![Select a project](./../common/images/select-project.png)
 
 1. Click the name of the notebook session. This will open the Notebook Session page.
-    ![Click Notebook session](./../speed-up-ds-with-the-ads-sdk/images/click-ns.png)
+    ![Click Notebook session](./../common/images/click-notebook-session.png)
+
+1. If the notebook is in the **Creating** state, then wait until it is in the **Active** state.
 
 1. If the notebook is in an **Active** state, then click **Open**.
-    ![Click open](./../speed-up-ds-with-the-ads-sdk/images/click-open.png)
+    ![Click open](./../common/images/open-notebook-session.png)
 
 1. If the notebook is in an **Inactive** state, then:
     1. Click **Activate** to open the **Activate Notebook Session** dialog with the configuration from the last time the notebook session was activated or created.
-    1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
-    1. Enter the block volume in GB. The suggested size is 100 Gb or larger. The size of the block storage can be increased, but not decreased.
-    1. Select the VCN compartment that contains the VCN that you want to use.
-    1. Select the VCN to use.
-    1. Select the subnet compartment that contains the subnet that you want to use.
-    1. Select the subnet to use. Using a private subnet is recommended.
+    1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard2.4. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard2.4**, and finally click **Select**.
+    1. Enter the block volume in GB. The suggested size is 100 Gb or larger. The size of the block storage can be increased, but not decreased. 
+    1. In the networking resources section, select the default networking option.
     1. Click **Activate** and the notebook session status changes to **Updating**.
     1. When the notebook session status changes to **Active**, click **Open**
 

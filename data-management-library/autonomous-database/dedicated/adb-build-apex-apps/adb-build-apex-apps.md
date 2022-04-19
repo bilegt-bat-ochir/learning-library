@@ -12,6 +12,8 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 
     [Learn More on Low Code Development](https://apex.oracle.com/en/platform/low-code/)
 
+Estimated Time: 30 minutes
+
 ### Objectives
 
 1. Access OCI autonomous database console and get URL for apex web console.
@@ -28,11 +30,11 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 
 - To get the APEX URL for your ATP Dedicated instance, log into the Oracle Cloud and navigate to Autonomous Transaction Processing option from the Hamburger menu.
     
-    ![This image shows the result of performing the above step.](./images/NavigateATP1.png " ")
+    ![This image shows the result of performing the above step.](./images/navigateatp1.png " ")
 
 - On the Autonomous Database console, select the ATP-Dedicated database you created.
     
-    ![This image shows the result of performing the above step.](./images/selectADB.png " ")
+    ![This image shows the result of performing the above step.](./images/selectadb.png " ")
 
 - On your database console, click **Tools** -> **Open APEX**.
 
@@ -40,7 +42,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 
 - Save the URL as we are going to need it later in this lab.
 
-    ![This image shows the result of performing the above step.](./images/getApexURL.png " ")
+    ![This image shows the result of performing the above step.](./images/getapexurl.png " ")
 
 
 ## Task 2: Set up VNC connection to the developer client VM and access APEX on the database as an admin user
@@ -69,7 +71,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/SettingVNC2.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc2.png " ")
 
 - Open another terminal window and execute the below command to create a tunnel from your local machine to the developer VM.
 
@@ -79,16 +81,16 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/SettingVNC1.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc1.png " ")
 
     *Note:  If you are a windows user, you can use Putty to create a tunnel into the Developer VM.*
 
 - Open the VNC Viewer application running on your local computer and connect to the VNC server as show below.
 
-    ![This image shows the result of performing the above step.](./images/SettingVNC3.png " ")
-    ![This image shows the result of performing the above step.](./images/SettingVNC5.png " ")
-    ![This image shows the result of performing the above step.](./images/SettingVNC4.png " ")
-    ![This image shows the result of performing the above step.](./images/SettingVNC6.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc3.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc5.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc4.png " ")
+    ![This image shows the result of performing the above step.](./images/settingvnc6.png " ")
 
 ## Task 3: Set up additional users on APEX
 
@@ -104,34 +106,34 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/AccessAPEX1.png " ")
-    ![This image shows the result of performing the above step.](./images/AccessAPEX2.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex1.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex2.png " ")
 
     *Note: If you are an experienced APEX user, you can just click Create a Workspace and skip the next 3 steps.*
 
 - Click **Manage Workspaces**. This page will have all the options for you to manage your workspace or all the workspaces if you are an admin.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX3.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex3.png " ")
 
 - Click **Monitor Activity**. This page allows you to manage and monitor your applications.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX3-2.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex3-2.png " ")
 
 - Now, go back to the Manage workspace page and click the **Create Workspace** option.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX4.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex4.png " ")
 
 - Enter a workspace name for your new workspace. Click **Next**.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX5.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex5.png " ")
 
 - In the dialog box, select **Yes**, if you want to re-use schema from your database. Select **No**, if you want to create a new schema for your workspace. In this lab we are going to create a new schema, so select **No**. Enter a Schema Name and a password for that schema. Click **Next**.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX6.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex6.png " ")
 
 - Enter a password for the workspace admin, enter name(optional) and give an email ID for the confirmation email.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX7.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex7.png " ")
 
 - Verify the information you just entered and click **Create Workspace**.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX8.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex8.png " ")
 
 - You will see a conformation message stating that the workspace has been created.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX9.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex9.png " ")
 
 - On the top right corner of the page, click the profile menu and sign out. Sign in to the new workspace using the workspace credentials you just created.
 
@@ -143,15 +145,17 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/AccessAPEX10.png " ")
-    ![This image shows the result of performing the above step.](./images/AccessAPEX11.png " ")
-    ![This image shows the result of performing the above step.](./images/AccessAPEX12.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex10.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex11.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex12.png " ")
 
 - Change the workspace password, if prompted.
-    ![This image shows the result of performing the above step.](./images/AccessAPEX13.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex13.png " ")
 
 - You have now logged into the new workspace that you have created and can start developing your application right away!
-    ![This image shows the result of performing the above step.](./images/AccessAPEX14.png " ")
+    ![This image shows the result of performing the above step.](./images/accessapex14.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

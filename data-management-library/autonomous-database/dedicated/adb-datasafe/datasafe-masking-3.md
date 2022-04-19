@@ -2,6 +2,8 @@
 ## Introduction
 Using Data Safe, create a masking format and assign a default masking format to a user-defined sensitive type.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 In this lab, you learn how to do the following:
 - Create a masking format.
@@ -34,12 +36,12 @@ In SQL Developer Web, search the `DEPARTMENT_ID` column in your target database 
 - Notice that the department ID values are 10, 20, 30, up to 270.
 - Click the **Data Modeler** tab.
 
-    ![This image shows the result of performing the above step.](./images/Img86.png " ")
+    ![This image shows the result of performing the above step.](./images/img86.png " ")
 
 - In the first drop-down list, select `HCM1`.
 - In the second drop-down list, select **Tables**.
 
-    ![This image shows the result of performing the above step.](./images/Img87.png " ")
+    ![This image shows the result of performing the above step.](./images/img87.png " ")
 
 - Drag the `DEPARTMENTS` table to the worksheet.
 - Notice that the `DEPARTMENT_ID` column has the data-type `NUMBER(4)`, which means it can take up to four digits (no decimals). It is also a primary key column.
@@ -53,7 +55,7 @@ In the Oracle Data Safe Console, create a masking format to mask department IDs.
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Under **Data Masking**, click **Masking Formats**, and then click **Add**.
 
-    ![This image shows the result of performing the above step.](./images/Img88.png " ")
+    ![This image shows the result of performing the above step.](./images/img88.png " ")
 
 - The **Create Masking Format** dialog box is displayed.
 - Leave the **Create Like** drop-down list as is.
@@ -64,12 +66,14 @@ In the Oracle Data Safe Console, create a masking format to mask department IDs.
 - In the **Start Number** field, enter **10**.
 - In the **End Number** field, enter **9990**.
 
-    ![This image shows the result of performing the above step.](./images/Img89.png " ")
+    ![This image shows the result of performing the above step.](./images/img89.png " ")
 
 - Click **Save**. A confirmation message states that you successfully created the masking format.
 - Move the **Hide Oracle Predefined** slider to the right and verify that your masking format is listed.
 
-    ![This image shows the result of performing the above step.](./images/Img90.png " ")
+    ![This image shows the result of performing the above step.](./images/img90.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

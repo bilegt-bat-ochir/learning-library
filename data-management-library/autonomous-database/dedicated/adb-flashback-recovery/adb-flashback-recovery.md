@@ -3,6 +3,8 @@
 ## Introduction
 The Oracle Autonomous Database service comes pre-configured with a set of features collectively known as Flashback Technology that supports viewing past states of data, and winding and rewinding data back and forth in time, without requiring the restore of the database from backup. Depending on the changes to your database, Flashback Technology can often reverse the unwanted changes more quickly and with less impact on database availability.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 As an administrator,
 1. Learn how to set up recovery points in database change scripts.
@@ -110,6 +112,8 @@ Let's first see how to recover from an accidental data loss.
     select count(*) from items;
     </copy>
     ````
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Congratulations! You successfully learned to recover from user errors using Oracle flashback.*

@@ -2,6 +2,8 @@
 ## Introduction
 Using Data Safe, view masking formats and masking policies in the Library and analyze data masking results and reports.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 In this lab, you will learn how to do the following:
 - View masking formats and masking policies in the Library
@@ -38,11 +40,11 @@ Refer to the earlier lab in this workshop, **Register a Target Database**.
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Click **Masking Formats**.
 
-    ![This image shows the result of performing the above step.](./images/Img81.png " ")
+    ![This image shows the result of performing the above step.](./images/img81.png " ")
 
 - In the search box, enter **Employee** (case-sensitive) and press **Enter** or click the magnifying glass button. Do the same for **Department**. Notice that there are no matching masking formats listed for Employee.
 
-    ![This image shows the result of performing the above step.](./images/Img82.png " ")
+    ![This image shows the result of performing the above step.](./images/img82.png " ")
 
 - Clear the search field and press **Enter** to restore the list of masking formats.
 - Click the **Age** masking format.
@@ -55,7 +57,7 @@ Refer to the earlier lab in this workshop, **Register a Target Database**.
 - Click **Masking Policies**. Your masking policy that you created in the earlier lab, **Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe**, should be listed (**Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
 - Click your masking policy.
 
-    ![This image shows the result of performing the above step.](./images/Img83.png " ")
+    ![This image shows the result of performing the above step.](./images/img83.png " ")
 
 - Review the details, and then close the window.
 - Notice that you can move the **Expand All** slider to the right to view all of the sensitive columns and their respective masking policies.
@@ -68,17 +70,17 @@ Refer to the earlier lab in this workshop, **Register a Target Database**.
 
 - Go to the **Library tab** and click **Masking Policies**.
 
-    ![This image shows the result of performing the above step.](./images/Img81.png " ")
+    ![This image shows the result of performing the above step.](./images/img81.png " ")
 
 - Select the check box for your masking policy.
 - Click **Download**.
 
-    ![This image shows the result of performing the above step.](./images/Img84.png " ")
+    ![This image shows the result of performing the above step.](./images/img84.png " ")
 
 - The **Download Masking Policy** dialog box is displayed.
 - Click Yes to download both the sensitive data model and the masking policy as a combined template. Or, click **No** to download just the masking policy. The XML file is downloaded to your browser. A confirmation message is displayed on your page.
 
-    ![This image shows the result of performing the above step.](./images/Img85.png " ")
+    ![This image shows the result of performing the above step.](./images/img85.png " ")
 
 - View your list of downloads in your browser and open the masking policy XML file.
 - Review the file, and then close it.
@@ -100,6 +102,8 @@ Explore the Jobs page.
 - Click the **X** button to close the dialog box.
 - Click a data masking job's ID to view all of its details.
 - Click the **X** button to close the dialog box.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -10,6 +10,8 @@ To institute access controls for cloud users, you define policies that grant spe
 
 To institute network access controls, you create VCNs and subnets and then, using the same policy mechanism, permit only the appropriate VCN and subnet to be used when a dedicated infrastructure resource is created. Thus, you can ensure the proper network isolation of resources.
 
+Estimated Time: 60 minutes
+
 ### Objectives
 As an OCI account administrator with network resource privileges:
 
@@ -35,15 +37,15 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
 1. Lets create compartments **fleetComparment** and **dbUserCompartment** as shown.
 
-    ![This image shows the result of performing the above step for creating compartments.](./images/create_compartment.png " ")
+    ![This image shows the result of performing the above step for creating compartments.](./images/create-compartment.png " ")
 
 2. Create groups **fleetAdmins** and **dbUsers**.
 
-    ![This image shows the result of performing the above step for creating groups](./images/create_groups.png " ")
+    ![This image shows the result of performing the above step for creating groups](./images/create-groups.png " ")
 
 3. Now, add the following IAM policies on the fleetAdminCompartment.
 
-    ![This image shows the result of performing the above step for creating policies](./images/create_policy1.png " ")
+    ![This image shows the result of performing the above step for creating policies](./images/create-policy1.png " ")
 
     - The following policy statement on the fleetCompartment ensure group fleetAdmins and dbUsers have the right privileges as explained earlier. Note how fleet admins have **manage** privileges while dbUsers have **read** privileges.
 
@@ -67,7 +69,7 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
     - The final set of policy statements on the fleet compartment appear as shown below.
 
-    ![This image shows the result of performing the above step for creating final policy statements.](./images/create_policy3.png " ")
+    ![This image shows the result of performing the above step for creating final policy statements.](./images/create-policy3.png " ")
 
 4. Similarly, create a **dbUserPolicy** on the **dbUserCompartment** as show. *Make sure you pick the right compartment before you click the 'Create Policy' button*.
 
@@ -89,12 +91,13 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
     - You may alternatively choose to grant **MANAGE all-resources** privileges to users that need to provision databases and other cloud resources in their own private compartment as shown below.
 
-    ![This image shows the result of performing the above step for granting MANAGE all-resources.](./images/dbUser_policy.png " ")
+    ![This image shows the result of performing the above step for granting MANAGE all-resources.](./images/dbuser-policy.png " ")
 
 5. And finally, let's create a fleet admin and a database user and add them to their respective groups. Any additional fleet admins or database users will simply need to be added to their groups and they will automatically assume their group privileges.
 
     ![This image shows the result of performing the above step for creating dbuser1](./images/dbuser1.png " ")
-    ![This image shows the result of performing the above step for creating adduserTogroup1](./images/adduserTogroup1.png " ")
+    
+    ![This image shows the result of performing the above step for creating adduserTogroup1](./images/addusertogroup1.png " ")
 
 You now have the users, groups and compartments setup to provision an autonomous database platform.
 
@@ -122,7 +125,7 @@ For simplicity, only two subnets are being created here - a private subnet for e
 
 - Create a VCN in **fleetCompartment** with CIDR block 10.0.0.0/16 which provide for 64k IP addresses for the various subnets within this network.
 
-    ![This image shows the result of performing the above step for creating a VCN.](./images/create_VCN.png " ")
+    ![This image shows the result of performing the above step for creating a VCN.](./images/create-vcn.png " ")
 
 - Let's add two security lists to this VCN, one for each of the two subnets we would deploy for the database and application networks. Each subnet has its own security list as defined in the table below.
 
@@ -134,9 +137,9 @@ For simplicity, only two subnets are being created here - a private subnet for e
 
      We start with creating a security list for the exadata subnet based on rules defined in the table above. When completed, our security list appears as follows.
 
-        ![This image shows the result of performing the above step.](./images/add_seclist1.png " ")
+        ![This image shows the result of performing the above step.](./images/add-seclist1.png " ")
 
-        ![This image shows the result of performing the above step.](./images/add_seclist2.png " ")
+        ![This image shows the result of performing the above step.](./images/add-seclist2.png " ")
 
     - Create a security list for the application subnet.
 
@@ -146,38 +149,40 @@ For simplicity, only two subnets are being created here - a private subnet for e
 
     - When deployed, your application subnet's security list appears as follows:
 
-        ![This image shows the result of performing the above step.](./images/add_seclist3.png " ")
+        ![This image shows the result of performing the above step.](./images/add-seclist3.png " ")
 
-        ![This image shows the result of performing the above step.](./images/add_seclist4.png " ")
+        ![This image shows the result of performing the above step.](./images/add-seclist4.png " ")
 
 - Create an internet gateway.
 
     Instances in the application subnet may need access to the internet. For that purpose we will deploy an internet gateway in the VCN and create a route to it. This is optional and depends on wether you want any hosts in the public domain. Typically bastion hosts can be setup in a public subnet for ssh access. In this guide, for simplicity, we will set up our developer client machines in the public appSubnet.
 
-    ![create_internet-gateway](./images/create_internet-gateway.png " ")
+    ![create-internet-gateway](./images/create-internet-gateway.png " ")
 
 - Create a route table for the Application Subnet to route traffic to the internet gateway.
 
     Note the destination CIDR block 0.0.0.0/0 indicate ALL IP addresses globally, that is, to any host anywhere on the internet. You can limit it to specific hosts or network as desired. For example, you can limit it to hosts in your corporate network or to a specific host such as your personal laptop as long as it has a unique public IP address.
 
-    ![This image shows the result of performing the above step.](./images/create_routeTable.png " ")
+    ![This image shows the result of performing the above step.](./images/create-routetable.png " ")
 
 - Similarly, create a route table for the Exadata Subnet.
 
     Since a route table is required when creating a subnet, we simply create a blank route table named **exaSubnet-routeTable** without any route rules.
 
-    ![This image shows the result of performing the above step.](./images/exaSubnet-routeTable.png " ")
+    ![This image shows the result of performing the above step.](./images/exasubnet-routetable.png " ")
 
 - Provision exadataSubnet and appSubnet.
 
     Now that we have build all the required network resources, we are ready to deploy the exadata and application subnets. Start by provisioning the exadataSubnet with CIDR 10.0.0.0/24 as shown below. The default route table associated with the exadataSubnet does not have any route rules.
 
-    ![This image shows the result of performing the above step.](./images/create_exaSubnet.png " ")
+    ![This image shows the result of performing the above step.](./images/create-exasubnet.png " ")
 
 - Next, provision the application subnet with CIDR 10.0.1.0/24. Note that we associate our custom route table to this subnet for internet access.
-    ![This image shows the result of performing the above step.](./images/create_appSubnet.png " ")
+    ![This image shows the result of performing the above step.](./images/create-appSubnet.png " ")
 
 Your network setup is now complete.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Fantastic! You have now setup your OCI network and users and are ready to deploy autonomous infrastructure, databases and applications.*
@@ -186,5 +191,5 @@ Your network setup is now complete.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, March 2022
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

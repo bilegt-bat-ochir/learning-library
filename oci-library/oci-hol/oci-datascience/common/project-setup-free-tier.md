@@ -25,11 +25,11 @@ You create a Data Science project to organize your notebook sessions and models 
 1. Under **Data and AI** and select **Data Sciences**. This will open the **Projects** page.
 1. Select the compartment where the project is to be created.
 
-    ![Compartment dropdown](../speed-up-ds-with-the-ads-sdk/images/compartment.png)
+    ![Compartment dropdown](../common/images/compartment-free-tier.png)
 
 1. Click **Create Project**.
 
-    ![Create a Project](../speed-up-ds-with-the-ads-sdk/images/create-project.png)
+    ![Create a Project](../common/images/create-project.png)
 1. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
 
 1. (Optional, but recommended) Enter a description (400 character limit) for the project. If you do not add a description, it remains empty.
@@ -38,11 +38,11 @@ You create a Data Science project to organize your notebook sessions and models 
 
 1. (Optional) To view the details for your project immediately after creation, select **VIEW DETAIL PAGE ON CLICKING CREATE.**.
 
-    ![Create a Project](./../speed-up-ds-with-the-ads-sdk/images/create-project2.png)
+    ![Create a Project](./../common/images/create-project-detail.png)
 
 1. Click **Create**.
 
-    ![Project page](./../speed-up-ds-with-the-ads-sdk/images/ds-project.png)
+    ![Project page](./../common/images/project-page.png)
 
     This creates the project and opens the project page.
 

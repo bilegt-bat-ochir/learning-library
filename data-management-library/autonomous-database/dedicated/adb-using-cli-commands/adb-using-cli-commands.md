@@ -10,6 +10,8 @@ The CLI is built on Python (version 2.7.5 or later), running on Mac, Windows, or
 
 This lab walks you through some examples using the OCI CLI for Autonomous Transaction Processing - Dedicated.
 
+Estimated Time: 30 minutes
+
 ### Objectives
 
 As a developer, DBA or DevOps user,
@@ -57,7 +59,7 @@ As a developer, DBA or DevOps user,
     ```
 
 - The command prompts you for the information required for the config file and the API public/private keys. The setup dialog generates an API key pair and creates the config file.
-    ![This image shows the result of performing the above step.](./images/OCI-Setup-Config.png " ")
+    ![This image shows the result of performing the above step.](./images/oci-setup-config.png " ")
 
 - Once you run the above command, you will need to enter the following:
 
@@ -68,7 +70,7 @@ As a developer, DBA or DevOps user,
     ![This image shows the result of performing the above step.](./images/usericon.png " ")
 
         - Copy the user OCID from the user details page.
-    ![This image shows the result of performing the above step.](./images/userOCID.png " ")
+    ![This image shows the result of performing the above step.](./images/userocid.png " ")
 
     - *Enter a tenancy OCID*: Similarly, for the tenancy, click on the tenancy name in the top right menu as shown above and copy the tenancy OCID.
     
@@ -93,17 +95,17 @@ As a developer, DBA or DevOps user,
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/OCIPublicKeycleare.png " ")
+    ![This image shows the result of performing the above step.](./images/ocipublickeycleare.png " ")
 
 - Login to your OCI console and click on Menu and select Identity and Users. Select a User and navigate to User Detail page.
 
 - Click on Add Public Key under API Keys section.
-    ![This image shows the result of performing the above step.](./images/ResourcesMenu.png " ")
+    ![This image shows the result of performing the above step.](./images/resourcesmenu.png " ")
 
-    ![This image shows the result of performing the above step.](./images/APIKeys.png " ")
+    ![This image shows the result of performing the above step.](./images/apikeys.png " ")
 
 - Paste Public key which you copied from CLI in Add Public Key.
-    ![This image shows the result of performing the above step.](./images/AddPublicKey.png " ")
+    ![This image shows the result of performing the above step.](./images/addpublickey.png " ")
 
 - Once you add the key run the below command to autocomplete OCI setup.
 
@@ -113,7 +115,7 @@ As a developer, DBA or DevOps user,
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/OCISetupAutocomplete.png " ")
+    ![This image shows the result of performing the above step.](./images/ocisetupautocomplete.png " ")
 
 ## Task 4: Interacting with Oracle Autonomous Database
 
@@ -140,8 +142,8 @@ As a developer, DBA or DevOps user,
     ```
 
 You are expected to see the following output in the command line interface.
-    ![This image shows the result of performing the above step.](./images/GetDBOutput1.png " ")
-    ![This image shows the result of performing the above step.](./images/GetDBOutput2.png " ")
+    ![This image shows the result of performing the above step.](./images/getdboutput1.png " ")
+    ![This image shows the result of performing the above step.](./images/getdboutput2.png " ")
 
 **Note** the compartment-id OCIDs are provided in the json output above. Make a note of the compartment-id OCID assigned to you as you need it in the following example to list databases in a compartment.
 
@@ -164,7 +166,7 @@ You are expected to see the following output in the command line interface.
     ```
 
 You are expected to see the following output in the command line interface.
-    ![This image shows the result of performing the above step.](./images/ListDBOutput1.png " ")
+    ![This image shows the result of performing the above step.](./images/listdboutput1.png " ")
 
 - Run the following command to List all Autonomous Transaction Processing Database in a specific compartment in a specific Container database.
 
@@ -183,8 +185,8 @@ You are expected to see the following output in the command line interface.
     ```
 
 You are expected to see the following output in the command line interface.
-    ![This image shows the result of performing the above step.](./images/ListDBOutput2.png " ")
-    ![This image shows the result of performing the above step.](./images/ListDBOutput3.png " ")
+    ![This image shows the result of performing the above step.](./images/listdboutput2.png " ")
+    ![This image shows the result of performing the above step.](./images/listdboutput3.png " ")
 
 
 ### *Creating Database*
@@ -192,7 +194,7 @@ You are expected to see the following output in the command line interface.
 - To create an autonomous dedicated database you will need some information handy such as the OCID of the Container Database and OCID of the compartment you want to create the database in. Once you have that ready, open your command line interface and run the following command to create an Autonomous Transaction Processing (dedicated) Database. 
 
     *To find the OCID of the container database, simply navigate to your autonomous database details page and click on the link for container DB. This will take you to the container DB details page and you can copy the OCID there.*
-        ![This image shows the result of performing the above step.](./images/ContainerDatabaseOCID2.png " ")
+        ![This image shows the result of performing the above step.](./images/containerdatabaseocid2.png " ")
 
     ```
     <copy>
@@ -209,8 +211,8 @@ You are expected to see the following output in the command line interface.
     ```
 
 You are expected to see the following output in the command line interface.
-    ![This image shows the result of performing the above step.](./images/CreateDBOutput1.png " ")
-    ![This image shows the result of performing the above step.](./images/CreateDBOutput2.png " ")
+    ![This image shows the result of performing the above step.](./images/createdboutput1.png " ")
+    ![This image shows the result of performing the above step.](./images/createdboutput2.png " ")
 
 ### *Deleting Database*
 
@@ -233,11 +235,11 @@ You are expected to see the following output in the command line interface.
 You are expected to see the following output in the command line interface.
 
 - You will be asked *Are you sure you want to delete this resource? [y/N]* type Y to comfirm.
-    ![This image shows the result of performing the above step.](./images/DeleteDBOutput1.png " ")
+    ![This image shows the result of performing the above step.](./images/deletedboutput1.png " ")
 
 - Login to OCI console and naviagte to Autonomous Transaction Processing Database from Menu and confirm that the database is *Terminating*.
-    ![This image shows the result of performing the above step.](./images/DeleteDBOutput2.png " ")
-    ![This image shows the result of performing the above step.](./images/DeleteDBOutput3.png " ")
+    ![This image shows the result of performing the above step.](./images/deletedboutput2.png " ")
+    ![This image shows the result of performing the above step.](./images/deletedboutput3.png " ")
 
 ### Bonus Steps 
 *Similarly, you can try the following examples.*
@@ -283,6 +285,7 @@ You are expected to see the following output in the command line interface.
 
 These are a handful of examples on using the OCI CLI REST interface to work with autonomous databases in your OCI tenancy. For a complete command reference,check out OCI documentation [here](https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db.html).
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -8,6 +8,8 @@ For a complete list of features, log in to your OCI account, select **Marketplac
 
 *In this lab we will configure and access Autonomous dedicated Transaction Processing database from Oracle Enterprise Manager.*
 
+Estimated Time: 60 minutes
+
 ### Objectives
 
 As a Database Administrator:
@@ -24,27 +26,27 @@ As a Database Administrator:
 
 - Log in to your Oracle Cloud Infrastructure account and select **Compute** > **Instances** from top left menu.
 
-    ![This image shows the result of performing the above step.](./images/Compute1.png " ")
+    ![This image shows the result of performing the above step.](./images/compute1.png " ")
 
 - Click **Create Instance**.
 
-    ![This image shows the result of performing the above step.](./images/Compute3.png " ")
+    ![This image shows the result of performing the above step.](./images/compute3.png " ")
 
 - A pop-up dialog opens. Select the compartment in which you create compute and click **Change Image**.
 
-    ![This image shows the result of performing the above step.](./images/Compute4.png " ")
+    ![This image shows the result of performing the above step.](./images/compute4.png " ")
 
 - Select **Enterprise Manager 13c Workshop v3.0** under **Oracle images**.
 
-    ![This image shows the result of performing the above step.](./images/Compute5.png " ")
+    ![This image shows the result of performing the above step.](./images/compute5.png " ")
 
 - Select VCN compartment and VCN, subnet compartment and subnet and then click **Create**, which will create compute with EM installed.
 
-    ![This image shows the result of performing the above step.](./images/Compute6.png " ")
+    ![This image shows the result of performing the above step.](./images/compute6.png " ")
 
 - Copy the public IP address of the instance in a note pad.
 
-    ![This image shows the result of performing the above step.](./images/Compute2.png " ")
+    ![This image shows the result of performing the above step.](./images/compute2.png " ")
 
 **Mac / Linux users**
 
@@ -146,23 +148,23 @@ As a Database Administrator:
 
 - Select **Users** under **Security**.
 
-    ![This image shows the result of performing the above step.](./images/upd_01.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-01.png " ")
 
 - The default user for OEM, **ADBSNMP**, will be locked by default. Click the user **ADBSNMP**.
 
-    ![This image shows the result of performing the above step.](./images/upd_02.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-02.png " ")
 
 - Click **Edit**.
 
-    ![This image shows the result of performing the above step.](./images/upd_03.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-03.png " ")
 
 - Select the **Unlocked** radio button and give the new password for **ADBSNMP** user and click **Apply**.
 
-    ![This image shows the result of performing the above step.](./images/upd_04.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-04.png " ")
 
 - Once the change is saved check under **Users** in **Security**. The user **ADBSNMP** will be **Open**.
 
-    ![This image shows the result of performing the above step.](./images/upd_05.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-05.png " ")
 
 ## Task 7: Establish connection with ATP as "ADBSNMP" user
 
@@ -170,7 +172,7 @@ As a Database Administrator:
 
 - Give the Target Name as **ADBEM2** (target name can be anything you want.)
 
-- Select **OCI Client Credential (Wallet)** as the ATPD instance wallet downloaded from the console.   
+- Select **OCI Client Credential (Wallet)** as the ATPD instance wallet downloaded from the console.
 
 - Select **Service Name** as **<ATPD_Name>_low**.
 
@@ -178,17 +180,19 @@ As a Database Administrator:
 
 - Give **Monitoring Password** as ADBSNMP user password and click **Test Connection**.
 
-    ![This image shows the result of performing the above step.](./images/upd_07.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-07.png " ")
 
 - Once the connection test is successful, Click **OK** and click **Next**.
 
-    ![This image shows the result of performing the above step.](./images/upd_08.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-08.png " ")
 
 - Click **Submit** to establish the connection.
 
-    ![This image shows the result of performing the above step.](./images/upd_09.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-09.png " ")
 
-    ![This image shows the result of performing the above step.](./images/upd_10.png " ")
+    ![This image shows the result of performing the above step.](./images/upd-10.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Congratulations! You have successfully established connection to Autonomous Transaction Processing Dedicated Database from OEM .*
@@ -196,5 +200,5 @@ As a Database Administrator:
 - **Authors** - Navya M S & Padma Priya Natarajan
 - **Last Updated By/Date** - Kris Bhanushali, March 2022
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

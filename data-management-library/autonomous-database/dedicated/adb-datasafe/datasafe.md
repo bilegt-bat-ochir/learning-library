@@ -6,6 +6,8 @@ This workshop walks you through the steps to get started using Oracle Data Safe 
 
 *Note: There are a few ways to sign in to the Oracle Data Safe Console. You can sign in from the Oracle Data Safe service page in Oracle Cloud Infrastructure. You can sign in through the Oracle Cloud Infrastructure Console. And you can sign in using a bookmark to your Oracle Data Safe Console.*
 
+Estimated Time: 10 minutes
+
 ### Objectives
 
 This workshop comprises various aspects of Data Security. So follow the given sequence to enhance your skills on utilizing Data Safe with ADB.
@@ -35,6 +37,8 @@ This workshop comprises various aspects of Data Security. So follow the given se
 - An Oracle Database Service enabled in a region in your tenancy
 - A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account.
 - [Documentation: Enable Oracle Data Safe](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/enable-oracle-data-safe.html#GUID-1293621D-A6C6-448C-AD97-38B90A9473F0)
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Last Updated By/Date** - Kris Bhanushali, Autonomous Database Product Management, March 2022

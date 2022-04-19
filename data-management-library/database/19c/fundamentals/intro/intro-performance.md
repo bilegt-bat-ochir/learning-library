@@ -14,23 +14,30 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 Estimated Time: 115 minutes
 
+### Objectives
+
+In this workshop, you will complete the following labs:
+
+- Use Memoptimized Rowstore - Fast Ingest
+- Complete an ADDM analysis inside a PDB
+- Use Real-Time SQL Monitoring as a SQL developer
+- Wait for in-memory objects to be populated
+- Configure and use Database Replay at the PDB level
+
+### Prerequisites
+This lab assumes you have:
+
+- Familiarity with Database is desirable, but not required
+- Some understanding of cloud and database terms is helpful
+- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+
 ## About the Oracle Database 19c New Features Workshop
 
 This workshop lets you try out new features in Oracle Database 19c. All the labs are independent of each other, so you don't need to do them in any particular order. If needed, a lab starts with instructions on how to prepare your environment, and ends with instructions on how to restore your environment back to its original state. For most lab steps, you enter a command in the terminal window. For database actions, you use SQL*Plus.
 
-> **Note**: Currently, this workshop is not supported in an Always Free environment.
-
-### Performance Enhancement Labs
-
-The following performance enhancement labs are available:
-
-- Use Memoptimized Rowstore - Fast Ingest
-- Complete an ADDM analysis inside a PDB
-- Use real-time SQL monitoring as a SQL developer
-- Wait for In-Memory Objects to be populated
-- Configure and use Database Replay at the PDB level.
+> **Note:** Currently, this workshop is not supported in an Always Free environment.
 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, February 17 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, April 18, 2021

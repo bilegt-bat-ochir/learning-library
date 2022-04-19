@@ -7,6 +7,8 @@ You can deploy controls to block privileged account access to application data a
 
 For more information, refer to the [Database Vault Administrator’s Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dvadm/introduction-to-oracle-database-vault.html).
 
+Estimated Time: 30 minutes
+
 ### Objectives
 As a database security admin,
 
@@ -25,7 +27,7 @@ Oracle Database vault comes pre-installed with your Autonomous database on dedic
 
 Our implementation scenario looks as follow,
 
-![This image shows the result of performing the above step.](./images/DVarchitecture.png " ")
+![This image shows the result of performing the above step.](./images/dvarchitecture.png " ")
 
 The HR schema contains multiple tables. The employees table contains sensitive information such as employee names, SSN, pay-scales etc. and needs to be protected from priviledged users such as the schema owner (user HR) and admin (DBA).
 
@@ -86,7 +88,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
     </copy>
     ````
-    ![This image shows the result of performing the above step.](./images/valueFalse.png " ")
+    ![This image shows the result of performing the above step.](./images/valuefalse.png " ")
 
     *As you can see, DV isn't enabled yet.*
 
@@ -110,7 +112,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     select value from v$option where parameter = 'Oracle Database Vault';
     </copy>
     ````
-    ![This image shows the result of performing the above step.](./images/verifyDV.png " ")
+    ![This image shows the result of performing the above step.](./images/verifydv.png " ")
 
 ## Task 3: Create security Realms and add schema objects
 Next we create a 'Realm', add objects to it and define access rules for the realm.
@@ -204,6 +206,8 @@ As Database Vault owner, execute:
     ````
 
 - Restart the database, go to the console to Stop and Start the ATP database.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Congratulations! You successfully learned to use database vault in your autonomous database.*

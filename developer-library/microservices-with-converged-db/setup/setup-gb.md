@@ -49,7 +49,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
      ```
      <copy>
-     git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+     git clone -b 22.4.1 --single-branch https://github.com/oracle/microservices-datadriven.git
      </copy>
      ```
 

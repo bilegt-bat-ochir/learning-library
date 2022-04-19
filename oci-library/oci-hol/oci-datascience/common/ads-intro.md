@@ -69,7 +69,7 @@ To plot the target’s value distribution:
 ds.target.show_in_notebook()
 ```
 
-![show-in-notebook command for target variable](./../speed-up-ds-with-the-ads-sdk/images/target-show-in-notebook.png " ")
+![show-in-notebook command for target variable](./../common/images/ads-target-show-in-notebook.png " ")
 
 ### Automatic Data Visualization
 
@@ -81,7 +81,7 @@ Example of a Gaussian heat map:
 ds.plot('col01', y='col03').show_in_notebook()
 ```
 
-![Plots from the show in notebook command](./../speed-up-ds-with-the-ads-sdk/images/plot-show-in-notebook.png " ")
+![Plots from the show in notebook command](./../common/images/ads-plot-show-in-notebook.png " ")
 
 Example of plotting latitude and longitude points on a map:
 
@@ -89,11 +89,11 @@ Example of plotting latitude and longitude points on a map:
 earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
 ```
 
-![GIS scatter plot](./../speed-up-ds-with-the-ads-sdk/images/plot-gis-scatter.png " ")
+![GIS scatter plot](./../common/images/ads-plot-gis-scatter.png " ")
 
 ### Feature Engineering
 
-Leverage ``ADS`` and the [DASK API](https://dask.org/) to transform the content of an ``ADSDataset`` object with custom data transformations.
+Leverage ``ADS`` to transform the content of an ``ADSDataset`` object with custom data transformations.
 
 Example of how to apply auto tranformations:
 
@@ -109,7 +109,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 
 Example of visualizing a decision tree:
 
-![Decision tree](./../speed-up-ds-with-the-ads-sdk/images/decision-tree.png " ")
+![Decision tree](./../common/images/ads-decision-tree.png " ")
 
 The Oracle AutoML engine, that produces ``ADSModel`` models, automates:
 
@@ -138,7 +138,7 @@ Example of tuning trial results:
 automl.visualize_tuning_trial()
 ```
 
-![AutoML hyperparameter tuning](./../speed-up-ds-with-the-ads-sdk/images/automl-hyperparameter-tuning.png " ")
+![AutoML hyperparameter tuning](./../common/images/ads-automl-hyperparameter-tuning.png)
 
 ### Model Evaluations
 
@@ -153,7 +153,7 @@ evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data
 evaluator.show_in_notebook()
 ```
 
-![Model evaluation](./../speed-up-ds-with-the-ads-sdk/images/model-evaluation.png " ")
+![Model evaluation](./../common/images/ads-model-evaluation.png)
 
 ### Model Interpretation and Explainability
 

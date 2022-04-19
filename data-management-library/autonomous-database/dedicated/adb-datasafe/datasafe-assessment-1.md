@@ -2,6 +2,8 @@
 ## Introduction
 Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues.
 
+Estimated Time: 30 minutes
+
 ### Objectives
 
 In this lab, you learn how to do the following:
@@ -28,19 +30,19 @@ In this lab, you learn how to do the following:
 2. Click the **Home tab** and then **Security Assessment**.
 3. On the Security Assessment page, select the check box for your target database, and click **Assess Now**.
 
-    ![This image shows the result of performing the above step.](./images/Img4.png " ")
+    ![This image shows the result of performing the above step.](./images/img4.png " ")
 
 *Note : Wait a moment for the report to generate.*
     - When the report is generated, review the high risk, medium risk, and low risk values.
     - In the Last Generated Report column, click View Report.
 
-![This image shows the result of performing the above step.](./images/Img5.png " ")
+![This image shows the result of performing the above step.](./images/img5.png " ")
 
 4. The Comprehensive Assessment report is displayed on the Reports tab.
 5. In the upper right corner, view the target name, when the database was assessed, and the database version.
 6. View the values for the different risk levels. These values give you an idea of how secure your database is.
 
-    ![This image shows the result of performing the above step.](./images/Img6.png " ")
+    ![This image shows the result of performing the above step.](./images/img6.png " ")
 
 7. View the values for security controls, user security, and security configurations. These totals show you the number of findings for each level category.
 
@@ -63,13 +65,13 @@ In this lab, you learn how to do the following:
 
 1. At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 
-    ![This image shows the result of performing the above step.](./images/Img7.png " ")
+    ![This image shows the result of performing the above step.](./images/img7.png " ")
 2. Scroll through the report to view the findings.
 3. Focus on **System Privilege Grants** under Privileges and Roles:
     - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including the ability to change passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role has used account management privileges.
     - Security Assessment found 474 grants of system privilege grants on your target database.
 
-    ![This image shows the result of performing the above step.](./images/Img8.png " ")
+    ![This image shows the result of performing the above step.](./images/img8.png " ")
 
 4. Fix: In SQL Developer, run the following query on your database to find out who has the `PDB_DBA` role. Sort the results by `GRANTED_ROLE` to make it easy to identify the users with the role. Then, revoke the `PDB_DBA` role from the `EVIL_RICH` user account.  
 
@@ -78,7 +80,7 @@ In this lab, you learn how to do the following:
     select * from dba_role_privs;
     </copy>
     ```   
-   ![This image shows the result of performing the above step.](./images/Img9.jpg " ")    
+   ![This image shows the result of performing the above step.](./images/img9.jpg " ")    
 
      ```
     <copy>
@@ -90,7 +92,7 @@ In this lab, you learn how to do the following:
 
 5. Auditing is an essential component for securing any system. The audit trail lets you monitor the activities of highly privileged users. Even though auditing cannot prevent attacks that exploit gaps in other security policies, it does act as a critical last line of defense by detecting malicious activity. Enable unified auditing policies on the database and ensure that audit records exist. This is a STIG, GDPR, and CIS recommended policy.
 
-    ![This image shows the result of performing the above step.](./images/Img10.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img10.jpg " ")
 
 6. Review the Details section in this finding and answer these questions: How many audit trails exist in your database and how many of those trails contain audit records? The report states that Security Assessment examined two audit trails and found records in one audit trail. There's only one audit trail because Autonomous Transaction Processing databases are in pure unified audit mode.
 
@@ -99,7 +101,7 @@ In this lab, you learn how to do the following:
 ###Focus on **Unified Audit**:
 
 Unified Auditing is the recommended audit method and is available in Oracle Database 12.1 and later releases.
-    ![This image shows the result of performing the above step.](./images/Img11.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img11.jpg " ")
 
 *Note: Not using Unified Auditing or disabling unified auditing policies is a risk. Verify that unified audit policies are enabled on the database. Audit all sensitive operations, including privileged user activities. Also audit access to application data that bypasses the application. How many unified audit policies are on your target database and how many of them are enabled?*
 
@@ -107,11 +109,11 @@ Unified Auditing is the recommended audit method and is available in Oracle Data
 
 1. At the top of the report, click **Advisory** to filter the report to show only the Advisory findings.
 
-    ![This image shows the result of performing the above step.](./images/Img12.png " ")
+    ![This image shows the result of performing the above step.](./images/img12.png " ")
 
 2. Scroll through the report to review the findings. For example, the following findings have a **Pass status**.
 
-    ![This image shows the result of performing the above step.](./images/Img13.png " ")
+    ![This image shows the result of performing the above step.](./images/img13.png " ")
 
 ## Task 6: Rerun Security Assessment and compare the results to the first assessment
 
@@ -128,6 +130,8 @@ Unified Auditing is the recommended audit method and is available in Oracle Data
 
 > **Note:**
 Currently, there's no compare functionality in the product so to compare assessment results, you need to view both reports and manually compare.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

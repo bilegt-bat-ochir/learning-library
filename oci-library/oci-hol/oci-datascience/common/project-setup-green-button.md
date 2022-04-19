@@ -24,14 +24,14 @@ You create a Data Science project to organize your notebook sessions and models 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
 	![Navigation to Data Science](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 1. Select the compartment, generally, you will need to expand (click the + symbol) the ``root`` and ``Livelabs`` sections. Then select the compartment name that you noted earlier.
-    ![Compartment dropdown](../speed-up-ds-with-the-ads-sdk/images/compartment-green-button.png)
+    ![Compartment dropdown](../common/images/compartment-green-button.png)
 1. Click **Create Project**.
-    ![Create a project](../speed-up-ds-with-the-ads-sdk/images/create-project.png)
+    ![Create a project](../common/images/create-project.png)
 1. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
 1. (Optional, but recommended) Enter a description (400 character limit) for the project. If you do not add a description, it remains empty.
 1. (Optional) Add tags to easily locate and track the project by selecting a tag namespace, then entering the key and value. To add more than one tag, click **+Additional Tags**. [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) describes the various tags that you can use organize and find projects including [cost-tracking tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm).
 1. (Optional) To view the details for your project immediately after creation, select **Display project details after creation**.
-    ![Create a project](../speed-up-ds-with-the-ads-sdk/images/create-project2.png)
+    ![Create a project](../common/images/create-project-detail.png)
 1. Click **Create**.
 
 This creates the project and opens the project page.

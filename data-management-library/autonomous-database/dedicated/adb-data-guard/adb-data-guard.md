@@ -3,11 +3,13 @@
 ## Introduction
 Autonomous Data Guard (AuDG) gives users the ability to create a standby database for an Autonomous Container Database (ACD) and all Autonomous Databases (ADB) built inside the ACD in just a few clicks.  As always in the Autonomous world - It is completely automated!
 
+Estimated Time: 45 minutes
+
 ### Objectives:
 
 As a fleet administrator:
 1.  Deploy an Autonomous Container Database (ACD) onto an Cloud Exadata Infrastructure (CEI) with Autonomous Data Guard (AuDG) enabled.
-2.  Review the AuDG setup and understand options and monitoring available.  
+2.  Review the AuDG setup and understand options and monitoring available.
 
 As a database user, DBA or application developer:
 1.  Deploy an autonomous transaction processing database inside of the Autonomous Data Guard enabled ACD.
@@ -28,11 +30,11 @@ As a database user, DBA or application developer:
 
 - Pick **Autonomous Container Database** from the three options and click the blue **Create Autonomous Container Database** button.
 
-    ![This image shows the result of performing the above step.](./images/create_acdv2.png " ")
+    ![This image shows the result of performing the above step.](./images/create-acdv2.png " ")
 
 - In the **Create Autonomous Container Database** dialog box you can choose / modify the compartment to create your ACD. You also need to select the compartment hosting your CEI and the CEI instance as highlighted below.
 
-- Check the box titled **Enable Autonomous Data Guard**. You will be able to select the region and CEI that you want to use for your standby databases.  
+- Check the box titled **Enable Autonomous Data Guard**. You will be able to select the region and CEI that you want to use for your standby databases.
 
 - Under Protection Mode select '**Maximum Performance**'
 
@@ -45,7 +47,7 @@ As a database user, DBA or application developer:
 
 ***Maximum Availability: Provides the highest level of data protection that is possible without compromising the availability of a primary database.***
 
-  ![This image shows the result of performing the above step.](./images/create_AuDG_acd2.png " ")
+  ![This image shows the result of performing the above step.](./images/create-audg-acd2.png " ")
 
 ***Note: If you select modify maintenance and click custom schedule you will see that it is possible to have the standby ACD patched up to 7 days before the primary for an extra buffer of patch verification time.***
 
@@ -65,7 +67,7 @@ As a database user, DBA or application developer:
 
 - Select **userXX-Compartment** under the Workshop Compartment.
 
-    ![This image shows the result of performing the above step.](./images/provisionATP-Dname1v2.png " ")
+    ![This image shows the result of performing the above step.](./images/provisionatp-dname1v2.png " ")
 
     *Note: Oracle Cloud Infrastructure allows logical isolation of users within a tenancy through Compartments. This allows multiple users and business units to share an OCI tenancy while being isolated from each other.*
 
@@ -76,7 +78,7 @@ As a database user, DBA or application developer:
 
 - This will bring up the **Create Autonomous Database** screen where you specify the configurations of the instance.
 
-- Fill in the dialog box following the screenshot below while using your user compartment and unique ADB name.  
+- Fill in the dialog box following the screenshot below while using your user compartment and unique ADB name.
 
     *For this lab, we will be using the following as a password.*
 
@@ -86,7 +88,7 @@ As a database user, DBA or application developer:
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/create_atp_full.png " ")
+    ![This image shows the result of performing the above step.](./images/create-atp-full.png " ")
 
 - Click **Create Autonomous Database** to start provisioning the instance.
 
@@ -146,12 +148,12 @@ As a database user, DBA or application developer:
 
     ![This image shows the result of performing the above step.](./images/failover2.jpg " ")
 
-- Wait a few minutes while the failover is done automatically and the standby becomes the new primary and the previous primary will be disabled. There will be a small brownout in transactions while this process is completed. The Swingbench application will automatically retry and continue transactions on the new primary once it is opened.  
+- Wait a few minutes while the failover is done automatically and the standby becomes the new primary and the previous primary will be disabled. There will be a small brownout in transactions while this process is completed. The Swingbench application will automatically retry and continue transactions on the new primary once it is opened.
 
 ## Task 6: Reinstate the disabled standby
 
  - Log in to the cloud console and navigate under Autonomous Database and select Autonomous Container Database. If your primary and standby database are in the same compartment you should see the following:
-    ![This image shows the result of performing the above step.](./images/state_overview.png " ")
+    ![This image shows the result of performing the above step.](./images/state-overview.png " ")
 
 - Select the ACD labeled **Disabled Standby**.
 
@@ -171,11 +173,13 @@ As a database user, DBA or application developer:
 
     ![This image shows the result of performing the above step.](./images/reinstate3.png " ")
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 *Congratulations! You successfully built and tested using the switchover and failover functionality of Autonomous Data Guard!*
 
 - **Author** - Jeffrey Cowen
 - **Last Updated By/Date** - Jeffrey Cowen, March 2022
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

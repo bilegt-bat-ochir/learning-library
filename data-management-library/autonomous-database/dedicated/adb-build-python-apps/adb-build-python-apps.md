@@ -10,6 +10,8 @@ For a complete list of features, and preinstalled components click [this documen
 
 *In this lab we will configure and deploy a python application in a developer client VM and connect it to an autonomous database.*
 
+Estimated time: 20 minutes
+
 ### Objectives
 
 As an application developer,
@@ -26,12 +28,12 @@ As an application developer,
 ## Task 1: Instances Setup
 
 - Log in to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu.
-    ![This image shows the result of performing the above step.](./images/Compute1.png " ")
+    ![This image shows the result of performing the above step.](./images/compute1.png " ")
 
 - Select the right Oracle Developer Cloud image you created in the earlier lab, **Configure a Development System**.
 
 - Copy the public IP address of the instance in a note pad.
-    ![This image shows the result of performing the above step.](./images/Compute2.png " ")
+    ![This image shows the result of performing the above step.](./images/compute2.png " ")
 
 **Mac / Linux users**
 
@@ -159,7 +161,7 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
     echo $TNS_ADMIN
     </copy>
     ```
-    ![This image shows the result of performing the above step.](./images/TNSadmin.png " ")
+    ![This image shows the result of performing the above step.](./images/tnsadmin.png " ")
 
 - That's all! Let's start up our python app and see if it makes a connection to the database.
 
@@ -168,7 +170,9 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
     python exampleConnection.py ADMIN PASSWORD dbname_tp
     </copy>
     ```
-    ![This image shows the result of performing the above step.](./images/pythonSuccess.png " ")
+    ![This image shows the result of performing the above step.](./images/pythonsuccess.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

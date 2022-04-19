@@ -2,6 +2,8 @@
 ## Introduction
 Using Oracle Data Safe, create your own sensitive type and sensitive category.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 In this lab, you learn how to do the following:
   - Create your own sensitive type in Oracle Data Safe
@@ -27,15 +29,15 @@ Review the predefined sensitive types in the Oracle Data Safe Library.
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. The **Sensitive Types** page is displayed. On this page you can view predefined sensitive types and manage your own sensitive types.
 
-    ![This image shows the result of performing the above step.](./images/Img55.png " ")
+    ![This image shows the result of performing the above step.](./images/img55.png " ")
 
 - Scroll through the list and become familiar with the different sensitive types available. The list contains `predefined` sensitive types only.
 
-    ![This image shows the result of performing the above step.](./images/Img56.png " ")
+    ![This image shows the result of performing the above step.](./images/img56.png " ")
 
 - Move the **Hide Oracle Predefined** slider to the right. The list removes the Oracle defined sensitive types, showing only the ones that you have defined.
 
-    ![This image shows the result of performing the above step.](./images/Img57.png " ")
+    ![This image shows the result of performing the above step.](./images/img57.png " ")
 
 - Move the slider back to the left.
 - To find out how many sensitive types exist in the Library, scroll to the bottom of the page. The list contains 128 items.
@@ -43,13 +45,13 @@ Review the predefined sensitive types in the Oracle Data Safe Library.
 - To sort the list by sensitive types, position your cursor over the **Sensitive Type Name** header, and then click the arrow.
 - To view the definition for a sensitive type, click directly on any one of the sensitive types. The **Sensitive Type Details** dialog box is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img58.png " ")
+    ![This image shows the result of performing the above step.](./images/img58.png " ")
 
 - View the sensitive type's short name, description, column name pattern (regular expression), column comment pattern (regular expression), column data pattern (regular expression), the search pattern semantic (And or Or), the default masking format associated with the sensitive type, and the sensitive category and resource group to which the sensitive type belongs.
 - Click **Close** to close the dialog box.
 - To check if there is a sensitive type that discovers department IDs, in the search field, enter **Department**. The search finds **Department Name**, but nothing for department IDs.
 
-    ![This image shows the result of performing the above step.](./images/Img59.png " ")
+    ![This image shows the result of performing the above step.](./images/img59.png " ")
 
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
@@ -76,7 +78,7 @@ In the Oracle Data Safe Console, create a sensitive type and sensitive category.
 - Click **Add**.
 The **Create Sensitive Type** dialog box is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img60.png " ")
+    ![This image shows the result of performing the above step.](./images/img60.png " ")
 
 - From the **Create Like** drop-down list, select **Employee ID Number**.
 - In the **Sensitive Type Name** field, enter **<username> Custom Department ID Number**.
@@ -107,9 +109,11 @@ The **Create Sensitive Type** dialog box is displayed.
 
 - Your sensitive type is included in the list and is available in the Data Discovery wizard.
 
-    ![This image shows the result of performing the above step.](./images/Img61.png " ")
+    ![This image shows the result of performing the above step.](./images/img61.png " ")
 
 - Move the **Hide Oracle Predefined** slider to the right to view your custom sensitive type in the list.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

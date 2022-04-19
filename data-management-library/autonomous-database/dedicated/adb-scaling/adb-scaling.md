@@ -3,6 +3,8 @@
 ## Introduction
 Continuous uptime is a key requirement of most business critical applications. While the cloud provides the notion of unlimited scale, this scalability comes at a cost of downtime with most services. The Oracle autonomous database service provides scalability without downtime as demonstrated in this lab.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As an adminstrator:
@@ -68,6 +70,8 @@ Now, let's scale the autonomous database you created in previous labs from 1 OCP
 - The database status will go into **Scaling**. When done it will turn back to **Available**. Please note that during all this time the Swingbench application will continue to run because there is no disruption to the service for scaling. You should also notice that the transactions per second increased or decreased depending on whether you scale the system up or down in number of CPU's.
 
     ![This image shows the result of performing the above step.](./images/swingout2.jpeg " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 *Congratulations! You successfully tested online scaling capabilities of your autonomous database service.*

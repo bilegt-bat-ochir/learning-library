@@ -9,6 +9,8 @@ Watch the video below for an overview of Autonomous Database Dedicated.
 
 [](youtube:fOKSNzDz1pk)
 
+Estimated Workshop Time: 490 minutes
+
 ## Workshop Objectives
 This set of hands-on-labs is designed to assist security administrators with setting up and using various features of the **Autonomous Database on dedicated Exadata Infrastructure** service. The labs address various database security aspects ranging from encryption key management, DB user security, auditing, sensitive data masking and privileged user access controls.
 

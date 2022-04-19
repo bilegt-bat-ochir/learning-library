@@ -30,7 +30,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "02/05/2022",
             "contentid": "12nnnn",
-            "filename": "./../../adb-provisioning-Cloud-VMC/adb-provisioning-Cloud-VMC.md"
+            "filename": "./../../adb-prov-cloud-vmc/adb-prov-cloud-vmc.md"
         },
         {
             "title": "Lab 4: Provisioning Exadata Infrastructure for ADB on Exadata Cloud@Customer",
@@ -38,7 +38,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "07/03/2020",
             "contentid": "12nnnn",
-            "filename": "./../../adb-provisioning-EXACC/adb-provisioning-EXACC.md"
+            "filename": "./../../adb-prov-exacc/adb-prov-exacc.md"
         },
         {
             "title": "Lab 5: Provisioning an Autonomous VM Cluster for ADB on Exadata Cloud@Customer",
@@ -46,7 +46,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "07/03/2020",
             "contentid": "12nnnn",
-            "filename": "./../../adb-provisioning-VMC/adb-provisioning-VMC.md"
+            "filename": "./../../adb-prov-vmc/adb-prov-vmc.md"
         },
         {
             "title": "Lab 6: Provisioning an Autonomous Container Database",
@@ -110,7 +110,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "06/16/2020",
             "contentid": "12nnnn",
-            "filename": "./../../adb-oem/adb-AWR-report-with-OEM.md"
+            "filename": "./../../adb-oem/awr-with-oem.md"
         },
         {
             "title": "Appendix",

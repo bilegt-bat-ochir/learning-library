@@ -10,6 +10,8 @@ For a complete list of features, and preinstalled components click [this documen
 
 In this lab we will configure and deploy a java application in a developer client VM and connect it to an autonomous database.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As an application developer,
@@ -25,12 +27,12 @@ As an application developer,
 ## Task 1: Download sample java application
 
 - Log in to your Oracle Cloud Infrastructure account and select **Compute** and **Instances** from the hamburger menu top left.
-    ![This image shows the result of performing the above step.](./images/Compute1.png " ")
+    ![This image shows the result of performing the above step.](./images/compute1.png " ")
 
 - Select the right Oracle Developer Cloud image you created in earlier labs.
 
 - Copy the public IP address of the instance on to a note pad.
-    ![This image shows the result of performing the above step.](./images/Compute2.png " ")
+    ![This image shows the result of performing the above step.](./images/compute2.png " ")
 
 
 **Mac users**
@@ -43,7 +45,7 @@ As an application developer,
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/SSH1.png " ")
+    ![This image shows the result of performing the above step.](./images/ssh1.png " ")
 
 **Windows users**
 
@@ -205,6 +207,8 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
     ```
 
     ![This image shows the result of performing the above step.](./images/atpd9.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

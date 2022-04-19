@@ -114,7 +114,7 @@ In this step you can choose between six different implementations of the Invento
 
     ```
     <copy>
-    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot inventory-micronaut inventory-quarkus; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
     cd $GRABDISH_HOME/inventory-micronaut ; ./undeploy-native-image.sh
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME

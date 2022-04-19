@@ -2,6 +2,8 @@
 ## Introduction
 Using Data Safe, create a custom audit policy on a target database, and enable a custom audit policy in the Oracle Data Safe Console. Perform some operations against the table defined in the audit policy and view the generated audit records in the Oracle Data Safe Console.
 
+Estimated Time: 40 minutes
+
 ### Objectives
 In this lab, you learn how to do the following:
 - Create a custom audit policy on a target database
@@ -44,7 +46,7 @@ Follow these general steps:
     <copy>select * from audit_unified_policies order by policy_name asc;</copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img154.png " ")
+    ![This image shows the result of performing the above step.](./images/img154.png " ")
 
 ## Task 2: Create a unified audit policy on your target database
 
@@ -65,7 +67,7 @@ In SQL Developer Web, create a unified audit policy on your target database to a
         EVALUATE PER SESSION;</copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img155.png " ")
+    ![This image shows the result of performing the above step.](./images/img155.png " ")
 
 - Notice that a message is displayed stating that the audit policy is created.
 - How could you extend this unified audit policy to be more effective? What could you add or remove to the `WHEN` clause?
@@ -76,23 +78,23 @@ In SQL Developer Web, create a unified audit policy on your target database to a
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Activity Auditing**.
 - Select the check box for your target database, and then click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img156.png " ")
+    ![This image shows the result of performing the above step.](./images/img156.png " ")
 
 - On the **Retrieve Audit Policies** page, select the check box for your target database, and then click **Retrieve**.
 - Wait for the **Retrieval Status** column to show a green check mark, which indicates that the audit policies are successfully retrieved from the target database.
 - Click **Continue**.
 
-    ![This image shows the result of performing the above step.](./images/Img157.png " ")
+    ![This image shows the result of performing the above step.](./images/img157.png " ")
 
 - On the **Review and Provision Audit and Alert Policies** page, click the name of your target database.
 - Expand **Custom Policies**.
 - Select your new policy, `EMPEXTENDED_DATA_ACCESS`.
 
-    ![This image shows the result of performing the above step.](./images/Img158.png " ")
+    ![This image shows the result of performing the above step.](./images/img158.png " ")
 
 - Click the **Alert Policies** tab and verify that the alert policy called **Audit Policy Changes** is enabled. If it's not, enable it now. You enable this policy in the earlier lab in this workshop, **Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe**.
 
-    ![This image shows the result of performing the above step.](./images/Img159.png " ")
+    ![This image shows the result of performing the above step.](./images/img159.png " ")
 
 - Click **Provision**.
 - Wait until the provisioning is finished. The dialog box is closed.
@@ -119,7 +121,7 @@ b. In the **Select Columns** dialog box, select **Object Owner**, and then click
 - Click **+ Filter** and define another filter: **Object Owner = HCM1**.
 - Click **Apply**.
 
-    ![This image shows the result of performing the above step.](./images/Img160.png " ")
+    ![This image shows the result of performing the above step.](./images/img160.png " ")
 
 - Review the results in the report.
 - Notice there are actions recorded by the `ADMIN` user as per the custom policy you created.
@@ -131,7 +133,7 @@ b. In the **Select Columns** dialog box, select **Object Owner**, and then click
   - Wait until the **Collection State** column reads **COLLECTING**, and then **IDLE**.
   - Repeat the steps from **Activity Auditing** again.
 
-    ![This image shows the result of performing the above step.](./images/Img161.png " ")
+    ![This image shows the result of performing the above step.](./images/img161.png " ")
 
 ## Task 6: In SQL Developer Web, disable the recently created audit policy and verify if any alerts are generated in Oracle Data Safe
 
@@ -141,16 +143,18 @@ b. In the **Select Columns** dialog box, select **Object Owner**, and then click
     ```
     <copy>NOAUDIT POLICY empextended_data_access;</copy>
     ```
-    ![This image shows the result of performing the above step.](./images/Img162.png " ")
+    ![This image shows the result of performing the above step.](./images/img162.png " ")
 
 - Return to the Oracle Data Safe Console.
 - Click the **Alerts** tab.
 - Click **+ Filter** and define a filter: **Object = empextended_data_access**. (Select Filters on top of the alerts page first, if no filters are displayed.)
 - Notice that Oracle Data Safe generated an alert for the disabled `empextended_data_access` audit policy. An alert is generated because you enabled the alert policy called **Audit Policy Changes**.
 
-    ![This image shows the result of performing the above step.](./images/Img163.png " ")
+    ![This image shows the result of performing the above step.](./images/img163.png " ")
 
 - If an alert is not generated, restart the audit trail and then check again.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -8,6 +8,8 @@ For a complete list of features, login to your OCI account, select *Marketplace*
 
 *In this lab we will configure and access Autonomous dedicated Transaction Processing database from Oracle Enterprise Manager.*
 
+Estimated Time: 60 minutes
+
 ### Objectives
 
 As a Database Administrator,
@@ -169,6 +171,9 @@ As a Database Administrator,
 - Click on *Submit* to establish the connection	
 	![This image shows the result of performing the above step.](./images/upd_09.png " ")
 	![This image shows the result of performing the above step.](./images/upd_10.png " ")
+
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -10,6 +10,8 @@ For a complete list of features, and preinstalled components click [this documen
 
 *In this lab we will configure and deploy a node.js application in a developer client VM and connect it to an autonomous database.*
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As an application developer,
@@ -29,13 +31,13 @@ As an application developer,
 
 - Login to your Oracle Cloud Infrastructure account select *Compute* —>  *Instances* from top left menu.
 
-    ![This image shows the result of performing the above step.](./images/Compute1.png " ")
+    ![This image shows the result of performing the above step.](./images/compute1.png " ")
 
 - Select the right Oracle Developer Cloud image you created in earlier labs.
 
 - Copy the public IP address of the instance in a note pad.
 
-    ![This image shows the result of performing the above step.](./images/Compute2.png " ")
+    ![This image shows the result of performing the above step.](./images/compute2.png " ")
 
 **Mac / Linux users**
 
@@ -47,7 +49,7 @@ As an application developer,
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/SSH1.png " ")
+    ![This image shows the result of performing the above step.](./images/ssh1.png " ")
 
 **Windows users**
 
@@ -132,7 +134,7 @@ Now that you have copied the database wallet to your development host, let's con
 
 - Change *DIRECTORY* path to /home/opc/ATPDnode/wallet/ and save the file.
 
-    ![This image shows the result of performing the above step.](./images/walletNode.png " ")
+    ![This image shows the result of performing the above step.](./images/walletnode.png " ")
 
 - Next, set up an environment variable TNS_ADMIN to point to the wallet location.
 
@@ -149,7 +151,7 @@ Now that you have copied the database wallet to your development host, let's con
     echo $TNS_ADMIN
     </copy>
     ```
-    ![This image shows the result of performing the above step.](./images/TNSnode.png " ")
+    ![This image shows the result of performing the above step.](./images/tnsnode.png " ")
 
 - And finally, let's edit the dbconfig.js file in /home/opc/ATPDnode/ATPDnode-master folder with the right admin credentials and connect string.
 
@@ -173,11 +175,13 @@ Now that you have copied the database wallet to your development host, let's con
     node server.js
     </copy>
     ```
-    ![This image shows the result of performing the above step.](./images/runNode.png " ")
+    ![This image shows the result of performing the above step.](./images/runnode.png " ")
 
 - From within your VNC session, open a browser and go to localhost:3050 to see the successful connection!
 
-    ![This image shows the result of performing the above step.](./images/connectionSuccessful.png " ")
+    ![This image shows the result of performing the above step.](./images/connectionsuccessful.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

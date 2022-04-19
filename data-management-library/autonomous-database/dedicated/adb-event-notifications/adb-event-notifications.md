@@ -5,6 +5,8 @@ The Oracle Cloud Infrastructure Notifications service broadcasts messages  to di
 
 You may get notified when service events occur, such as database creation, termination etc. or when alarms trigger eg. CPU usage exceeds threshold. Subscribers may choose to be notified via email, SMS messages to their phones or via Slack channels.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 As an database developer or administrator:
 1. Learn how to set up autonomous database event topics.
@@ -23,11 +25,11 @@ As an database developer or administrator:
 
 - Select the desired compartment from the drop down and click **Create Topic**.
 
-    ![This image shows the result of performing the above step.](./images/create_topic.png " ")
+    ![This image shows the result of performing the above step.](./images/create-topic.png " ")
 
 - Provide a topic name, an optional description, and click **Create**.
 
-    ![This image shows the result of performing the above step.](./images/create_topic2.png " ")
+    ![This image shows the result of performing the above step.](./images/create-topic2.png " ")
 
 - Next, let's add some subscribers to this topic. On the **Notification** page, select **Subscriptions** at the top left.
 
@@ -63,6 +65,8 @@ As an database developer or administrator:
 
 - That's it! To test your notification setup, create an autonomous database service instance as explained in the lab, **Provisioning Databases**, in the **Introduction to ADB Dedicated for Developers and Database Users** workshop.
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 *Congratulations! You successfully learnt to create DB event subscriptions and setup notifications!*
 
@@ -71,5 +75,5 @@ As an database developer or administrator:
 - **Last Updated By/Date** - Kris Bhanushali, Autonomous Database Product Management, April 2022
 
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

@@ -2,6 +2,8 @@
 ## Introduction
 Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 In this lab, you learn how to do the following:
 - Perform an incremental update to a sensitive data model by using the Data Discovery wizard
@@ -48,17 +50,17 @@ Update your sensitive data model against your database by using the update optio
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click Data Discovery. The Select Target for **Data Discovery** page is displayed.
 
-    ![This image shows the result of performing the above step.](./images/Img25.png " ")
+    ![This image shows the result of performing the above step.](./images/img25.png " ")
 
 - Select your target database, and then click **Continue**. The **Select Sensitive Data Model** page is displayed.
 - For Sensitive Data Model, click **Pick from Library**.
 
-    ![This image shows the result of performing the above step.](./images/Img51.png " ")
+    ![This image shows the result of performing the above step.](./images/img51.png " ")
 
 - Click **Continue**. The **Select Sensitive Data Model** page is displayed.
 - Select your sensitive data model (**SDM1**).
 
-    ![This image shows the result of performing the above step.](./images/Img54.png " ")
+    ![This image shows the result of performing the above step.](./images/img54.png " ")
 
 - Leave **Update the SDM with the target** selected.
 - Click **Continue**. The wizard launches a data discovery job.
@@ -69,6 +71,8 @@ Update your sensitive data model against your database by using the update optio
 - To view all of the sensitive columns in the sensitive data model, click **View all sensitive columns**.
 - You can toggle the view back and forth between displaying all of the sensitive columns or just the newly discovered ones.
 - Click **Exit**.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

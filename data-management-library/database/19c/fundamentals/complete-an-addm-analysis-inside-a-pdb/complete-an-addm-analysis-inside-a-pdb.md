@@ -207,15 +207,17 @@ This lab assumes you have:
     SQL> <copy>EXEC dbms_workload_repository.create_snapshot()</copy>
     ```
 
-    >**NOTE:** The ADDM report requires a significant amount of database activity to provide useful recommendations, if you would not like to wait for the proper amount of database activity, you may proceed with the lab without waiting. If you would like to see recommendations, please wait. Later, if you still do not see recommendations, we have provided the steps that allow you to reset the task. 
+    > **NOTE:** The ADDM report requires a significant amount of database activity to provide useful recommendations, if you would not like to wait for the proper amount of database activity, you may proceed with the lab without waiting. If you would like to see recommendations, please wait. Later, if you still do not see recommendations, we have provided the steps that allow you to reset the task. We've also included the recommendations in the output of step 9 if you choose to not wait. 
 
 6. Retrieve snapshot values to analyze. Pick the minimum and maximum snapshots. Note that the lower snap_id will be the `min` and the top value will be the `max` in step 8.
 
     ```
-    SQL> <copy>SELECT snap_id from awr_cdb_snapshot ORDER BY snap_id DESC FETCH FIRST 2 ROWS ONLY;</copy>
+    SQL> <copy>SELECT snap_id from awr_cdb_snapshot ORDER BY snap_id DESC;</copy>
 
         SNAP_ID
     ----------
+        4
+        3
         2
         1
     ```
@@ -239,8 +241,7 @@ This lab assumes you have:
     PL/SQL procedure successfully completed.
     ```
 
-y
-1. View the PDB report in **session 1**. Note that your output may not be the exact same as the following. Also note that there is no recommendation at a specific PDB level, but the analysis report elements from PDB1 that impacted the whole database performance. 
+9. View the PDB report in **session 1**. Note that your output may not be the exact same as the following. Also note that there is no recommendation at a specific PDB level, but the analysis report elements from PDB1 that impacted the whole database performance. 
 
     ```
     SQL> <copy>SELECT DBMS_ADDM.GET_REPORT(:tname) FROM DUAL;</copy>
@@ -479,31 +480,33 @@ y
     Wait class "Network" was not consuming significant database time.
     ```
 
-2.  **OPTIONAL**: If your output excludes recommendations, please delete the workload with the following command.
+10. **OPTIONAL**: If your output excludes recommendations, please delete the workload with the following command.
 
     ```
     SQL> <copy>EXEC DBMS_ADDM.delete('CDB analysis_mode_task');</copy>
     ```
 
-3.  **OPTIONAL**: Then, wait about five minutes and take another snapshot.
+11. **OPTIONAL**: Then, wait about ten minutes and take another snapshot.
 
     ```
     SQL> <copy>EXEC dbms_workload_repository.create_snapshot()</copy>
     ```
 
-4.  **OPTIONAL**: You can find the newest snapshot by executing the following query.
+12. **OPTIONAL**: You can find the newest snapshot by executing the following query.
 
     ```
     SQL> <copy>SELECT snap_id from awr_cdb_snapshot ORDER BY snap_id DESC;</copy>
 
         SNAP_ID
     ----------
+        5
+        4
         3
         2
         1
     ```
 
-5.  **OPTIONAL**: In **session 1**, execute the ADDM task manually. **Replace the min and max values with the minimum and maximum snapshot values.**
+13. **OPTIONAL**: In **session 1**, execute the ADDM task manually. **Replace the min and max values with the minimum and maximum snapshot values.**
 
     ```
     SQL> <copy>BEGIN
@@ -516,13 +519,13 @@ y
     PL/SQL procedure successfully completed.
     ```
 
-6.  **OPTIONAL**: View the PDB report in **session 1**.
+14. **OPTIONAL**: View the PDB report in **session 1**.
 
     ```
     SQL> <copy>SELECT DBMS_ADDM.GET_REPORT(:tname) FROM DUAL;</copy>
     ```
 
-7.  In **session 1**, Confirm that ADDM is analyzing a CDB.
+15. In **session 1**, Confirm that ADDM is analyzing a CDB.
 
     ```
     SQL> <copy>SELECT task_name, cdb_type_detected FROM dba_addm_tasks

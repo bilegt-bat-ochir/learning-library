@@ -7,6 +7,8 @@ Oracle Analytics Cloud is a scalable and secure public cloud service that provid
 
 With Oracle Analytics Cloud you also get flexible service management capabilities, including fast setup, easy scaling and patching, and automated lifecycle management.
 
+Estimated Time: 45 minutes
+
 ### Objectives
 
 As a LOB user
@@ -44,8 +46,8 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Picture200-3.png " ")
-    ![This image shows the result of performing the above step.](./images/Picture200-3-1.png " ")
+    ![This image shows the result of performing the above step.](./images/picture200-3.png " ")
+    ![This image shows the result of performing the above step.](./images/picture200-3-1.png " ")
 
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications.
 
@@ -97,7 +99,7 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
   *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
   Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
-      ![This image shows the result of performing the above step.](./images/vncViewer.png " ")
+      ![This image shows the result of performing the above step.](./images/vncviewer.png " ")
 
   - Note how the connect string for VNC Server is simply **localhost:1**. That is because the default port 5901 on your local machine is forwarded to 5901 on your OCI dev client over an ssh tunnel.
 
@@ -144,22 +146,22 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
 
 5. Oracle Analytics Cloud RDC Installer should pop-up. Select default Inventory Directory and click **OK**.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer.png " ")
 
 6. Click **Next** on the Welcome page.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer1.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer1.png " ")
 
 7. Enter RDC installer location and click **Next**.
 
     ```
     /home/opc/Oracle/Middleware/Oracle_Home
     ```
-    ![This image shows the result of performing the above step.](./images/RDC-installer2.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer2.png " ")
 
 8. Select Remote Data Gateway in Remote Data Version and click **Next**.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer3.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer3.png " ")
 
 9. Enter Username and Password for Agent Configuration Credentials and click **Next**.
 
@@ -168,19 +170,19 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
     Password: WElcome_123#
     ```
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer4.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer4.png " ")
 
 10. Verify the Installation Summary and click **Install**.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer5.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer5.png " ")
 
 11. Once the installation progress is 100% click **Next**.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer6.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer6.png " ")
 
 12. Verify Start Jetty is checked and click **Finish**.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer7.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer7.png " ")
 
 13. Configure Data Gateway with Oracle Analytics Cloud. Open web browser in your Cloud Developer Image and type in the below URL.
 
@@ -188,7 +190,7 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
     http://localhost:8080/obiee/config.jsp
     ```
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer8.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer8.png " ")
 
 14. Enter the Username and Password as specified earlier in this lab and click **OK**.
 
@@ -201,9 +203,9 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
 
     #### Note: Copy the Generated key to a note pad. We will be using the key in Oracle Analytics Cloud console.
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer10.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer10.png " ")
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer11.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer11.png " ")
 
 16. Click **Test** and scroll down to bottom of the page to verify. You should see the following message:
 
@@ -211,7 +213,7 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
     Sucecessfully authenticated
     ```
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer12.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer12.png " ")
 
 17. Click **Save** and scroll down to bottom of the page to verify.
 
@@ -219,7 +221,7 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
     Successfully Submitted
     ```
 
-    ![This image shows the result of performing the above step.](./images/RDC-installer13.png " ")
+    ![This image shows the result of performing the above step.](./images/rdc-installer13.png " ")
 
 
 ## Task 4: Configure Remote Data Connectivity and connect Autonomous Database Dedicated to Oracle Analytics Cloud
@@ -234,17 +236,17 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
 
 - Click **Remote Data Connectivity** on the Console page.
 
-    ![This image shows the result of performing the above step.](./images/console-RDC.png " ")
+    ![This image shows the result of performing the above step.](./images/console-rdc.png " ")
 
 - Click **Add** in the Remote Data Connectivity page.
 
-    ![This image shows the result of performing the above step.](./images/console-RDC-Add.png " ")
+    ![This image shows the result of performing the above step.](./images/console-rdc-add.png " ")
 
 - Paste the key you copied in Task 3, step number 15, into the **Public Key** field and click **OK**.
 
     #### Note Name, ID and Host will be auto populated once you paste the public key.
 
-    ![This image shows the result of performing the above step.](./images/console-RDC-key.png " ")
+    ![This image shows the result of performing the above step.](./images/console-rdc-key.png " ")
 
 - Open the Menu on the top left corner and click **Home**.
 
@@ -276,11 +278,13 @@ First we SSH into the dev client and invoke the VNC server that comes pre-instal
 
 - You can see Autonomous Database connected to Oracle Analytics Cloud.
 
-    ![This image shows the result of performing the above step.](./images/connectionSuccess.png " ")
+    ![This image shows the result of performing the above step.](./images/connectionsuccess.png " ")
 
 For more information on Oracle Analytics Cloud please visit [this OAC website](https://www.oracle.com/business-analytics/analytics-cloud.html).
 
 To further explore Oracle Analytics Cloud you can visit [our blogs](https://blogs.oracle.com/analytics/).
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

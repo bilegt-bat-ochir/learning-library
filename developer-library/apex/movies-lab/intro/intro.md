@@ -11,8 +11,7 @@ Estimated Workshop Time: 2 hours
 *Note: This lab assumes you are using Oracle APEX 21.2.*
 
 ### Objectives
-In this lab, you will:  
-- Obtain a free development environment.  
+In this lab, you will:   
 - Learn how to create REST data sources.  
 - Learn how to create local tables.  
 - Learn how to use application items and processes.  

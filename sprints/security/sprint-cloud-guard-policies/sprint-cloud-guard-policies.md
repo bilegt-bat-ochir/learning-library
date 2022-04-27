@@ -21,7 +21,9 @@ To enable Cloud Guard, you need to add the proper IAM policies below. From there
 
 ## Learn More
 
-* [How do I enable Oracle Cloud Guard?](http://docs.oracle.com)
+* [Cloud Guard Policies](https://docs.oracle.com/en-us/iaas/cloud-guard/using/policies.htm)
+* [Policy Reference](https://docs.oracle.com/en-us/iaas/Content/Identity/Reference/policyreference.htm)
+* [How policies work](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policies.htm)
 
 
 

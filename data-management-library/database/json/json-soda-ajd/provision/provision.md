@@ -132,15 +132,27 @@ In this lab, you will:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
+    Later stages of this LiveLab will be easier if you avoid any of the characters / : ? # [ ] and @ in your password.
+    
     ![Enter password and confirm password.](./images/administration.png " ")
 
 8. Choose network access:
 
-    - __Secure access from everywhere__ - For this lab, accept the default, "__Secure access from everywhere__.
-    - __Private endpoint access only__ - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - __Configure access control rule__ - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+    - Choose __Secure access from allowed IPs and VCNs only__ 
+
+    In the drop-down box, set __IP notation type__ to __CIDR Block__ and enter the following in the __Values__ box:
+
+    ```
+    <copy>
+    0.0.0.0/0
+    </copy>
+    ```
+
+    Note: this is insecure, and will allow access to your database from any IP address. For a production database, you should *always* provide a list of the IP addresses for the specific (usually mid-tier) machines that need to access your database. However, using this CIDR block simplifies later parts of this lab.
 
     ![](./images/network-access.png " ")
+
+
 
 9. Choose a license type:
 
@@ -157,7 +169,29 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/provisioning.png " ")
 
-## Task 3: Connect to your Autonomous Database using "JSON Workshop" UI
+## Task 3: Find the MongoDB API Connection URL
+
+1. Open Service Console
+
+    On the Autonomous Database Information page, click on the Service Console button
+
+    ![Service Console button](./images/service-console-button.png " ")
+
+    The Service Console will open in a new browser tab.
+
+2. Choose Development
+
+    Click on the Development link on the left hand side
+
+    ![](./images/service-console-dev.png " ")
+
+3. Save the URL for __Oracle Database API for MongoDB__
+
+    Scroll down the development page until you find the card labelled __Oracle Database API for MongoDB__. There are two URLs listed. Copy the first one (containing port number 27017) and save it with a text editor for later use in lab 3.
+
+    ![](./images/mongodb-url.png " ")
+
+## Task 4: Connect to your Autonomous Database using "JSON Workshop" UI
 
 1. On the Autonomous Database Details page, click on the Tools tab.
 

@@ -113,6 +113,14 @@
             "filename": "./../../adb-oem/awr-with-oem.md"
         },
         {
+            "title": "Lab 14: Oracle Standard Tags",
+            "description": "Oracle Standard Tags",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/21/2022",
+            "contentid": "12nnnn",
+            "filename": "./../../oracle-standard-tags/oracle-standard-tags.md"
+        },
+        {
             "title": "Appendix",
             "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
             "partnumber": "Ennnnn_01",

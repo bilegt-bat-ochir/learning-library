@@ -5,7 +5,7 @@ Oracle Analytics Server is a comprehensive enterprise analytics solution that em
 
 This workshop illustrates how a quick service restaurant chain in the retail industry named 'Bobby's Burgers & Fries' relies on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data discovery and visual analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver deeper insight.
 
-*Estimated Completion Time:* **TBD #hours
+*Estimated Completion Time:* 2 hours 30 minutes
 
 ### About Product/Technology
 Oracle Analytics Server helps organizations discover deep, unique insights from their data through augmented analytics. Streamline data access and data preparation with machine learning. Provide self-service analytics enabling users to build compelling visual stories and to confidently make highly informed decisions.
@@ -25,8 +25,12 @@ Throughout this lab you will:
 
 ### Prerequisites
 -	Internet Access
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported. 
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
 
-This concludes this lab. You may now proceed to the next lab.
+
+
+This concludes this lab. You may now **proceed to the next lab.**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

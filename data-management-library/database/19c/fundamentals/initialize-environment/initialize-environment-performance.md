@@ -162,7 +162,7 @@ This lab assumes that you have:
     ```
     $ <copy>mkdir -p ~/labs/19cnf</copy>
     $ <copy>cd ~/labs/19cnf</copy>
-    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Yz4c9EubkeTFWyDoeqGJ_KEO6JlwYwzHrTSDaXTFsLQChfB6a29VySzYYqdSJKPT/n/frmwj0cqbupb/b/19cNewFeatures/o/performanceenhancements-19c-new-features.zip</copy>
+    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/19c-new-features.zip</copy>
     $ <copy>mv performanceenhancements-19c-new-features.zip ./19cnf-lab-files.zip</copy>
     $ <copy>unzip -q 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>

@@ -40,6 +40,11 @@ Quick walk through to tear down the resources created in your tenancy and the di
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)   
+Search for and join the `oracle-db-microservices` channel.
+
 ## Acknowledgements
 
 * **Author** - Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata

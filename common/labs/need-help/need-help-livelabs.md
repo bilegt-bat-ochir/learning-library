@@ -14,22 +14,6 @@ For more about getting support using our email, click [here](#HowtoFormatYourSup
   - [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateanOracleDatabase?NothinginYourCompartment?)
   - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnabletoUploadDataorConnecttotheDatabase?)
 
-### **Rate This Workshop**
-When you are finished please don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
-
-1.  Go back to your **Workshop Homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-
-2.  Click on the **Brown Button** to re-access the workshop.  
-
-    ![](images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**.
-
-    ![](images/rate-this-workshop.png " ")
-
-If you still have an active reservation, you can also rate by going to **My Reservations** -> **Launch Workshop**.
-
-
 ## How to Format Your Support Email Request
 This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
 

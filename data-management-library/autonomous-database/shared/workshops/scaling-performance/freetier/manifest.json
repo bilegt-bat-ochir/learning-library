@@ -23,6 +23,10 @@
             "description": "Scaling and Performance in Your Autonomous Database",
             "filename": "./../../../adw-scaling-performance/adw-scaling-performance.md"
         },
-        
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
     ]
 }

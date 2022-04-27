@@ -176,9 +176,9 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
 
     That tells us that our index MYINDEX is created on table MYTABLE, column TEXT.
 
-3.  Look at the sub-tables created.
+3.  Look at the underlying tables created.
 
-    Text indexes are implemented as a set of sub-tables. These normally have the form DR$<indexname>$<suffix>, where the suffix indicates the particular type of table. There's normally no need to know what is in these indexes, but one in particular (the "dollar I" table) is interesting.
+    Text indexes are implemented as a set of underlying tables. These usually have the form DR$&lt;indexname&gt;$&lt;suffix&gt;, where the suffix indicates the particular type of table. There's normally no need to know what is in these indexes, but one in particular (the "dollar I" table) is interesting.
 
     Refresh the list of tables on the left side of the screen.
 
@@ -206,7 +206,7 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
     or provide a "custom stoplist" of words we don't want indexed. The default list of stopwords will vary with language and
     will depend on the default language setting for the database (always English for Autonomous Database).
     
-    We don't need to know anything about the index sub-tables at the moment. But it's useful to see the words that are indexed,
+    We don't need to know anything about the underlying index tables at the moment. But it's useful to see the words that are indexed,
     and it can sometimes be worth refering to this list when trying to figure out why a particular query acts as it does (queries
     are covered in the next lab).
 
@@ -215,5 +215,5 @@ You may now continue to the next lab.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Contributors** - Kamryn Vinson, Andres Quintana
+- **Contributors** - Alexandra Czarlinska
 - **Last Updated By/Date** - Roger Ford, March 2022

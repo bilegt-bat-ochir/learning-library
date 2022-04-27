@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features to prevent unauthorized privileged users from accessing sensitive data.
 
-*Estimated Lab Time:* 45 minutes
+Estimated Time: 45 minutes
 
 *Version tested in this lab:* Oracle DB 19.13
 
@@ -19,9 +19,9 @@ Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtu
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- An Oracle Cloud account
 - You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (Paid Tenants only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -396,7 +396,7 @@ This lab assumes you have:
 
 3. Now, Database Vault is disabled in the container database as well as pdb1!
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## **Appendix**: About the Product
 ### **Overview**

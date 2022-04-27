@@ -105,6 +105,10 @@ Estimated Time:  10 minutes
 
 You may now **proceed to the next lab.**.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021

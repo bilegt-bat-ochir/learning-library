@@ -193,4 +193,4 @@ Please *proceed to the next lab*.
 
 * **Authors** - Keith Laker and Mike Matthews, ADB Product Management
 * **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Mike Matthews, November 2021
+* **Last Updated By/Date** - Anoosha Pilli, April 2022

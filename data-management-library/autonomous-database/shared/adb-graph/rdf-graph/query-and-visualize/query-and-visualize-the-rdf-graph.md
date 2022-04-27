@@ -8,6 +8,7 @@ Estimated Time: 10 minutes
 
 ### Objectives
 - Create a Notebook in Graph Studio
+- Import a Notebook in Graph Studio
 - Use RDF Interpreter in Notebook paragraph
 - Query and Analyze the RDF Graph
 
@@ -17,7 +18,36 @@ Estimated Time: 10 minutes
   - Provisioned Autonomous Database-Shared instance
   - A database user with the correct roles and privileges for working with Graph Studio, which can be achieved with successfully completing Lab 2
 
-## **Task 1:** Create a Notebook in Graph Studio
+## **Task 1:** Import the notebook
+
+The instructions below show you how to create each notebook paragraph, execute it, and change default visualization settings as needed.  
+First **import** the sample notebook and then execute the relevant paragraph for each step in task 2.   
+
+1. Download the exported notebook from the Object Store.
+   Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.   
+   Copy the URL below and paste it into your browser's address bar.  
+  Note the location of the downloaded file.
+
+    ```
+  	<copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/uaOb7jHZFcCWy4Y-OPjS3MYydBdIWL8OY2qAq5OUDmUUOZ8L-h8fggF_mjP4H0_e/n/c4u04/b/livelabsfiles/o/data-management-library-files/INTRO_SPARQL.dsnb</copy>
+  	```
+
+  2. Click the **Notebooks** menu icon and then on the **Import Notebook** icon on the top right.  
+
+  ![Import button to import the notebook](images/import-notebook.png " ")  
+
+  3. Drag the downloaded file or navigate to the correct folder and select it for upload.  
+  ![ALT text is not available for this image](images/choose-exported-file.png " ")  
+
+  4. Click **Import**.
+  ![Import notebook selected and clicking import](images/import-notebook-selected.png " ")  
+  5. Once imported it should open in Graph Studio.  
+
+  ![The imported notebook will open](images/open-notebook.png " ")  
+
+  You can execute the paragraphs in sequence and experiment with visualizations settings as described in **Task 2** below.  
+
+## **Task 2:** Create a Notebook in Graph Studio
 
 You can perform the following steps to create a notebook in Graph Studio.
 
@@ -33,7 +63,7 @@ You can perform the following steps to create a notebook in Graph Studio.
 
   ![Demonstrates how to create a new name for a notebook](./images/name-notebook.png)
 
-## **Task 2:** Use RDF Interpreter in Notebook Paragraph
+## **Task 3:** Use RDF Interpreter in Notebook Paragraph
 
 For a newly created notebook, the notebook page is displayed with an empty paragraph. You can run a notebook paragraph using one of the following supported interpreters:
 
@@ -344,7 +374,7 @@ SPARQL `DESCRIBE` queries also return an RDF graph instead of a set of variable 
 
   ![Executes the prior query in a RDF Paragraph](./images/query16-part2.png)
 
-## **Task 3:** (Optional) Continue to Query and analyze the RDF graph
+## **Task 4:** (Optional) Continue to Query and analyze the RDF graph
 
 **1. Executing a Concise SPARQL Query Using Shortcuts**
 

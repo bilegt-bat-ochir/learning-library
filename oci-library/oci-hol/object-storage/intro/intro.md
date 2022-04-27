@@ -21,12 +21,7 @@ In this workshop, you will:
 
 ### Prerequisites
   <if type="freetier">
-  - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-  >**Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
-  
-  **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-  </if>
-   
+  - An Oracle Cloud Account 
   <if type="livelabs">
   - Oracle Cloud Infrastructure account credentials (User name, Password, Tenancy, and Compartment) 
   </if>

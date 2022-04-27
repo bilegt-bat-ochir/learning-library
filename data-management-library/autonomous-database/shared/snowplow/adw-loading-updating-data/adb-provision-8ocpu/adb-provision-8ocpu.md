@@ -16,10 +16,8 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-<if type="freetier">
-- Obtained an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a 30-day free trial, or a training account whose details were given to you by an Oracle instructor.
-</if>
-- **Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. <if type="freetier"> If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with 1 OCPU, the response times and query times will be longer.</if>
+
+- **Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. If you opt to configure fewer OCPUs the response times and query times will be longer.
 - Completed the steps in the **Get Started** section seen in the Contents menu on the left.
 
 ## Task 1: Choose ADW from the Services Menu
@@ -45,7 +43,7 @@ This lab assumes you have:
 
     ![Autonomous Databases console.](./images/Compartment.png " ")
 
-6. <if type="freetier">If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available.</if> You can see your current default **region** in the top, right hand corner of the page.
+6. You can see your current default **region** in the top, right hand corner of the page.
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
@@ -79,10 +77,9 @@ This lab assumes you have:
     ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
 
 6. Configure the database:
-    <if type="freetier">
-    - __Always Free__ - **Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with one OCPU, the response times and query times will be longer.</if>
+
     - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this workshop, our example uses a database instance with __8 OCPUs__. <if type="freetier">If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with one OCPU, your response times and query times will be longer.</if>
+    - __OCPU count__ - Number of CPUs for your service<if type="livelabs">, choose __2 OCPUs__ when you are running your workshop in LiveLabs sandbox environment</if>. Our example screenshot uses a database instance with __8 OCPUs__. If you opt to configure fewer OCPUs your response times and query times will be longer<if type="livelabs"> and similarly if you opt to configure more OCPUs your response times and query times will be lesser</if>.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
@@ -130,4 +127,4 @@ Please *proceed to the next lab*.
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Brianna Ambler, July 2021
+- **Last Updated By/Date** - Anoosha Pilli, April 2022

@@ -25,7 +25,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained a free or paid Oracle Cloud account (Always Free accounts are not supported for this workshop)
+- Obtained an Oracle Cloud account 
 - Signed in to Oracle Cloud Infrastructure
 
 

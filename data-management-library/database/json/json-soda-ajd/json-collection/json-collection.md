@@ -18,8 +18,9 @@ In this lab, you will:
 
 * Create Collection
 * Insert First Document
-* Finding JSON document in a collection
-* JSON and Constraints
+* Find JSON documents in a collection
+* Learn about JSON and Constraints
+* Load more data through the Database API for MongoDB
 
 ### Prerequisites
 
@@ -31,7 +32,7 @@ In this lab, you will:
 
 	![](./images/create-collection.png)
 
-2. Provide a name for your collection in the field **Collection Name - products** and click **Create**. DO NOT check the **MongoDB Compatible** box. Note that the collection name is case-sensitive. You must enter products in all lower-case, don't use PRODUCTS or Products.
+2. Provide a name for your collection in the field **Collection Name - products** and click **Create**. MAKE SURE you check the **MongoDB Compatible** box. Note that the collection name is case-sensitive. You must enter products in all lower-case, don't use PRODUCTS or Products.
 
 	![](./images/new-products.png)
 
@@ -58,7 +59,7 @@ In this lab, you will:
 	```
 	<copy>
 	{
-		"id": 100,
+		"_id": 100,
 		"type":"movie",
 		"title": "Coming to America",
 		"format": "DVD",
@@ -85,7 +86,7 @@ In this lab, you will:
     ```
 	<copy>
 	{
-		"id": 101,
+		"_id": 101,
 		"title": "The Thing",
 		"type": "movie",
 		"format": "DVD",
@@ -106,7 +107,7 @@ In this lab, you will:
 	```
 	<copy>
 	{
-		"id": 102,
+		"_id": 102,
 		"title": "Aliens",
 		"type": "movie",
 		" format ": "VHS",
@@ -126,7 +127,7 @@ In this lab, you will:
 	```
 	<copy>
 		{
-		"id": 103,
+		"_id": 103,
 		"title": "The Thing",
 		"type": "book",
 		"condition": "okay",
@@ -156,7 +157,7 @@ Now let's issue some simple queries on the *products* collection we just created
 
 	```
 	<copy>
-	{"id":101}
+	{"_id":101}
 	</copy>
 	```
 	![](./images/id101.png)
@@ -217,92 +218,28 @@ Now let's issue some simple queries on the *products* collection we just created
 
 ## Task 4: JSON and Constraints
 
-Some values need to be unique, so how do we enforce this?
+JSON data is "schema flexible", you can add whatever data you like to a JSON document. But sometimes you will wish to impose some required structure on that data. That can be done through SQL by creating indexes and/or constraints on the JSON collection.
 
-1.	Insert a duplicate document for the id - 100:
+An index will aid fast access to an item (for example speeding up access via the "title" field), but can also be used to impose uniqueness (a unique index or primary key constraint), or to enforce particular datatypes (by triggering an error if the datatype is not what is expected).
 
-	Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
+More generally, constraints can be used to check the data being entered for various aspects.
 
-	The document is successfully inserted as duplicate id's are not prevented and JSON database is schemaless.
-
-	```
-	<copy>
-	{
-		"id": 100,
-		"fruit": "banana"
-	}
-	</copy>
-	```
-	![](./images/step4.1.png)
-
-2. Use QBE:
-
-	Copy and paste the following query in the worksheet and click **Run Query**.
-
-	The result now shows two documents with id 100.
-
-	```
-	<copy>
-	{"id":100}
-	</copy>
-	```
-
-	![](./images/id100-2.png)
-
-	Let's delete the {id:100, fruit:banana} last inserted document by clicking on the trash bin button.
-
-	![](./images/delete_document.png)
-
-	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
-
-	Now we use a field 'id' in the JSON document to identify the product. The value could also be a SKU (barcode) or some catalog number. Obviously, every product needs an id and we want this to be a unique numeric value across all documents in the collection. Also, we want to be able to quickly find a product using the id value. So, let's create a unique index that solves all requirements (unique, numeric, present).
-
-3.	Let's navigate to SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
-
-	![](./images/sql-dw.png)
-
-4. Copy and paste the query below in the worksheet and click Run query button to creates a unique index that solves all requirements (unique, numeric, present).
-
-	```
-	<copy>
-	create unique index product_id_idx on products (JSON_VALUE(json_document, '$.id.number()' ERROR ON ERROR));
-	</copy>
-	```
-	![](./images/index.png)
-
-	JSON_Value is a SQL/JSON function that extracts one value from the JSON data that is specified by a JSON Path Expression - in this case we extract the 'id' and convert the selected value to a SQL number. Here, *$.id.number()* is a standard, SQL/JSON path expression. You'll learn more about SQJ/JSON functions later in this lab.
-
-	*Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
-
-5.	Once the product\_id\_idx is created, navigate back to JSON workshop. Click the navigation menu on the top left and select **JSON** under Development.
-
-	![](./images/json-nav.png)
-
-6.	Try to insert some documents that do not have an id or a non-numeric id:
-
-	Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	Although the "id" is unique the insert fails throws the error "Unable to add new JSON document" because the value is not a number. The same happens if the id is missing or already in use. Try it!
-
-	```
-	<copy>
-	{"id":"xxx","title":"Top Gun"}
-	</copy>
-	```
-	![](./images/create-error.png)
-	![](./images/error.png)
-
-7.  While we're at it lets add more 'checks' - we call them 'constraints'. Navigate back to the SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
+1.  Let's add a check - or 'constraint' to check our data entry. We will do this using SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
 
 	![](./images/nav.png)
 
-8. Check constraint to make sure every product has a title of string data type and price >=0. Add a constraint to make sure that every item has at least a title and the price. We want the price to be a non-negative number and title to be a string.
+8. Check constraint to make sure every product has a title of string data type and price >=0. 
+
+	Add a constraint to make sure that every item has at least a title and the price. We want the price to be a non-negative number and title to be a string.
 
 	Copy and paste the query below in the worksheet and click Run query button to run the SQL query to alter products table and add constraints.
 
 	```
 	<copy>
-	alter table products add constraint required_fields check (JSON_EXISTS(json_document, '$?(@.title.type() == "string" && @.price.number() > 0)'));
+	alter table products add constraint required_fields 
+		check (
+				JSON_EXISTS(data, '$?(@.title.type() == "string" && @.price.number() > 0)')
+			  );
 	</copy>
 	```
 	![](./images/sql-query.png)
@@ -321,7 +258,7 @@ Some values need to be unique, so how do we enforce this?
 
 	```
 	<copy>
-	{"id":"200","title":"Top Gun"}
+	{"_id":"200","title":"Top Gun"}
 	</copy>
 	```
 	![](./images/tester.png)
@@ -332,7 +269,7 @@ Some values need to be unique, so how do we enforce this?
 	```
 	<copy>
 	{
-		"id": 200,
+		"_id": 200,
 		"title": "Top Gun",
 		"category": "VHS",
 		"condition": "like new",
@@ -349,6 +286,168 @@ Some values need to be unique, so how do we enforce this?
 	</copy>
 	```
 
+## Task 5: Using the Database API for MongoDB
+
+In this task we will use the Oracle Database API for MongoDB. That allows standard MongoDB tools and drivers to connect to Autonomous Database as though it were a MongoDB database. We will use the mongoimport tool to bulk-load some data, then use mongosh to connect and do some interactive commands.
+
+1.  Start Cloud Shell
+
+	Go back to the main Cloud menu page (you may need to close the Database Actions tab).
+
+	On the top row, click the "Command Prompt" button.
+
+	![](./images/start-shell.png " ")
+
+	That will bring up the Cloud Shell (it may take a minute or so to start). You can maximize the cloud shell window using the "double arrow" button at the top right.
+
+	![](./images/shell-maximize.png " ")
+
+	We're now going to download and install the MongoDB shell tool. We will download this from MongoDB's own website using 'wget' and install it directly in Cloud Shell.
+
+	Copy these commands into the cloud shell (make sure you press "Enter" after the final command as the paste doesn't include it).
+
+	```
+	<copy>
+	wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-rhel70-x86_64-100.5.2.tgz
+	tar -xvf mongodb-database-tools-rhel70-x86_64-100.5.2.tgz
+	export PATH="`pwd`/mongodb-database-tools-rhel70-x86_64-100.5.2/bin/:$PATH"
+	</copy>
+	```
+
+	Note that if you close and reopen the Cloud Shell before running mongoimport, you will need to run that last PATH setting command again.
+
+	![](./images/install-mongosh.png " ")
+
+
+1.	Edit the URI for the MongoDB API to include the correct username and password.
+
+	Earlier (in Lab 1) you saved the URI for the Database API for MongoDB.
+
+	* Change the [user:password@] to admin:YourPassword@ at the start of the URI. Substitute the password you chose earlier for the YourPassword.
+	* Change the [user] string in the middle to admin
+
+   	For example, let's say your password is "Password123", and your original connection string is mongodb://[user:password@]MACHINE-JSONDB.oraclecloudapps.com:27017/[user]?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+
+	You would change it to 
+
+	```
+	<copy>
+	mongodb://admin:Password123@MACHINE-JSONDB.oraclecloudapps.com:27017/admin?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+    </copy>
+	```
+
+	Make sure you've changed both strings, and have not left any square brackets in there.
+
+	**IMPORTANT NOTE:** if your password contains any special characters in the set / : ? # [ ] @, you will need to escape them as follows:
+
+	| Character | Escape Sequence |
+	| :---:     | :---: |
+	| /	 | %25 |
+	| :	 | %3A |
+	| #	 | %23 |
+	| [	 | %5B |
+	| ]  | %5D |
+	| @	 | %40 |
+
+	So if your password was **P@ssword#123** you would encode it as **P%40ssword%23123**.
+
+2.  Store the MongoDB URI in an environment variable
+
+	Copy the following into Cloud Shell, making sure that you replace <yourURI> with the edited URI from the previous step. Make sure you keep the single quote characters either side of the URI.
+
+	```
+	<copy>
+	export URI='<yourURI>'
+	</copy>
+	```
+
+	![](./images/set-uri.png " ")
+
+	If you close Cloud Shell and open it again before running the following commands, you will need to re-run this step.
+
+3. 	Bulk load the data using mongoimport
+
+	mongoimport is a standard MongoDB tool which takes a file full of JSON documents and loads it to a MongoDB compatible database. Here we will use the tool to load a file currently situated on Object Storage into Autonomous Database. We could download the file to Cloud Shell, then upload it to the database using mongoimport, but we might as well do pipe it directly into mongoimport using standard output.
+
+	The following command using 'curl -s' to fetch the file from object storage and send it to stdout. mongoimport then reads the data from stdin, connects to the database specified by $URI, and inserts the data into the collection 'products'.
+
+	Copy this into Cloud Shell, being sure to press "Enter" afterwards.
+
+	```
+	<copy>
+	curl -s https://objectstorage.us-ashburn-1.oraclecloud.com/n/idaqt8axawdx/b/products/o/products.ndjson | \
+    	mongoimport --collection products --uri $URI
+	</copy>
+	```
+
+	![](./images/mongo-import.png " ")
+	
+4.	Optional step: Download and run Mongo Shell
+
+	Copy these commands into Cloud Shell, being sure to press "Enter" after the last:
+
+	```
+	<copy>
+	curl -s https://objectstorage.us-ashburn-1.oraclecloud.com/n/idaqt8axawdx/b/products/o/products.ndjson | \
+    mongoimport --collection products --uri $URI
+	wget https://downloads.mongodb.com/compass/mongosh-1.3.1-linux-x64.tgz
+	tar -xvf mongosh-1.3.1-linux-x64.tgz
+	export PATH="`pwd`/mongosh-1.3.1-linux-x64/bin/:$PATH"
+	</copy>
+	```
+
+	(as before you will need to run that PATH expression again if you leave Cloud Shell)
+
+	![](./images/install-mongosh-2.png " ")
+
+	Then run mongosh providing the URI to connect to your Autononous Database:
+
+	```
+	<copy>
+	mongosh $URI
+	</copy>
+	```
+
+	That will bring you to the Mongo Shell prompt.
+
+	![](./images/mongosh.png " ")
+
+	From here you can run MongoDB commands against the data in your Autonomous Database. Here's a few suggested commands.
+
+	Show collections in the database:
+
+	```
+	<copy>
+	show collections
+	</copy>
+	```
+
+	Count the documents in the __products__ collection
+
+	```
+	<copy>
+	db.products.countDocuments()
+	</copy>
+	```
+
+	Find product with _id = 100
+
+	```
+	<copy>
+	db.products.find( { "_id": 100} )
+	</copy>
+	```
+
+	Find products priced over 100:
+
+	```
+	<copy>
+	db.products.find( {"price": {"$gt": 11} } )
+	</copy>
+	```
+
+	When done in Mongo Shell, you can type "quit" to exit to Cloud Shell.
+	
 You may now proceed to the next lab.
 
 ## Learn More

@@ -145,7 +145,7 @@ Generate encrypted passwords using the **`mv2adb encpass`** command for system p
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img7.jpg " ")
+![This image shows the result of performing the above step.](./images/img7.jpg " ")
 
 ## Task 6: Run the Migration Script
 

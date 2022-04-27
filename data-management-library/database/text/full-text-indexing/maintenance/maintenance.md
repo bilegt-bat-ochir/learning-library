@@ -79,7 +79,7 @@ We'll assume you're already in Database Actions having just completed the previo
     
 2.  Optimize the index
 
-    We can optimize the index using another PL/SQL command in the ctx_ddl package: ctx\_ddl.optimize\_index. That takes two parameters, the name of the index and the type of optimization to perform. Common values are 'FULL', 'FAST' or 'REBUILD'. We'll go with 'FULL':
+    We can optimize the index using another PL/SQL command in the ctx_ddl package: ctx\_ddl.optimize\_index. That takes two mandatory parameters, the name of the index and the type of optimization to perform. Common values are 'FULL' or 'REBUILD'. We'll go with 'FULL':
 
     ![](./images/before-optimize.png " ")
 
@@ -179,7 +179,7 @@ Time interval SYNCs use database scheduler, so in 19c and before you must have _
 
 You should now have a good grounding in creating Oracle Text indexes, running basic queries against those indexes, and maintaining those indexes.
 
-There is much more to Oracle Text than we were able to cover here, so look out for an advanced LiveLab coming soon.
+There is much more to Oracle Text than we were able to cover here, so look out for an advanced Oracle Text LiveLab coming soon.
 
 ## Acknowledgements
 

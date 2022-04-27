@@ -1,11 +1,13 @@
 # Create the main dashboard
 
 ## Introduction
+
 This exercise will introduce you to the key features of data visualization within Oracle Analytics Server and will help to tell a story on what is happening at **Bobby's Burgers & Fries**, a fictional quick serve restaurant with chains in multiple geographies.
 
 Estimated Time: 20 minutes
 
 ### About Oracle Analytics Server
+
 Oracle Analytics Server features powerful, intuitive data visualization capabilities that enable analysts to create self-service data visualizations on an accurate and consistent data set.
 
 ### Objectives
@@ -49,7 +51,7 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 
 5. **Select** the **Bobby's Burgers & Fries** icon from under the **Projects** section.  
 
-6. You will be presented with an empty canvas. Let’s start visualizing! First, **click** on the **Prepare tab** at the top of the screen. Here is where we can see all of the data that Bobby's Burgers & Fries will be working with.
+6. You will be presented with an empty canvas. Let’s start visualizing! First, **click** on the **Data Tab** at the top of the screen. Here is where we can see all of the data that Bobby's Burgers & Fries will be working with.
     ![OAS Visualize page](./images/mian-dashboard-visualize-tab.png " ")
 Oracle Analytics Server includes its own light weight data preparation capabilities. When you import the spreadsheet, you will navigate to the preparation tab before adding the data to the project.  Here you can make some modifications to the data elements or make modifications to your data based upon any recommendations Oracle Analytics knowledge service suggests.  Additionally, you can define a relationship between the subject areas in order to join the data sources for further analysis.
 

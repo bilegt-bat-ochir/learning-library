@@ -8,10 +8,10 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "publisheddate": "03/10/2020",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
-        }, 
+        },
         {
             "title": "Lab 1: Autonomous Data Warehouse (ADW) and Application Express (APEX)",
             "publisheddate": "02/24/2020",
@@ -42,6 +42,10 @@
             "publisheddate": "02/24/2020",
             "filename": "../../oda-with-apex-api/oda-with-apex-api.md"
         },
-        
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
      ]
 }

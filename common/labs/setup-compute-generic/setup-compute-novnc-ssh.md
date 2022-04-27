@@ -18,10 +18,10 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
+- An Oracle Cloud account
 - SSH Keys (optional)
 - You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup 
 
 ## Task 1: Create Stack: Choose a Path
 Proceed to deploy your workshop environment using Oracle Resource Manager (ORM) stack
@@ -175,7 +175,7 @@ If you just completed Task 1A, please proceed to Task 2.  If you have an existin
 
   ![](./images/create-stack-novnc-8.png " ")
 
-9. Your stack has is now created and the *Apply* action triggered is running to deploy your environment!
+9. Your stack is now created and the *Apply* action triggered is running to deploy your environment!
 
   ![](./images/create-stack-novnc-5.png " ")
 
@@ -333,4 +333,4 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2022
+* **Last Updated By/Date** - Marion Smith, Technical Program Manager, April 2022

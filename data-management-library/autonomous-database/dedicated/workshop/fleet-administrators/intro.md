@@ -41,7 +41,8 @@ Lab 9: Migrate with Data Pump
 Lab 10: Oracle Goldengate Replication  
 Lab 11: OCI Notification Service  
 Lab 12: Deploy OEM and connect ADB to OEM  
-Lab 13: Download AWR report from OEM  
+Lab 13: Download AWR report from OEM 
+Lab 14: Oracle Standard Tags 
 
 ### *See our second Autonomous Database Dedicated workshop, Introduction to Oracle Autonomous Database Dedicated for Developers and Database Users*
 A Developer is the owner of an Autonomous Database (ADB) and is responsible for provisioning ADBs on-demand. Developers may also be interested in the performance of their database application. The following developer / ADB user focused labs address provisioning, application development, monitoring, tuning of ADBs as well as recovery from user errors.

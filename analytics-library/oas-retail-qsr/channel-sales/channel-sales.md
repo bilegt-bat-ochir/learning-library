@@ -1,4 +1,4 @@
-# Analyze channel sales
+# Analyze Channel Sales
 
 ## Introduction
 
@@ -79,9 +79,9 @@ This lab assumes you have:
 
     ![Analyze Sentiment](images/sentiment.png")
 
-    Now, we have a visual that breaks down the different instances of each sentiment.
-
     ![Bar Chart](images/bar-chart.png")
+
+    Now, we have a visual that breaks down the different instances of each sentiment.
 
 ## **Task 4:** Create a Tag Cloud
 
@@ -96,15 +96,7 @@ This lab assumes you have:
 
     ![Sentiment](images/top-responses.png")
 
-    In order to also have accurate representations of color sentiment, we can **select** "Manage Assignments."
-
-    ![Manage Color Assignments](images/manage-assignments.png")
-
-    Then we can change the colors to **red** for "Negative," **yellow** for "Neutral," and **blue** for "Positive."
-
-    ![Colors](images/colors.png")
-
-    Now, we have a visual that breaks down the top responses of customer surveys such as 'Always Out of Fries', 'Long Wait Time', and 'Beats My Cooking' by sentiment.
+    With this change, we see the representations of sentiment by color: **red** for "Negative," **yellow** for "Neutral," and **green** for "Positive." Now, we have a visual that breaks down the top responses of customer surveys such as 'Always Out of Fries', 'Long Wait Time', and 'Beats My Cooking' by sentiment.
 
     ![Tag Cloud](images/tag-cloud.png")
 
@@ -125,7 +117,7 @@ This lab assumes you have:
 
     ![Channel Sales Dashboard](images/dashboard.png")
 
-4. Now that we have completed our Channel Sales Dashboard, we can name it 'Analyze Channel Sales.' You may now **proceed to the next lab**.
+4. Now that we have completed our Channel Sales Dashboard, you may now **proceed to the next lab**.
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -136,4 +128,4 @@ This lab assumes you have:
 
 * **Authors** - Killian Lynch, Nagwang Gyamtso, Luke Wheless, Akash Dharamshi, Solution Engineer Specialist Hub Team, NA Technology
 * **Contributors** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology
-* **Last Updated By/Date** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology, March 2022
+* **Last Updated By/Date** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology, April 2022

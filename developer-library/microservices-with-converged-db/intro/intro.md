@@ -26,11 +26,10 @@ If you would like to watch us do the workshop, click [here](https://youtu.be/yLB
 
  - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
 
-  > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
- **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
-
 ## Want to Learn More?
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack) 
+Search for and join the `oracle-db-microservices` channel.  
 
 * [Multitenant Database–Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)

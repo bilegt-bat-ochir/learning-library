@@ -3,21 +3,15 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "Sprint - Title",
+            "title": "How do I enable Oracle Cloud Guard?",
             "description": "",
-            "filename": "sprint-title.md"
+            "filename": "sprint-enable-cloud-guard.md"
         },
-        {
-            "title": "Other related Sprints 1 - How to loreum ipsum larum?",
+        { "title": "How do I create user groups in Cloud Guard?",
             "description": "",
-            "filename": "sprint-title.md"
-        },
-        {
-            "title": "Other related Sprints n - How to Mauris sit amet dolor?",
-            "description": "",
-            "filename": "sprint-title.md"
-        }
-    
+            "filename": "../sprint-create-user-group-cloud-guard/sprint-create-user-group-cloud-guard.md"
+        }   
+        
     ],
     "task_type": "Sections"
 }

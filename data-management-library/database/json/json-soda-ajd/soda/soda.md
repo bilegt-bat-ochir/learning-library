@@ -4,27 +4,9 @@
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST.
 
-This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. Part of this lab involves loading more documents through a REST call. If you wish to move straight on to Lab 4, you can load the extra documents from SQL instead, using the SQL code that follows.
-
-Note: To get to SQL, follow the instructions in Lab 2 Task 3, but instead of choosing JSON in the Database Actions console in step 5, choose SQL.
-
-```
-<copy>
-begin
-dbms_cloud.copy_collection(
-	collection_name => 'products',
-	file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/testdata.json',
-	format => '{ "recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "1000000" }'
-);
-end;
-</copy>
-```
+This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. 
 
 Estimated Time: 15 minutes
-
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:9I38EbsVWPQ)
 
 ### Objectives
 
@@ -175,50 +157,6 @@ In this lab, you will:
 
 	![](./images/proof.png)	
 
-## Task 2: Insert Data into the Collection
-
-1. Now, let's do a bulk load to insert more data. Navigate back to the tab with Oracle Cloud Shell.
-
-	![](./images/soda2-1.png " ")
-
-2.	The test data has been uploaded to the object store. Run the following pre-authenticated link that allows us to retrieve the data.
-
-	```
-	<copy>
-	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/testdata.json --output testdata.json
-	</copy>
-	```
-
-	![](./images/soda2-2.png " ")
-
-3.	Confirm the download by doing a *ls*. You should see the file testdata.json.
-
-	![](./images/soda2-3.png " ")
-
-4.	Now, we take this file (which is one large JSON array of objects) and bulk insert it to the collection using REST. Each object of the JSON array will be inserted into the products collection as a separate document.
-
-5.	The following POST command with the action clause 'insert' will take the single JSON array and insert the embedded objects as separate documents. Replace *your URL* with your URL.
-
-	```
-	curl -X POST --data-binary @testdata.json  -H "Content-Type: application/json" https://<your URL>/ords/admin/soda/latest/products?action=insert
-	```
-
-	Your URL should now look like this:
-
-	```
-	curl -X POST --data-binary @testdata.json  -H "Content-Type: application/json" https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products?action=insert
-	```
-
-	![](./images/soda2-4.png " ")
-
-6. Navigate back to the tab with JSON workshop to run this in the worksheet to verify that you have many more movies in the collection.
-
-	```
-	<copy>
-	{}
-	</copy>
-	```
-	![](./images/soda2-5.png " ")
 
 You may now proceed to the next lab.
 

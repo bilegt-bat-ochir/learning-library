@@ -15,6 +15,7 @@
         {
             "title": "Lab 1: Provision an Autonomous Database",
             "description": "Provisioning an Autonomous Database",
+            "type": "livelabs",
             "filename": "../../adb-provision-8ocpu/adb-provision-8ocpu.md"
         },
         {

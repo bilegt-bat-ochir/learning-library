@@ -12,10 +12,6 @@ In the following we show you how you can use SQL to work with the JSON data in a
 
 Estimated Time: 30 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:MrSXStEfOF4)
-
 ### Objectives
 
 In this lab, you will:
@@ -37,7 +33,7 @@ In this lab, you will:
 
     ![](./images/products-table.png)
 
-    You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identifier for the document, a 'JSON\_DOCUMENT' which holds the document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the JSON\_DOCUMENT column in the following examples.
+    You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identifier for the document (and in the case of MongoDB-compatible collections, is taken from the "_id" column in the JSON), a column 'DATA' which holds the JSON document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the DATA column in the following examples.
 
     *Learn more -* [Use Oracle Database Actions with JSON Collections](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/use-oracle-database-actions-json-collections1.html) and [Use SQL With JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-04377B36-654B-47C4-A480-535E00E46D1F)
 
@@ -49,7 +45,7 @@ In this lab, you will:
 
     ```
     <copy>
-    select JSON_Serialize(json_document) from products where rownum < 10;
+    select JSON_Serialize(data) from products where rownum < 10;
     </copy>
     ```
 
@@ -61,11 +57,11 @@ In this lab, you will:
 
     ```
     <copy>
-    select JSON_Serialize(json_document)
+    select JSON_Serialize(data)
     from products p
-    where p.json_document.type.string() = 'movie'
-    and p.json_document.format.string() = 'DVD'
-    and p.json_document.price.number() > 5;
+    where p.data.type.string() = 'movie'
+    and p.data.format.string() = 'DVD'
+    and p.data.price.number() > 5;
     </copy>
     ```
     ![](./images/sql2-2.png " ")
@@ -76,9 +72,9 @@ In this lab, you will:
 
     ```
     <copy>
-    select p.json_document.title.string(), p.json_document.year.number()
+    select p.data.title.string(), p.data.year.number()
     from products p
-    where p.json_document.type.string() = 'movie'
+    where p.data.type.string() = 'movie'
     order by 2 DESC;
     </copy>
     ```
@@ -90,11 +86,11 @@ In this lab, you will:
 
     ```
     <copy>
-    select p.json_document.decade.string(),
-    avg(p.json_document.price.number())
+    select p.data.decade.string(),
+           avg(p.data.price.number())
     from products p
-    where p.json_document.type.string() = 'movie'
-    group by p.json_document.decade.string();
+    where p.data.type.string() = 'movie'
+    group by p.data.decade.string();
     </copy>
     ```
     ![](./images/sql2-4.png " ")
@@ -112,19 +108,19 @@ All above examples extracted singleton values from the JSON data - values that o
     ```
     <copy>
     select jt.*
-    from products p nested json_document columns (id, title, year NUMBER) jt;
+    from products p nested data columns ("_id", title, year NUMBER) jt;
     </copy>
     ```
     ![](./images/sql3-1.png " ")
 
-    As you can see we're extracting the 'id', the 'title' and the 'year' from each document. Instead of a trailing function we can specify an optional SQL data type like NUMBER - the default (used for the title) is a VARCHAR2(4000).
+    As you can see we're extracting the '_id', the 'title' and the 'year' from each document. Instead of a trailing function we can specify an optional SQL data type like NUMBER - the default (used for the title) is a VARCHAR2(4000). Note that since _id starts with an underscore character it's necessary to put it in quotes.
 
 2.  We could have written this query with the simple dot notation, as well, because we do not drill into any JSON array yet. Let's do that in  this query, by using the NESTED clause also in the COLUMNS clause.
 
     ```
     <copy>
     select jt.*
-    from products p nested json_document columns (id, title, year NUMBER, nested starring[*] columns (actor path '$')) jt;
+    from products p nested data columns ("_id", title, year NUMBER, nested starring[*] columns (actor path '$')) jt;
     </copy>
     ```
     ![](./images/sql3-2.png " ")
@@ -136,7 +132,7 @@ All above examples extracted singleton values from the JSON data - values that o
     ```
     <copy>
     select jt.*
-    from products p nested json_document.starring[*] columns (actor path '$') jt;
+    from products p nested data.starring[*] columns (actor path '$') jt;
     </copy>
     ```
     ![](./images/sql3-3.png " ")
@@ -146,7 +142,7 @@ All above examples extracted singleton values from the JSON data - values that o
     ```
     <copy>
     select jt.actor, count(1)
-    from products p nested json_document.starring[*] columns (actor path '$') jt
+    from products p nested data.starring[*] columns (actor path '$') jt
     group by actor
     order by 2 DESC;
     </copy>
@@ -163,13 +159,13 @@ The 'simple dot notation' as shown in the previous steps is a syntax simplificat
 
 SQL/JSON relies on 'path expressions' which consist of steps: A step can navigate into an object or array.
 
-An object step starts with a dot followed by a key name; for example, '.name' or '.id'. If the key name starts with a non-Ascii character you need to quote it; for example, '."0abc"'.
+An object step starts with a dot followed by a key name; for example, '.name' or '."_id"'. If the key name starts with a non-Ascii character you need to quote it; for example, '."0abc"'.
 
 An array step uses square brackets; '[0]' selects the first value in an array. It is possible to select more than one element form the array, for example, '[*]' selects all values, '[0,1,2]' selects the first three elements, and '[10 to 20]' selects elements 11 through 21.
 
 Steps can be chained together. A path expression typically starts with the '$' symbol which refers to the document itself.
 
-Path expressions are evaluated in a 'lax' mode. This means that an object step like '.id' can also be evaluated on an array value: it then means to select the 'id' values of each object in the array. This will be explained a bit in JSON_Exists, where we also explain Path Predicates (filters).
+Path expressions are evaluated in a 'lax' mode. This means that an object step like '."_id"' can also be evaluated on an array value: it then means to select the '"_id"' values of each object in the array. This will be explained a bit in JSON_Exists, where we also explain Path Predicates (filters).
 
 *Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
 
@@ -179,11 +175,13 @@ Now let's look at the different SQL/JSON operators step by step:
 
 JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL scalar value.
 
-1.  The first argument is the input, the column 'json_document' from the products collection/table. This is followed by a path expression, in this case we select the value for field 'format'. The optional 'returning' clause allows to specify the return type, in this case a varchar2 value of length 10. Because not every product has a 'format' value (only the movies do) there are cases where no value can be selected. By default NULL is returned in this case. The optional ON EMPTY clause allows to specify a default value (like 'none') or to raise an error - with ERROR ON EMPTY.
+1.  The first argument is the input, the column 'data' from the products collection/table. This is followed by a path expression, in this case we select the value for field 'format'. The optional 'returning' clause allows to specify the return type, in this case a varchar2 value of length 10. Because not every product has a 'format' value (only the movies do) there are cases where no value can be selected. By default NULL is returned in this case. The optional ON EMPTY clause allows to specify a default value (like 'none') or to raise an error - with ERROR ON EMPTY. 
+
+    NOTE: there's a bug in SQL Developer Web which means it does not parse this query correctly, if you see the error: "ORA-00923: FROM keyword not found where expected" then just make sure the whole query is selected before you attempt to run it.
 
     ```
     <copy>
-    select JSON_Value (json_document, '$.format' returning varchar2(10) default 'none' on empty) from products;
+    select JSON_Value (data, '$.format' returning varchar2(10) default 'none' on empty) from products;
     </copy>
     ```
     ![](./images/sql4-1.png " ")
@@ -192,7 +190,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
 
     ```
     <copy>
-    select JSON_Value (json_document, '$.starring[0,1]') from products;
+    select JSON_Value (data, '$.starring[0,1]') from products;
     </copy>
     ```
     ![](./images/sql4-2.png " ")
@@ -203,7 +201,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
 
     ```
     <copy>
-    select JSON_Value (json_document, '$.starring' ERROR ON ERROR) from products;
+    select JSON_Value (data, '$.starring' ERROR ON ERROR) from products;
     </copy>
     ```
     ![](./images/sql4-3.png " ")
@@ -212,7 +210,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
 
     ```
     <copy>
-    select JSON_Value (json_document, '$.starring[0,1]' ERROR ON ERROR) from products;
+    select JSON_Value (data, '$.starring[0,1]' ERROR ON ERROR) from products;
     </copy>
     ```
     ![](./images/sql4-4.png " ")
@@ -227,7 +225,7 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
 
     ```
     <copy>
-    select JSON_Query(p.json_document, '$.starring')
+    select JSON_Query(p.data, '$.starring')
     from products p;
     </copy>
     ```
@@ -237,7 +235,7 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
 
     ```
     <copy>
-    select JSON_Query(p.json_document, '$.starring[0,1]' with array wrapper)
+    select JSON_Query(p.data, '$.starring[0,1]' with array wrapper)
     from products p;
     </copy>
     ```
@@ -256,7 +254,7 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     <copy>
     select count(1)
     from products
-    where JSON_Exists(json_document, '$.format');
+    where JSON_Exists(data, '$.format');
     </copy>
     ```
 
@@ -266,9 +264,9 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
 
     ```
     <copy>
-    select JSON_SERIALIZE(p.json_document)
+    select JSON_SERIALIZE(p.data)
     from products p
-    where JSON_Exists(p.json_document, '$.starring?(@ == "Jim Carrey")');
+    where JSON_Exists(p.data, '$.starring?(@ == "Jim Carrey")');
     </copy>
     ```
     ![](./images/sql5-2.png " ")
@@ -280,9 +278,9 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
 
     ```
     <copy>
-    select JSON_SERIALIZE(p.json_document)
+    select JSON_SERIALIZE(p.data)
     from products p
-    where JSON_Exists(p.json_document, '$?(@.genres.size() >= 2 && @.genres == "Sci-Fi" && @.starring starts with "Sigourney")');
+    where JSON_Exists(p.data, '$?(@.genres.size() >= 2 && @.genres == "Sci-Fi" && @.starring starts with "Sigourney")');
     </copy>
     ```
     ![](./images/sql5-3.png " ")
@@ -303,8 +301,8 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     <copy>
     select jt.*
     from products,
-    JSON_TABLE (json_document, '$' columns (
-      id NUMBER,
+    JSON_TABLE (data, '$' columns (
+      "_id" NUMBER,
       ProductName varchar2(50) path '$.title',
       type,
       actors varchar(100) FORMAT JSON path '$.starring',
@@ -315,10 +313,10 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     ```
     ![](./images/sql6-1.png " ")
 
-2.  Like the other SQL/JSON operators the first input is the JSON data - the column 'json_document' from the products collection/table. The first path expressions, '$', is the row path expression - in this case we select the entire document. It would be possible to directly access an embedded object or array here, for example '$.starring[*]' would then generate a row for each actor.
+2.  Like the other SQL/JSON operators the first input is the JSON data - the column 'data' from the products collection/table. The first path expressions, '$', is the row path expression - in this case we select the entire document. It would be possible to directly access an embedded object or array here, for example '$.starring[*]' would then generate a row for each actor.
 
     The columns clause then lists each column. Let's go over this line by line:
-    *	The 'id' column is defined to be a number instead of the default VARCHAR2(4000).
+    *	The '_id' column is defined to be a number instead of the default VARCHAR2(4000).
     *	The next column is called 'ProductName' which is not a field name in the JSON data, we therefore need to tell which field name we want to use. This is done by providing title column path expression, '$.title', which targets field 'title'.. We also set the data type to be a VARCHAR2 of length 50.
     *	The column 'type' uses the same name as the field in the JSON, therefore we do not need to provide a path expression. Also we accept the default datatype.
     *	Field 'actors' does not exists, so we map the actors, which are elements of array 'starring', to column 'actors' using path expression '$.starring'. We use FORMAT JSON to specify JSON\_Table that this column has JSON\_Query  semantics and the returned value is JSON itself - in this case we extract the embedded array.
@@ -331,7 +329,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     <copy>
     select jt.*
     from products,
-    JSON_TABLE (json_document, '$' columns (
+    JSON_TABLE (data, '$' columns (
       title,
       nested path '$.starring[*]'
       columns (actor path '$'),
@@ -351,8 +349,8 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     create view movie_view as
     select jt.*
     from products,
-    JSON_TABLE (json_document, '$' columns (
-      id NUMBER,
+    JSON_TABLE (data, '$' columns (
+      "_id" NUMBER,
       ProductName varchar2(50) path '$.title',
       type,
       actors varchar(100) FORMAT JSON path '$.starring',
@@ -398,9 +396,9 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
 
     ```
     <copy>
-    select JSON_Serialize(json_document)
+    select JSON_Serialize(data)
     from products p
-    where p.json_document.id.number() = 316;
+    where p.data."_id".number() = 316;
     </copy>
     ```
     ![](./images/sql7-1.png " ")
@@ -410,8 +408,8 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     ```
     <copy>
     update products p
-    set p.json_document = JSON_Mergepatch(json_document, '{"price":45, "note":"rare original VHS!"}')
-    where p.json_document.id.number() = 316;
+    set p.data = JSON_Mergepatch(data, '{"price":45, "note":"rare original VHS!"}')
+    where p.data."_id".number() = 316;
     </copy>
     ```
     ![](./images/sql7-2.png " ")
@@ -420,9 +418,9 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
 
     ```
     <copy>
-    select JSON_Serialize(json_document)
+    select JSON_Serialize(data)
     from products p
-    where p.json_document.id.number()= 316;
+    where p.data."_id".number()= 316;
  
     </copy>
     ```
@@ -440,9 +438,9 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
 
     ```
     <copy>
-    select JSON_Serialize(json_document)
+    select JSON_Serialize(data)
     from products p
-    where p.json_document.id.number() = 515;
+    where p.data."_id".number() = 515;
     </copy>
     ```
     ![](./images/sql7-4.png " ")
@@ -452,12 +450,12 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
     ```
     <copy>
     update products p
-    set p.json_document = JSON_Transform(json_document,
+    set p.data = JSON_Transform(data,
     set '$.duration' = '108 minutes',
-    set '$.price' = (p.json_document.price.number() * 1.10),
+    set '$.price' = (p.data.price.number() * 1.10),
     append '$.genres' = 'Thriller'
     )
-    where p.json_document.id.number() = 515;
+    where p.data."_id".number() = 515;
     </copy>
     ```
     ![](./images/sql7-5.png " ")
@@ -541,9 +539,9 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     ```
     <copy>
-    select jt.id, jt.title, jt.actor
-    from products NESTED json_document COLUMNS(
-      id NUMBER,
+    select jt."_id", jt.title, jt.actor
+    from products NESTED data COLUMNS(
+      "_id" NUMBER,
       title,
       NESTED starring[*] COLUMNS(
        actor path '$'
@@ -559,9 +557,9 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     <copy>
     with
     actor_title_map as (
-    select jt.id, jt.title, jt.actor
-    from products NESTED json_document COLUMNS(
-      id NUMBER,
+    select jt."_id", jt.title, jt.actor
+    from products NESTED data COLUMNS(
+      "_id" NUMBER,
       title,
       NESTED starring[*] COLUMNS(
        actor path '$'
@@ -580,9 +578,9 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     <copy>
     with
     actor_title_map as (
-    select jt.id, jt.title, jt.actor
-    from products NESTED json_document COLUMNS(
-      id NUMBER,
+    select jt."_id", jt.title, jt.actor
+    from products NESTED data COLUMNS(
+      "_id" NUMBER,
       title,
       NESTED starring[*] COLUMNS(
        actor path '$'
@@ -614,7 +612,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
     ```
     <copy>
-    select JSON_Dataguide(json_document, dbms_json.FORMAT_HIERARCHICAL)
+    select JSON_Dataguide(data, dbms_json.FORMAT_HIERARCHICAL)
     from products;
     </copy>
     ```
@@ -653,7 +651,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     ```
     <copy>
     insert into tmp_dataguide (dg_val)
-    select JSON_Dataguide(json_document, dbms_json.FORMAT_HIERARCHICAL)
+    select JSON_Dataguide(data, dbms_json.FORMAT_HIERARCHICAL)
     from products;
     </copy>
     ```
@@ -693,10 +691,10 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     ```
     <copy>
     declare
-    dg clob;
+        dg clob;
     BEGIN
-    select dg_val into dg from tmp_dataguide;
-    dbms_json.create_view('prod_view', 'products', 'json_document', dg);
+        select dg_val into dg from tmp_dataguide;
+        dbms_json.create_view('prod_view', 'products', 'data', dg, resolveNameConflicts => true);
     END;
     /
     </copy>
@@ -735,7 +733,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     AS
     SELECT ...
     FROM "PRODUCTS" RT,
-    JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
+    JSON_TABLE("data", '$[*]' COLUMNS
     "id" number path '$.id',
     "note" varchar2(32) path '$.note',
     "plot" varchar2(2048) path '$.plot',

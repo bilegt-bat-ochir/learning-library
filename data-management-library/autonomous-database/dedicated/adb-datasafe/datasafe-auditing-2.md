@@ -182,9 +182,9 @@ How many client hosts have connected to your database?
 
 (If your custom report is not listed, please refresh the browser window.)
 
-    ![This image shows the result of performing the above step.](./images/img148.png " ")
+![This image shows the result of performing the above step.](./images/img148.png " ")
 
-    ![This image shows the result of performing the above step.](./images/img149.png " ")
+![This image shows the result of performing the above step.](./images/img149.png " ")
 
 - Click **Generate Report**. The Generate Report dialog box is displayed.
   1. Leave **PDF** selected.

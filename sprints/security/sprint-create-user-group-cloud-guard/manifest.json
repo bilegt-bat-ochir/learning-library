@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do I enable Oracle Cloud Guard?",
+            "description": "",
+            "filename": "sprint-enable-cloud-guard.md"
+        },
+        { "title": "How do I create conditional operators in Cloud Guard?",
+            "description": "",
+            "filename": "../sprint-conditional-operators-cloud-guard/sprint-conditional-operators-cloud-guard.md"
+        }   
+        
+    ],
+    "task_type": "Sections"
+}

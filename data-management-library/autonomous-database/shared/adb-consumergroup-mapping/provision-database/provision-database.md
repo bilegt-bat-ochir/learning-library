@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Deploy a Autonomous Transaction Processing Database
+Deploy a Autonomous Transaction Processing Database.
 
 Estimated Time: 5 minutes
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
 ## Task 2: Create the Autonomous Database instance
 
-1. Click **Create Autonomous Database** to start the instance creation process.
+1. Select your compartment and click **Create Autonomous Database** to start the instance creation process. If you were assigned a compartment, enter it here.
 
     ![Click Create Autonomous Database.](./images/create-adb-button.png " ")
 
@@ -40,21 +40,11 @@ In this lab, you will:
 </if>
 
 3. Give basic information for the autonomous database:
-
-<if type="freetier">
-    - __Choose a compartment__ - You can simply use the default compartment or pick a different one. See [the documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) if you want to learn more about compartments.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADB__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __POSTOATP__.
-
-    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
-</if>
-<if type="livelabs">
     - __Choose a compartment__ - Use the default compartment created for you.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADB__.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use **My-Quick-Start-ADB**.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __POSTOATP__.
 
     ![Enter the required details.](./images/livelabs-adwname.png " ")
-</if>
 
 4. Choose __Transaction Processing__ workload type:
 
@@ -66,14 +56,11 @@ In this lab, you will:
 
 6. Configure the database:
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
     - __Choose database version__ - Select 19c as the database version.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPUs__. If you choose an Always Free database, it comes with 1 CPU.
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-    - __Auto Scaling__ - For this lab, keep auto scaling enabled, to enable the system to automatically use up to three times more CPU and IO resources to meet workload demand.
+    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPUs__.
+    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.
+    - __OCPU Auto Scaling__ - For this lab, keep auto scaling enabled, to enable the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
-
-    > **Note:** You cannot scale up/down an Always Free autonomous database.
 
     ![Choose the remaining parameters.](./images/adb-configure.png " ")
 
@@ -132,3 +119,4 @@ See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-wa
 ## Acknowledgements
 
 - **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering
+- **Last Updated By/Date** - Kamryn Vinson, April 2022

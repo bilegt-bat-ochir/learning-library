@@ -4,7 +4,7 @@
 
 In this lab, we will be creating a repository table in an Autonomous database that maps the user to the consumer group and a PL/SQL function to validate the user session on connect.
 
-Estimated Time: 2 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -33,7 +33,7 @@ This lab assumes you have:
         )  
         TABLESPACE "DATA" ;
 
-
+    ![Create table](./images/create-table.png " ")
 
 2. Lets add two users “SCOTT” and “TOTO” and map it to respective consumer group “TP” and “LOW” services.
 
@@ -43,7 +43,7 @@ This lab assumes you have:
         <copy>Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('TOTO','LOW');
         Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('SCOTT','TP');
 
-
+    ![Add users](./images/add-users.png " ")
 
 3. Lets check the repository table contents
 
@@ -51,9 +51,6 @@ This lab assumes you have:
         <copy>Select * from USERS_CONS_GRP
 
     ![Repository table contents](./images/repo-table.png " ")
-
-
-
 
 
 ## Task 2: Create function to validate User Consumer group mapping
@@ -75,10 +72,14 @@ This lab assumes you have:
         END; 
         /
 
+    ![Create function](./images/create-function.png " ")
+
 2. Grant execute on the function to DVSYS user.
 
     ---
         <copy>grant execute on ADMIN.USER_GRP_FN to dvsys;
+
+    ![Grant execute](./images/grant-execute.png " ")
 
 You may now **proceed to the next lab**.
 
@@ -88,6 +89,6 @@ You may now **proceed to the next lab**.
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
 
 
-
 ## Acknowledgements
 * **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Kamryn Vinson, April 2022

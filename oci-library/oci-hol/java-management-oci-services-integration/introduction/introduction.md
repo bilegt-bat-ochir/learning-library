@@ -42,12 +42,9 @@ _Estimated Time:_ 45 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Infrastructure account with valid credentials
+* This workshop requires an Oracle Cloud account. You may use your existing account or create one in the following lab.
 * A host(desktop/laptop/server/virtual machine) with Linux/Windows Operating System
 * Completion of the [Manage Java Runtimes, Applications and Managed Instances Inventory with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=912) workshop
-
->**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
-**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Learn More
 

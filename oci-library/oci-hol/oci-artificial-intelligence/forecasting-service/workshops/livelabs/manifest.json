@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction: Forecasting Service",
-            "description": "Learn how to build anomaly detection model and use it for detection",
+            "description": "Learn how to use Forecasting Service",
             "filename": "../../item-1-forecasting-service-intro/item-1-forecasting-service-intro.md"
         },
         {
@@ -32,6 +32,11 @@
             "title": "Lab 4: Generate Model Explainability",
             "description": "Learn how to generate Explainability for model used for Forecasting",
             "filename": "../../item-6-explainability/item-6-explainability.md"
+        },
+        {
+            "title": "Lab 5: Generate Forecast from UI",
+            "description": "Learn how to generate Forecast from OCI Console",
+            "filename": "../../item-7-forecast-with-console/item-7-forecast-with-console.md"
         },
         {
             "title": "Need Help?",

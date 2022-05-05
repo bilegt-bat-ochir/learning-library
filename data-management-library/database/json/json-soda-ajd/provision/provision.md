@@ -6,10 +6,6 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:ICHM8bDast0)
-
 ### Objectives
 
 In this lab, you will:
@@ -133,7 +129,7 @@ In this lab, you will:
     - Re-enter the password to confirm it. Make a note of this password.
 
     Later stages of this LiveLab will be easier if you avoid any of the characters / : ? # [ ] and @ in your password.
-    
+
     ![Enter password and confirm password.](./images/administration.png " ")
 
 8. Choose network access:

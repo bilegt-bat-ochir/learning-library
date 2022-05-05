@@ -41,7 +41,7 @@ Learn how to
 
 **Note:** *If you are logged in as ADMIN after clicking Database Actions*:
 - Sign out by clicking in the right corner of the screen
-    ![ALT text is not available for this image](images/sing-out-admin.png " ") 
+    ![ALT text is not available for this image](images/sing-out-admin.png " ")
 
 ## Task 2: Login as the graph-enabled user
 
@@ -89,7 +89,7 @@ Learn how to
 
     ![ALT text is not available for this image](./images/db-actions-dataload-choose-files.png " ")
 
-3. Verify that the correct files were selected and then click **Run** icon.
+3. Verify that the correct files were selected and then click on the **Start** icon.
 ![ALT text is not available for this image](./images/db-actions-dataload-click-run.png " ")
 
 4. Confirm that you wish the data load job.
@@ -140,7 +140,7 @@ Learn how to
       - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts.acct_id`
       - Helps you verify that the addition of a `txn_id` column and the constraints
 
-8. Execute the `fixup.sql` script in the SQL worksheet.  
+8. Execute the `fixup.sql` script in the SQL worksheet by clicking on the **Run Script** icon.  
    ![ALT text is not available for this image](./images/db-actions-sql-execute-fixup.png " ")  
 
 9. The script output should look as follows:

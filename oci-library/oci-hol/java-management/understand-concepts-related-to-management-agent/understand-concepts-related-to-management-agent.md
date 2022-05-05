@@ -49,7 +49,7 @@ Before the set up of the Management Agent, it is important to understand the con
 
 * **Response File**: For Management Agent installation to take place, a response file is also required. In [Lab 2](?lab=setup-a-fleet), we clicked **Download Install Key** during the creation of our fleet. The file that we downloaded is the response file which contains the install key, as observed in the `ManagementAgentInstallKey` field. The line in our response file `Service.plugin.jms.download=true` will help to download and enable the JMS plugin for Java runtime discovery and reporting.
 
-  The line `Service.plugin.jm.download=true` will also help to download and enable the JMS plugin for Java runtime Lifecycle Management. Lifecycle Management is an advanced feature of JMS, and you may refer to the [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/home) workshop to learn more about it.
+  The line `Service.plugin.jm.download=true` will also help to download and enable the JMS plugin for Java runtime Lifecycle Management. Lifecycle Management is an advanced feature of JMS, and you may refer to the [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202) workshop to learn more about it.
 
   ![image of response file](/../images/input-rsp-updated.png)
 
@@ -64,7 +64,7 @@ Before the set up of the Management Agent, it is important to understand the con
 - **Oracle Cloud Agent (OCA)**: A lightweight process that manages **OCA plugins** running on compute instances. When you are using compute instances, you can deploy Management Agents by using the Oracle Cloud Agent.
 
   As part of the set up of JMS on an OCI compute instance, the Management Agent will be deployed through the **Management Agent plugin** in OCA.
-  In addition, it is important to note that the **Oracle Java Management Service OCA plugin** is responsible for enabling Java runtime Lifecycle Management, which is an advanced feature of JMS. This workshop will focus on the basics of JMS, and thus focus on only the Management Agent OCA plugin. If you would like to learn more about the Lifecycle Management feature, you may refer to the [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/home).
+  In addition, it is important to note that the **Oracle Java Management Service OCA plugin** is responsible for enabling Java runtime Lifecycle Management, which is an advanced feature of JMS. This workshop will focus on the basics of JMS, and thus focus on only the Management Agent OCA plugin. If you would like to learn more about the Lifecycle Management feature, you may refer to the [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
   ![image of oca with management agent plugin](/../images/oca-plugins.png)
 
 - **Management Agent OCA plugin**: Helps to collect data from resources such as OSs, applications, and infrastructure resources for Oracle Cloud Infrastructure services that are integrated with Management Agent. Data can include observability, log, configuration, capacity, and health data.

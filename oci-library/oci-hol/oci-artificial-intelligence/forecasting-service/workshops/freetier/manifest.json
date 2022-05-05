@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction: Forecasting Service",
-            "description": "Learn how to build anomaly detection model and use it for detection",
+            "description": "Learn how to use Forecast Service",
             "filename": "../../item-1-forecasting-service-intro/item-1-forecasting-service-intro.md"
         },
         {
@@ -15,7 +15,7 @@
         },
         {
             "title": "Lab 1: Set up Data Science Notebook",
-            "description": "Learn what data and format needed for training, and use the prepared sample data for nex steps.",
+            "description": "Learn what data and format needed for training, and use the prepared sample data for next steps.",
             "filename": "../../item-3-forecasting-service-create-ds-notebook/item-3-forecasting-service-create-ds-notebook.md"
         },
         {
@@ -32,6 +32,11 @@
             "title": "Lab 4: Generate Model Explainability",
             "description": "Learn how to generate Explainability for model used for Forecasting",
             "filename": "../../item-6-explainability/item-6-explainability.md"
+        },
+        {
+            "title": "Lab 5: Generate Forecast from Console",
+            "description": "Learn how to generate Forecast from OCI Console",
+            "filename": "../../item-7-forecast-with-console/item-7-forecast-with-console.md"
         },
         {
             "title": "Need Help?",

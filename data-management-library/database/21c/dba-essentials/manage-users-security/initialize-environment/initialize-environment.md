@@ -1,23 +1,26 @@
-# Initialize Environment
+# Initialize environment
 
 ## Introduction
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Time:* 10 Minutes
+Estimated time: 10 Minutes
 
 ### Objectives
+
 - Initialize the workshop environment.
 
 ### Prerequisites
+
 This lab assumes you have -
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed -
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Setup Compute Instance
+- Completed -
+    - Lab: Prepare setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Setup compute instance
 
-## Task 1: Validate That Required Processes are Up and Running
-1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+## Task 1: Validate that required processes are up and running
+
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following processes should be up and running:
 
     - Database Listeners
         - LISTENER
@@ -29,7 +32,7 @@ This lab assumes you have -
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
-2. On the *Web Browser* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and provide the credentials below to login.
+1. On the web browser window on the right preloaded with *Enterprise Manager*, click on the **Username** field and provide the credentials below to login.
 
     ```
     User name: <copy>sysman</copy>
@@ -40,14 +43,13 @@ This lab assumes you have -
 
     ![Enterprise Manager Login](images/em-login.png " ")
 
-
-3. Confirm successful login. Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start.
+1. Confirm successful login. Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start.
 
     ![Enterprise Manager Landing Page](images/em-landing.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-4. If you are still unable to login or the login page is not functioning after reloading from the desktop icon *Get Started with your Workshop*, open a terminal session and proceed as indicated below to validate the services.
+1. If you are still unable to login or the login page is not functioning after reloading from the desktop icon *Get Started with your Workshop*, open a terminal session and proceed as indicated below to validate the services.
 
     - Database services (All databases and Standard Listener)
 
@@ -80,7 +82,7 @@ This lab assumes you have -
 
     ![Enterprise Manager Service Status](images/em-service-status.png " ")
 
-5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+1. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
 
@@ -99,7 +101,7 @@ This lab assumes you have -
     </copy>
     ```
 
-6. Validate *emcli* connectivity. From the terminal session on your remote desktop, run as user *oracle*
+1. Validate *emcli* connectivity. From the terminal session on your remote desktop, run as user *oracle*
 
     ```
     <copy>
@@ -121,11 +123,11 @@ This lab assumes you have -
     </copy>
     ```
 
-2. Accept defaults for file and passphrase by pressing *Enter* three times to create a key with no passphrase.
+1. Accept defaults for file and passphrase by pressing *Enter* three times to create a key with no passphrase.
 
     ![Generate SSH Keys](images/ssh-key-gen.png " ")
 
-3.  Update *`~/.ssh/authorized_keys`* and copy the *private key* to */tmp*.
+1.  Update *`~/.ssh/authorized_keys`* and copy the *private key* to */tmp*.
 
     ```
     <copy>
@@ -137,41 +139,42 @@ This lab assumes you have -
 
     ![Update SSH Credentials](images/update-ssh-creds-0.png " ")
 
-### **Update the Named Credentials with the new SSH Key**
+ ### **Update the Named Credentials with the new SSH Key**
 
-4. From the EM Console as *SYSMAN*, navigate to ***Setup menu*** > ***Security*** > ***Named Credential*** and Select ROOT credential;
-
-5. Click Edit. Replace the existing entry with the *SSH Private Key* you copied to *"/tmp"*. Keep the General section unchanged and update the *Credential Properties* as followed:
-
-    - User name: *oracle*
-    - Delete any content from *SSH Public Key* Textbox
-    - Click *Browse* to select the *Private Key*
+1. From the EM Console as *SYSMAN*, navigate to **Setup menu** > **Security** > **Named Credentials**. Select the *ROOT* credential and click **Edit**.
 
     ![Update Named Credentials](images/update-ssh-creds-1.png " ")
 
-6. On the file browser, navigate to *+Other Locations* > *tmp* and select the file *rsa_priv*
+1. Keep the General Properties unchanged and update the **Credential Properties** section as follows:
+
+    - **User name**: *oracle*
+    - Delete any content from the **SSH Public Key** textbox
+    - Click **Choose File** to select the *Public Key* `id_rsa.pub`. If you cannot see the *.ssh* directory, you can click *.livelabs* and then go to *oracle* to access the *.ssh* folder.
 
     ![Edit Credentials Properties](images/update-ssh-creds-2.png " ")
 
-7. Click *Test and Save*
+1. For **SSH Private Key**, on the file browser navigate to **+Other Locations** > **tmp** and select the file *rsa_priv*.
 
     ![Save Credentials](images/update-ssh-creds-3.png " ")
+
+1. Click *Test and Save*
+
     ![Credential Operation Successful](images/update-ssh-creds-4.png " ")
 
-8. Setup Oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
-Navigate to ***Enterprise*** > ***Job*** > ***Library*** and select "SETUP ORACLE CREDENTIALS"; Click **Submit**.
+1. Setup Oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.   
+	Navigate to **Enterprise** > **Job** > **Library**, select *SETUP ORACLE CREDENTIALS*, and click **Submit**.
 
     ![Job Library](images/named-creds-job.jpg " ")
 
-9. Click **Submit** again on the Job submission Page.
+1. Click **Submit** again on the Job submission Page.
 
     ![Job Submission](images/named-creds-job-submit.jpg " ")
 
-10. The Job will be submitted successfully. Click on SETUP ORACLE CREDENTIALS Job link to view the Job.
+1. The job will be submitted successfully. Click on *SETUP ORACLE CREDENTIALS* job link to view the job.
 
     ![Setup Oracle Credentials](images/submitted.jpg " ")
 
-11. The Job should show Status **Succeeded**.
+1. The Job should show Status **Succeeded**.
 
     ![Job Status](images/named-creds-job-succeeded.jpg " ")
 
@@ -205,7 +208,7 @@ You may now **proceed to the next lab**.
     <copy>sudo systemctl restart oracle-database</copy>
     ```
 
-2. Listener Service (Non-Standard)
+1. Listener Service (Non-Standard)
 
     - Start
 
@@ -231,7 +234,7 @@ You may now **proceed to the next lab**.
     <copy>sudo systemctl restart oracle-db-listener</copy>
     ```
 
-3. Enterprise Manager Service (OMS and emagent)
+1. Enterprise Manager Service (OMS and emagent)
 
     - Start
 
@@ -273,7 +276,7 @@ If for any reason you want to login from a location that is external to your rem
     URL: <copy>http://<Your Instance public_ip>:7803/em</copy>
     ```
 
-    *Note:* You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
+     > **Note:** You may see an error on the browser while accessing the web console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
 
     ![Privacy Error](images/login-em-external-1.png " ")
     ![Oracle EMCC Login](images/login-em-external-2.png " ")
@@ -300,6 +303,7 @@ While you will only need the browser to perform all tasks included in this works
     ``` -->
 
 ## Acknowledgements
+
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
   - **Contributors** - Ashish Kumar
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2021
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2022

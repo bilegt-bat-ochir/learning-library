@@ -42,12 +42,13 @@ In this lab, you will:
 3. Click the navigation menu in the upper left to show top level navigation choices.
 
 4. Click on **Oracle Database** and choose **Autonomous Transaction Processing**.
+<if type="livelabs">
 
     ![Click Autonomous Transaction Processing](./images/adb-atp.png " ")
 
 5. Use the __List Scope__ drop-down menu on the left to select the same compartment where you created your Autonomous Databae in Lab 1. Make sure your workload type is __Transaction Processing__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+    ![Check the workload type on the left.](./images/livelabs-compartment.png " ")
 
 </if>
 <if type="freetier">
@@ -56,7 +57,7 @@ In this lab, you will:
     ![check workload type](./images/workload-type.png " ")
 
 <if type="freetier">
-   > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
+   **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 </if>
 
 6. You should see your database **TEXTDB** listed in the center. Click on the database name "TEXTDB".
@@ -65,12 +66,11 @@ In this lab, you will:
 
 7.  On the database page, choose __Database Actions__.
 
-    ![dbactions button](./images/dbactions button.png " ")
+    ![dbactions button](./images/dbactions-button.png " ")
 
 8.  You are now in Database Actions.
 
     Database Actions allows you to connect to your Autonomous Database through various browser-based tools. We will just be using the SQL workshop tool.
-    
 
 ## Task 2: Create and populate a simple table
 
@@ -164,7 +164,7 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
 
     So there is your index, with an index_type of 'DOMAIN' and a status of 'VALID'. A Text index must be VALID for you to use it. An index being created on a large table may show as INPROGRS, meaning index creation is in progress, and it's not yet ready to use.
 
-    We can also look in the "Text Data Dictionary". That's a set of views owned by the user CTXSYS, and is specifically for Oracle Text indexes. The views are all prefixed 'CTX_' and are viewable by any user with the CTXAPP role. Run the following:
+    We can also look in the "Text Data Dictionary". That's a set of views owned by the user CTXSYS, and is specifically for Oracle Text indexes. The views are all prefixed 'CTX_' and are viewable by all users. Run the following:
 
     ```
     <copy>

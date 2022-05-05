@@ -1,10 +1,8 @@
-# Interacting with JSON Documents through Database Actions
+# Oracle Text Queries
 
 ## Introduction
 
-This lab will use the SQL Workshop in Database Actions from the Autonomous Transaction Processing page. It will create a simple Oracle table with a textual column in it, and create an Oracle Text index on that table.
-
-We will then briefly explore information about the index before moving on to queries in the next lab.
+This lab will use the SQL Workshop in Database Actions from the Autonomous Transaction Processing page. We will explore the CONTAINS operator, used to query Oracle Text indexes.
 
 Estimated Time: 10 minutes
 
@@ -48,6 +46,7 @@ Otherwise, login to the Oracle Cloud.
     ![Click Autonomous Transaction Processing](./images/adb-atp.png " ")
 
 5. Use the __List Scope__ drop-down menu on the left to select the same compartment where you created your Autonomous Databae in Lab 2. Make sure your workload type is __Transaction Processing__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+<if type="livelabs">
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 

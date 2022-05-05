@@ -218,7 +218,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
 ## Task 3: Deploy the model and score a table
 
-1. [**CLICK HERE** to download the ""Scoring customers with Churn Model" notebook in JSON format](./files/Scoring_customers_with_Churn_Model.json?download=1) which contains the sequence of SQL commands for scoring customers, and download it to a folder on your local computer.
+1. [**CLICK HERE** to download the "Scoring customers with Churn Model" notebook in JSON format](./files/scoring_customers_with_churn_model.json?download=1) which contains the sequence of SQL commands for scoring customers, and download it to a folder on your local computer.
 
     Go to the main notebooks listing by clicking on the "three lines" button on the upper left of the screen, and then select **Notebooks**.
 

@@ -189,11 +189,11 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 	![Request Publishing](images/publishing-tab.png)
 
-2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
+2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Paid Tier Enabled?**, and/or **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
 
-    - Always Free On? - Can this workshop be done in an Always Free account using only Always Free services? (i.e. Compute Micro, ADB-Shared, etc). [Here](https://www.oracle.com/cloud/free/#always-free) is a list of Always Free eligible services.
+    - Always Free On? - Turn off this button. This button will be deleted soon.
 
-    - Free Tier On? - Can this workshop be done in a Free Tier account using the $300 (or $500) credit and Always Free services? [Here](https://www.oracle.com/cloud/free/#free-cloud-trial) is a list of Free Tier eligible services.
+    - Free Tier On? - Turn off this button. This button will be deleted soon.
 
     - Paid Tier On? - Can this workshop be done in a customer tenancy?
 
@@ -271,5 +271,6 @@ This concludes this lab. You may now **proceed to the next lab**.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
     * Arabella Yao, Product Manager, Database
+    * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Madhusudhan Rao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, Apr 2022

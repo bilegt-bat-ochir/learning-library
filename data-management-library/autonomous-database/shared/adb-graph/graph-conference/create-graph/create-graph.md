@@ -9,7 +9,7 @@ The following video shows the steps you will execute in this lab.
 
 [](youtube:5g9i9HA_cn0) Graph Studio: Create a graph. -->
 
-Estimated Time: 15 minutes. 
+Estimated Time: 15 minutes.
 
 Watch the video below for a quick walk through of the lab.
 
@@ -22,32 +22,32 @@ Learn how to
 
 ### Prerequisites
 
-- The following lab requires an Autonomous Database - Shared Infrastructure account. 
+- The following lab requires an Autonomous Database - Shared Infrastructure account.
 - And that the Graph-enabled user (`GRAPHUSER`) exists. That is, a database user with the correct roles and privileges exists.
 
 ## Task 1: Connect to your Autonomous Database using Graph Studio
 
-1. If you have the Graph Studio URL then proceed to step 4. 
+1. If you have the Graph Studio URL then proceed to step 4.
 
-    Log in to the Oracle Cloud Console, choose the Autonomous Database instance, then Click the **Tools** tab on the details page menu on the left. 
+    Log in to the Oracle Cloud Console, choose the Autonomous Database instance, then Click the **Tools** tab on the details page menu on the left.
 
    ![Oracle Cloud Console](./images/adw-console-tools-tab.png)
 
 
 2. Click the **Open Graph Studio** card to open in a new page or tab in your browser.   
-   
+
    If your tenancy administrator provided you the Graph Studio URL to connect directly then use that instead.
 
 
 3. Enter your Autonomous Database account credentials (for example, `GRAPHUSER`) into the login screen:
- 
+
     ![ALT text is not available for this image](./images/graphstudio-login-graphuser.png " ")
 
 4. Then click the **Sign In** button. You should see the studio home page.   
 
-    ![ALT text is not available for this image](./images/gs-graphuser-home-page.png " ") 
+    ![ALT text is not available for this image](./images/gs-graphuser-home-page.png " ")
 
-    Graph Studio consists of a set of pages accessed from the menu on the left. 
+    Graph Studio consists of a set of pages accessed from the menu on the left.
 
     The Home icon ![ALT text is not available for this image](images/home.svg "") takes you to the Home page.  
     The Models icon ![ALT text is not available for this image](images/code-fork.svg "") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instantiate, a graph.  
@@ -78,16 +78,17 @@ Learn how to
     And `BANK_TXNS` is a suggested edge table.
 
   ![ALT text is not available for this image](./images/create-graph-suggested-model.png " ")    
-  
+
 
 5.  Now let's change the default Vertex and Edge labels.  
 
-    Click the `BANK_ACCOUNTS` vertex table. Change the label to `ACCOUNTS`. Then click outside the input box to save the update.  
+    Click the `BANK_ACCOUNTS` vertex table. Change the label to `ACCOUNTS`.
+    Then click **check mark** icon to save the update.  
 
     ![ALT text is not available for this image](images/edit-accounts-vertex-label.png " ")  
 
     Click the `BANK_TXNS` edge table and change the label from `BANK_TXNS` to `TRANSFERS`.  
-    Then click outside the input box to save the update.  
+    Then click **check mark** icon to save the update.
 
     ![ALT text is not available for this image](images/edit-edge-label.png " ")  
 
@@ -97,7 +98,7 @@ Learn how to
     In this instance we want to **confirm** that the direction is from `from_acct_id` to `to_acct_id`.  
 
     Note the `Source Vertex` and `Destination Vertex` information on the left.  
- 
+
     ![ALT text is not available for this image](images/wrong-edge-direction.png " ")  
 
     **Notice** that the direction is wrong. The Source Key is `to_acct_id` instead of what we want, which is `from_acct_id`.  
@@ -106,17 +107,17 @@ Learn how to
 
    Note that the `Source Vertex` is now the correct one, i.e. the `FROM_ACCT_ID`.
 
-   ![ALT text is not available for this image](images/reverse-edge-result.png " ") 
+   ![ALT text is not available for this image](images/reverse-edge-result.png " ")
 
 
-   
+
 
 7. Click the **Source** tab to verify that the edge direction, and hence the generated CREATE PROPERTY GRAPH statement, is correct.
 
 
    ![ALT text is not available for this image](images/generated-cpg-statement.png " ")  
-  
-<!--- 
+
+<!---
   **An alternate approach:** In the earlier Step 5 you could have just updated the CREATE PROPERTY GRAPH statement and saved the updates. That is, you could have just replaced the existing statement with the following one which specifies that the SOURCE KEY is  `from_acct_id`  and the DESTINATION KEY is `to_acct_id`.  
 
     ```
@@ -125,13 +126,13 @@ Learn how to
     <copy>
     CREATE PROPERTY GRAPH bank_graph
         VERTEX TABLES (
-            BANK_ACCOUNTS as ACCOUNTS 
-            KEY (ACCT_ID) 
+            BANK_ACCOUNTS as ACCOUNTS
+            KEY (ACCT_ID)
             LABEL ACCOUNTS
             PROPERTIES (ACCT_ID, NAME)
         )
         EDGE TABLES (
-            BANK_TXNS 
+            BANK_TXNS
             KEY (FROM_ACCT_ID, TO_ACCT_ID, AMOUNT)
             SOURCE KEY (FROM_ACCT_ID) REFERENCES ACCOUNTS
             DESTINATION KEY (TO_ACCT_ID) REFERENCES ACCOUNTS
@@ -151,12 +152,14 @@ Learn how to
    Enter `bank_graph` as the graph name.  
    That graph name is used throughout the next lab.  
    Do not enter a different name because then the queries and code snippets in the next lab will fail.  
-   
+
    Enter a model name (for example, `bank_graph_model`), and other optional information.  
    ![ALT text is not available for this image](./images/create-graph-dialog.png " ")
 
+   When you are done click **Create**.
+
 9. Graph Studio modeler will now save the metadata and start a job to create the graph.  
-   The Jobs page shows the status of this job. 
+   The Jobs page shows the status of this job.
 
    ![ALT text is not available for this image](./images/23-jobs-create-graph.png " ")  
 

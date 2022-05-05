@@ -61,7 +61,7 @@ In order for users to create and manage the resources used in Forecasting servic
     If you want to allow all the users in your tenancy to use forecasting service. Create a new policy with the below statement:
 
     ```
-    <copy>allow any-user to manage ai-service-forecasting-service-family in tenancy</copy>
+    <copy>allow any-user to manage ai-service-forecasting-family in tenancy</copy>
     ```
 
     ![](../images/policy-creating-process.png " ")
@@ -69,7 +69,7 @@ In order for users to create and manage the resources used in Forecasting servic
     If you want to limit access to a user group, you can create a new policy with the below statement:
 
     ```
-    <copy> allow group <group-name> to manage ai-service-forecasting-service-family in tenancy</copy>
+    <copy> allow group <group-name> to manage ai-service-forecasting-family in tenancy</copy>
     ```
 You may now proceed to the next lab
 

@@ -4,7 +4,7 @@
 
 In this lab, we will provision and setup the resources to execute microservices in your environment.
 
-Estimates Lab Time - 20 minutes
+Estimates Time: 20 minutes
 
 ### Objectives
 

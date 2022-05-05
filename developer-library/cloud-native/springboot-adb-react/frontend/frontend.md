@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this lab you will make changes and deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
+In this lab, you will make changes and deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastructure.
 
 Estimated time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk-through of the lab.
 
 Mac:
 
@@ -59,7 +59,7 @@ In this lab, you will:
 6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`.
 
 ## **Task 1**: Configure API.js
-In this task you will edit API.js to point to the correct endpoint that has been been allowed (in the previous lab) to access the APIs used in your application
+In this task, you will edit API.js to point to the correct endpoint that has been allowed (in the previous lab) to access the APIs used in your application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -104,30 +104,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 4. Update API_LIST in API.js
 
-  Make sure to be in frontend/src directory
+- Make sure to be in the frontend/src directory
 	```
 	<copy>
 	cd frontend/src
 	</copy>
 	```
- In the Cloud console, navigate to **Developer Services > API Management >Gateways**
+- In the Cloud console, navigate to **Developer Services > API Management >Gateways**
 
  	![](images/api-gateway-navigate.png "api-gateway-navigate")
 
-   Click on your Gateway and go to Deployment
-   Copy the Deployment Endpoint
+- Click on your Gateway and go to Deployment and copy the Deployment Endpoint
 
 	![](images/api-gtw-deploy.png "api-gateway-deploy")
 
- - Paste the endpoint as the value of API_LIST and append "/todolist"
-    ![](images/update_api.png "update_api")
-  Example:
-  const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
+ - Paste the endpoint as the value of 'API_LIST' and append "/todolist"
+    
+	![](images/update_api.png "update_api")
+  
+  Example: const 'API_LIST' = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
   - Save the modified API.js file
 
 ## **Task 2**: Run in Dev Mode then Build for Production
-Here you will run the application locally in development mode, then run in production mode to create the build folder.
+Here you will run the application locally in development mode, then run it in production mode to create the build folder.
 1. In the project directory, run the app in the development mode <br />
 
 	```
@@ -155,10 +155,10 @@ It correctly bundles React in production mode (into the build folder) and optimi
 
   ![](images/run-build.png "run-build")
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+	The build is minified and the filenames include the hashes.<br />
+	Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+	See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## **Task 3**: Hosting on the Oracle Cloud's Object Storage
 The build folder will be uploaded to object storage so you can access your application from OCI.
@@ -167,57 +167,60 @@ The build folder will be uploaded to object storage so you can access your appli
 **Object Storage > Object Storage**.
 
   ![](images/object-store-navigate.png "object-store-navigate")
+
   Create the 'mtdrworkshop' (or another name if that's taken) bucket
 
   ![](images/create-bucket.png "create-bucket")
 
   Enter in the bucket details.
+
   ![](images/bucket-details.png "bucket-details")
 
   Edit visibility to public
 
   ![](images/edit-visibility.png "edit-visibility")
+
 2. Install the Staci utility for copying directories to OCI object storage
    bucket with folder hierarchies
 
-  - git clone https://github.com/maxjahn/staci.git
+	- git clone https://github.com/maxjahn/staci.git
 
-	```
-	<copy>
-	git clone https://github.com/maxjahn/staci.git
-	</copy>
-	```
+		```
+		<copy>
+		git clone https://github.com/maxjahn/staci.git
+		</copy>
+		```
 
-  - cd staci
+	- cd staci
 
-	```
-	<copy>
-	cd staci
-	</copy>
-	```
-  - go mod init staci
+		```
+		<copy>
+		cd staci
+		</copy>
+		```
+	- go mod init staci
 
-	```
-	<copy>
-	go mod init staci
-	</copy>
-	```
-  - go get -d
+		```
+		<copy>
+		go mod init staci
+		</copy>
+		```
+	- go get -d
 
-	```
-	<copy>
-	go get -d
-	</copy>
-	```
+		```
+		<copy>
+		go get -d
+		</copy>
+		```
 
-  - go build
+	- go build
 
-	```
-	<copy>
-	go build
-	</copy>
-	```
-3. If you have never used your laptop for connecting to an Oracle Cloud account, you need to setup an **OCI config file** and create an **API key**
+		```
+		<copy>
+		go build
+		</copy>
+		```
+3. If you have never used your laptop for connecting to an Oracle Cloud account, you need to set up an **OCI config file** and create an **API key**
     * Follow Step #2 in the following doc https://bit.ly/3vM7v2h for that purpose.
 
 4. Upload a static build into the bucket, using the staci binary.
@@ -229,16 +232,17 @@ The build folder will be uploaded to object storage so you can access your appli
 	</copy>
 	```
 
-- The application is visible in the 'mtdrworkshop' bucket of your tenancy
+* The application is visible in the 'mtdrworkshop' bucket of your tenancy
 
-- Click on the index.html object and copy the URL of the index object
+* Click on the index.html object and copy the URL of the index object
 
-  ![](images/bucket-index.png "bucket-index")
+	![](images/bucket-index.png "bucket-index")
 
-- You may now run the application from Object store, using the URL of the index that you've copied above.
+- You may now run the application from Object Storage, using the URL of the index that you've copied above.
 
-  ![](images/my-todo.png "my-todo")
+	![](images/my-todo.png "my-todo")
   
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements

@@ -19,47 +19,7 @@ Learn how to
 
 - Earlier labs of this workshop. That is, the graph user exists and you have logged into Graph Studio.
 
-## Task 1: Import the notebook
-
-The instructions below show you how to create each notebook paragraph, execute it, and change default visualization settings as needed.  
-First **import** the sample notebook and then execute the relevant paragraph for each step in task 2.   
-
-1. Download the exported notebook from the Object Store.
-   Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.   
-   Copy the URL below and paste it into your browser's address bar.  
-   Note the location of the downloaded file.
-
-	```
-	<copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/circular-payments-notebook-wid770.dsnb</copy>
-	```
-
-2. Click the **Notebooks** menu icon and then on the **Import Notebook** icon on the top right.  
-
-  ![ALT text is not available for this image](images/import-notebook-button.png " ")  
-
-3. Drag the downloaded file or navigate to the correct folder and select it for upload.  
-  ![ALT text is not available for this image](images/choose-exported-file.png " ")  
-
-4. Click **Import**.
-  ![ALT text is not available for this image](images/notebook-file-selected.png " ")  
-5. Once imported it should open in Graph Studio.  
-
-  ![ALT text is not available for this image](images/notebook-imported.png " ")  
-
-You can execute the paragraphs in sequence and experiment with visualizations settings as described in **Task 2** below.  
-
->**Note:** *When you open a notebook it spawns a task to enable the interpreters which let you execute code snippets in a paragraph.*
-
-That is, a notebook requires an environment, or compute, for interpreting and executing the lines of code entered in its paragraphs.  
-Open the menu on the top-right corner to check whether the environment is attached, i.e. ready for use.
-
-  ![ALT text is not available for this image](images/env-attaching.png " ")
-
-If the status is attaching you can choose to wait for the 20-30 seconds it may take to start up the environment. If the environment is attached it will be indicated by a green icon and the amount of memory (e.g. 14Gb) available for executing code and loading graphs into memory.  
-
-  ![ALT text is not available for this image](images/env-attached.png " ")
-
-## Task 2: Load and Query the `BANK_GRAPH` and visualize the results
+## Task 1: Load and Query the `BANK_GRAPH` and visualize the results
 
 >**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
           If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bootom of the paragraph to indicate that a background task is in progress.  
@@ -220,7 +180,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   The result will be similar to the following screenshot.  
   ![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
 
-## Task 3: More query features and the use of the JAVA API to execute graph algorithms   
+## Task 2: More query features and the use of the JAVA API to execute graph algorithms   
 
 1. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
    **Enter 534 as the account id**, and then execute the paragraph.  
@@ -246,8 +206,8 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 
     ```
     <copy>%java-pgx
-    // PgxGraph bgraph = session.getGraph("BANK_GRAPH");
-    analyst.pagerank(bankgraph);</copy>
+    PgxGraph bgraph = session.getGraph("BANK_GRAPH");
+    analyst.pagerank(bgraph);</copy>
     ```
 
   ![ALT text is not available for this image](images/53-java-pagerank.png " ")

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this session, we will show you how to use our create and get forecast APIs. 
+In this session, we will show you how to use create and get forecast APIs. 
 
 *Estimated Time*: 30 minutes
 
@@ -12,10 +12,10 @@ In this lab, you will:
 - Learn to use forecast API 
 - Learn to get forecasts and predictions intervals for the forecast horizon
 
-
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
 - You have completed all the tasks in Lab 2 
+- Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb) : We will be using for explaining on how to use Forecasting Service APIs
 
 ## Task 1: Create a Forecast model
 
@@ -26,121 +26,122 @@ Creating a model requires 3 actions to kick off training the forecasting model.
   * Create Forecast API Call using the /forecasts url
 
   We pre-define some the parameters of the payload based on the example input data (the one we uploaded in previous lab session)
-      ```Python 
-      date_col_primary = 'date'
-      date_col_add = 'date'
-      target_col = 'sales'
-      id_col_primary = 'item_id'
-      id_col_add = 'item_id'
-      data_frequency = 'DAY'
-      forecast_frequency = 'DAY'
-      forecast_horizon  = 14
-        
-      ```
+
+    ```Python 
+    date_col = 'date'
+    target_col = 'sales'
+    id_col = 'item_id'
+    data_frequency = 'DAY'
+    forecast_frequency = 'DAY'
+    forecast_horizon  = 14
+    forecast_name = "LiveLabs Inline Forecasting Service API "
+    ```
 
 In the example below we show how to create the payload for calling create forecast API. 
-- "compartmentId": same as tenancy id (refer Task 5 : Create Project ID in Lab 2)
+- "compartmentId": is same as tenancy id(refer Task 5 : Create Project ID in Lab 2)
 - "projectId": the one you get after creating a project (refer Task 5 : Create Project ID in Lab 2)
 - "targetVariables": name of the column in primary data having the target values
 - models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
 - "forecastHorizon": number of future timesteps for which to forecast 
-- "forecastFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on forecast frequency required 
+- "tsColName": name of the timestamp column  
+- "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
+- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. Eg.  If dataFrequency : 2HOURS  , then forecastFrequency: 24HOURS if you want forecastFrequency to be a DAY level
 - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
 - "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
 - "columnSchema": provide column name and data type for each column in the data source
-- "dataFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on frequency of input data
-- "tsColName": name of the timestamp column 
-- "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data.
+- "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data
+- "models" : We can use any of the available algorithms are univariate and multivariate methods. 
+
+   - Univariate :"SMA","DMA","HWSM","HWSA","SES","DES","SA","SM","UAM","UHM","HWSMDAMPED","HWSADAMPED", "PROPHET", "ARIMA"
+   
+   - Multivariate : "PROBRNN","APOLLONET","EFE"               
 
     ```Python
     %%time
 
-    url = "https://forecasting---------------------.oraclecloud.com/20220101/forecasts"
+    url = "https://forecasting.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/forecasts"
 
-    payload = json.dumps({
-      "compartmentId": compartment_id,
-      "displayName": "Forecast Model",
-      "description": "Training Forecast Model",
-      "projectId": project_id,
-      "forecastCreationDetails": {
-        "targetVariables": [
-          target_col
-        ],
-        "modelTrainingDetails": {
-          "modelType": "UNIVARIATE",
-          "models": [
-            "SMA",
-            "DMA",
-            "HWSA",
-            "HWSM",
-            "SES",
-            "DES",
-            "SA",
-            "SM",
-            "UAM",
-            "UHM",
-            "ARIMA",
-            "PROPHET"
-          ]
-        },
+    payload = simplejson.dumps(
+    {
+    "displayName": forecast_name,
+    "compartmentId": compartment_id,
+    "projectId": project_id,
+    "forecastCreationDetails": {
         "forecastHorizon": forecast_horizon,
         "confidenceInterval": "CI_5_95",
         "errorMeasure": "RMSE",
         "forecastTechnique": "ROCV",
         "forecastFrequency": forecast_frequency,
         "isForecastExplanationRequired": True,
+        "modelDetails": {
+            "models": [
+                    "SMA",
+                    "DMA",
+                    "HWSM",
+                    "HWSA",
+                    "SES",
+                    "DES",
+                    "PROPHET"
+            ]
+        },
         "dataSourceDetails": {
-          "type": "INLINE",
-          "dataSources": {
+            "type": "INLINE",
             "primaryDataSource": {
-              "isDataGrouped": True,
-              "columnData": prim_load,
-              "columnSchema": [
-                {
-                  "columnName": date_col_primary,
-                  "dataType": "DATE"
-                },
-                {
-                  "columnName": target_col,
-                  "dataType": "INT"
-                },
-                {
-                  "columnName": id_col_primary,
-                  "dataType": "STRING"
-                },
-              ],
-              "tsColName": date_col_primary,
-              "tsColFormat": "yyyy-MM-dd HH:mm:ss",
-              "dataFrequency": data_frequency
+                "columnData": prim_load,
+                "isDataGrouped": True,
+                "tsColName": date_col,
+                "tsColFormat": "yyyy-MM-dd HH:mm:ss",
+                "dataFrequency": data_frequency,
+                "columnSchema": [
+                        {
+                            "columnName": id_col,
+                            "dataType": "STRING"
+                        },
+                        {
+                            "columnName": date_col,
+                            "dataType": "DATE"
+                        },
+                        {
+                            "columnName": target_col,
+                            "dataType": "INT"
+                        }
+                    ]
             },
             "additionalDataSource": {
-              "isDataGrouped": True,
-              "columnData": add_load,
-              "columnSchema": [
-                {
-                  "columnName": date_col_add,
-                  "dataType": "DATE"
-                },
-                {
-                  "columnName": "onpromotion",
-                  "dataType": "INT"
-                },
-                {
-                  "columnName": id_col_add,
-                  "dataType": "STRING"
-                },
-              ],
-              "tsColName": date_col_add,
-              "tsColFormat": "yyyy-MM-dd HH:mm:ss",
-              "dataFrequency": data_frequency
+                "columnData": add_load,
+                "isDataGrouped": True,
+                "tsColName": date_col,
+                "tsColFormat": "yyyy-MM-dd HH:mm:ss",
+                "dataFrequency": data_frequency,
+                "columnSchema": [
+                        {
+                            "columnName": id_col,
+                            "dataType": "STRING"
+                        },
+                        {
+                            "columnName": "date",
+                            "dataType": "DATE"
+                        },
+                        {
+                            "columnName": "onpromotion",
+                            "dataType": "INT"
+                        }
+                    ]
             }
-          }
-        }
-      }
-    })
+              
+        },
+        "targetVariables": [
+            target_col
+        ]
+    }
+    }
+        , ignore_nan=True
+    )
+
     headers = {
       'Content-Type': 'application/json'
     }
+          
     response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
     ```
 
@@ -149,102 +150,7 @@ In the example below we show how to create the payload for calling create foreca
     create_forecast_response = json.loads(response.text)
     create_forecast_response
     ```
-    The above code snippet give below response :
-    ```json
-    {'description': 'Training Forecast Model',
-    'id': 'ocid1.....................',
-    'responseType': None,
-    'compartmentId': 'ocid1...................',
-    'projectId': 'ocid1..................',
-    'displayName': 'Forecast Model',
-    'createdBy': None,
-    'timeCreated': '2021-12-14T09:17:09.525Z',
-    'timeUpdated': '2021-12-14T09:17:09.525Z',
-    'lifecyleDetails': None,
-    'lifecycleState': 'CREATING',
-    'failureMessage': None,
-    'forecastCreationDetails': {'targetVariables': ['sales'],
-      'modelTrainingDetails': {'modelType': 'UNIVARIATE',
-      'models': ['SMA',
-        'DMA',
-        'HWSA',
-        'HWSM',
-        'SES',
-        'DES',
-        'SA',
-        'SM',
-        'UAM',
-        'UHM',
-        'ARIMA',
-        'PROPHET']},
-      'dataSourceDetails': {'type': 'INLINE',
-      'dataSources': {'primaryDataSource': {'dataAssetId': None,
-        'isDataGrouped': True,
-        'tsColName': 'date',
-        'dataFrequency': 'DAY',
-        'tsColFormat': 'yyyy-MM-dd HH:mm:ss',
-        'columnSchema': [{'columnName': 'date', 'dataType': 'DATE'},
-          {'columnName': 'sales', 'dataType': 'INT'},
-          {'columnName': 'item_id', 'dataType': 'STRING'}],
-        'columnData': [['2013-01-01 00:00:00',
-          '2013-01-02 00:00:00',
-          '2013-01-03 00:00:00',
-          '2013-01-04 00:00:00',
-          '2013-01-05 00:00:00',
-          ...],
-          ['0',
-          '767',
-          '987',
-          '652',
-          '1095',
-          '724',
-          ...],
-          ['13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          ...]]},
-          'additionalDataSource': {'dataAssetId': None,
-        'isDataGrouped': True,
-        'tsColName': 'date',
-        'dataFrequency': 'DAY',
-        'tsColFormat': 'yyyy-MM-dd HH:mm:ss',
-        'columnSchema': [{'columnName': 'date', 'dataType': 'DATE'},
-          {'columnName': 'onpromotion', 'dataType': 'INT'},
-          {'columnName': 'item_id', 'dataType': 'STRING'}],
-        'columnData': [['2013-01-01 00:00:00',
-          '2013-01-02 00:00:00',
-          '2013-01-03 00:00:00',
-          '2013-01-04 00:00:00',
-          '2013-01-05 00:00:00',
-          ...],
-          ['0',
-          '0',
-          '0',
-          '0',
-          '0',
-          ...],
-          ['13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          '13_BEVERAGES',
-          ...]]}}},
-          'forecastHorizon': 14,
-      'confidenceInterval': 'CI_5_95',
-      'errorMeasure': 'RMSE',
-      'forecastTechnique': 'ROCV',
-      'forecastFrequency': 'DAY',
-      'isForecastExplanationRequired': True},
-    'forecastResult': None,
-    'freeformTags': {},
-    'definedTags': {'Oracle-Tags': {'CreatedBy': 'demo_user',
-      'CreatedOn': '2021-12-14T09:17:08.153Z'}},
-    'systemTags': {}}
-
-    ```
-
+   
 ## Task 2: Get forecast and Prediction Intervals
 - Take the forecast ID from response above and create a *Get forecast API* call using below code snippet
 - Once the results are produced, the  'lifecycleState' changes to 'ACTIVE'. If it is 'CREATING', then you need to re-run the code below after sometimes.
@@ -266,23 +172,28 @@ In the example below we show how to create the payload for calling create foreca
     get_forecast_response
     ```  
     Forecast Response below :
-    ```Json
-    {'description': 'Training Forecast Model',
-    'id': 'ocid1.....................',
+    ```json
+        {'description': None,
+    'id': 'ocid1.aiforecast.oc1.phx.amaaaaaasxs7gpyaaeoiniiomm6b3wyl4tao5epvjh5qcxcjmuw765l6r35a',
     'responseType': None,
-    'compartmentId': 'ocid1...................',
-    'projectId': 'ocid1..................',
-    'displayName': 'Forecast Model',
+    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaaadany3y6wdh3u3jcodcmm42ehsdno525pzyavtjbpy72eyxcu5f7q',
+    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaasxs7gpya64347fdyocgxvqvxkt5qxr5rr2axxlovvdzwavhks4bq',
+    'displayName': 'Stat_Prophet Inline Forecasting Service API BETA V2 ',
     'createdBy': None,
-    'timeCreated': '2021-12-14T09:17:09.525Z',
-    'timeUpdated': '2021-12-14T09:17:09.525Z',
+    'timeCreated': '2022-04-27T09:14:15.209Z',
+    'timeUpdated': '2022-04-27T09:16:03.221Z',
     'lifecyleDetails': None,
     'lifecycleState': 'ACTIVE',
     'failureMessage': None,
     'forecastCreationDetails': None,
     'forecastResult': {'dataSourceType': 'INLINE',
+      'forecastHorizon': 14,
       'forecast': [{'targetColumn': '13_BEVERAGES',
-        'dates': ['2017-08-02 00:00:00',
+        'dates': ['2017-07-29 00:00:00',
+        '2017-07-30 00:00:00',
+        '2017-07-31 00:00:00',
+        '2017-08-01 00:00:00',
+        '2017-08-02 00:00:00',
         '2017-08-03 00:00:00',
         '2017-08-04 00:00:00',
         '2017-08-05 00:00:00',
@@ -291,66 +202,60 @@ In the example below we show how to create the payload for calling create foreca
         '2017-08-08 00:00:00',
         '2017-08-09 00:00:00',
         '2017-08-10 00:00:00',
-        '2017-08-11 00:00:00',
-        '2017-08-12 00:00:00',
-        '2017-08-13 00:00:00',
-        '2017-08-14 00:00:00',
-        '2017-08-15 00:00:00'],
-        'forecast': [1609.5647,
-        1343.6483,
-        1546.2831,
-        2087.823,
-        1794.3483,
-        1497.6057,
-        1382.0226,
-        1461.8567,
-        1259.3473,
-        1504.2533,
-        1968.2959,
-        1646.6401,
-        1511.9377,
-        1445.6711],
-        'predictionInterval': [{'upper': 2086.9155, 'lower': 1128.2715},
-        {'upper': 1839.9146, 'lower': 912.95483},
-        {'upper': 2013.9352, 'lower': 1082.0677},
-        {'upper': 2535.684, 'lower': 1612.1564},
-        {'upper': 2251.6038, 'lower': 1325.7798},
-        {'upper': 1958.7988, 'lower': 1043.9397},
-        {'upper': 1870.6536, 'lower': 925.10504},
-        {'upper': 1920.7454, 'lower': 977.78406},
-        {'upper': 1715.7109, 'lower': 792.765},
-        {'upper': 1948.4724, 'lower': 1027.3519},
-        {'upper': 2423.6401, 'lower': 1531.121},
-        {'upper': 2116.753, 'lower': 1183.1195},
-        {'upper': 1980.629, 'lower': 1068.0222},
-        {'upper': 1902.9133, 'lower': 979.5294}]}],
+        '2017-08-11 00:00:00'],
+        'forecast': [1794.423,
+        1458.0826,
+        1322.5546,
+        1746.7986,
+        1664.3289,
+        1606.625,
+        1436.7811,
+        1594.2352,
+        1343.2721,
+        1264.662,
+        1584.5563,
+        1464.1411,
+        1624.6233,
+        1521.1838],
+        'predictionInterval': [{'upper': 2310.6255, 'lower': 1274.0431},
+        {'upper': 1970.2235, 'lower': 992.85834},
+        {'upper': 1826.6882, 'lower': 816.79974},
+        {'upper': 2230.6548, 'lower': 1218.3107},
+        {'upper': 2158.7866, 'lower': 1162.2372},
+        {'upper': 2111.322, 'lower': 1099.0563},
+        {'upper': 1940.0271, 'lower': 941.1704},
+        {'upper': 2074.8967, 'lower': 1097.0505},
+        {'upper': 1815.2491, 'lower': 847.81165},
+        {'upper': 1740.884, 'lower': 755.6372},
+        {'upper': 2069.1372, 'lower': 1137.5074},
+        {'upper': 1964.7842, 'lower': 963.93646},
+        {'upper': 2153.4753, 'lower': 1094.3989},
+        {'upper': 2050.892, 'lower': 995.7819}]}],
       'metrics': {'trainingMetrics': {'numberOfFeatures': 1,
-        'totalDataPoints': 1670},
+        'totalDataPoints': 1670,
+        'generationTime': '108 seconds'},
       'targetColumns': [{'targetColumn': '13_BEVERAGES',
         'bestModel': 'ProphetModel',
-        'errorMeasureValue': 248.34917,
+        'errorMeasureValue': 272.46014,
         'errorMeasureName': 'RMSE',
-        'numberOfMethodsFitted': 13,
+        'numberOfMethodsFitted': 9,
         'seasonality': 7,
         'seasonalityMode': 'ADDITIVE',
+        'modelValidationScheme': 'ROCV',
         'preprocessingUsed': {'aggregation': 'NONE',
           'outlierDetected': 14,
           'missingValuesImputed': 0,
           'transformationApplied': 'NONE'}}]}},
-    'freeformTags': {},
-    'definedTags': {'Oracle-Tags': {'CreatedBy': 'fc-mcs-team',
-      'CreatedOn': '2021-12-14T09:17:08.153Z'}},
-    'systemTags': {}}
-
+    'freeformTags': None,
+    'definedTags': None,
+    'systemTags': None}
     ```
-
 Using below code, we can save the forecast as tabular data in a csv file with prediction intervals.
-
 
 ```Python
 df_forecasts = pd.DataFrame({'forecast_dates':[],'upper':[],'lower':[],'forecast':[], 'series_id':[]})
 for i in range(len(get_forecast_response['forecastResult']['forecast'])):
-    
+
     group = get_forecast_response['forecastResult']['forecast'][i]['targetColumn']
     point_forecast = get_forecast_response['forecastResult']['forecast'][i]['forecast']
     pred_intervals = pd.DataFrame(get_forecast_response['forecastResult']
@@ -361,8 +266,9 @@ for i in range(len(get_forecast_response['forecastResult']['forecast'])):
     forecasts = pd.concat([forecast_dates,out],axis=1)
     forecasts['series_id'] = group
     df_forecasts = df_forecasts.append(forecasts, ignore_index = False)
-file_name = 'forecast.csv'
-df_forecasts.to_csv(file_name, index = None)          
+file_name = 'forecast_demo.csv'
+df_forecasts.to_csv(file_name, index = None)
+df_forecasts        
 ```
 The forecast.csv will be saved in the same folder as the notebook file.
 
@@ -382,11 +288,12 @@ The forecast.csv will be saved in the same folder as the notebook file.
     ```Json
     [{'targetColumn': '13_BEVERAGES',
       'bestModel': 'ProphetModel',
-      'errorMeasureValue': 248.34917,
+      'errorMeasureValue': 272.46014,
       'errorMeasureName': 'RMSE',
-      'numberOfMethodsFitted': 13,
+      'numberOfMethodsFitted': 9,
       'seasonality': 7,
       'seasonalityMode': 'ADDITIVE',
+      'modelValidationScheme': 'ROCV',
       'preprocessingUsed': {'aggregation': 'NONE',
       'outlierDetected': 14,
       'missingValuesImputed': 0,
@@ -404,4 +311,4 @@ You may now proceed to the next lab
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 19th-January 2022
+    * Last Updated By/Date: Ravijeet Kumar, 29th-April 2022

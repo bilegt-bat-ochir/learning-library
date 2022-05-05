@@ -6,12 +6,12 @@ In this lab, we will tear down the resources created in your tenancy and the dir
 Estimated time: 5 minutes
 
 ### Objectives
-- Delete object storage bucket created in Lab 3
+- Delete the object storage bucket created in Lab 3
 - Delete deployment created in Lab 3
 - Run destroy script
 - edit ~/.bashrc
 ### Prerequisites
-- Have successfully completed the earlier labs
+- Have completed the earlier labs
 
 
 ## **Task 1**: Delete Workshop Resources
@@ -21,13 +21,13 @@ The resources in this task weren't created during the setup script, so we must d
 
     ![](images/delete-bucket.png "delete bucket")
 
-2. We can't run the destroy script when there's a deployment in the api gateway. Navigate to Gateway, click on the deployment and click delete.
+2. We can't run the destroy script when there's a deployment in the API gateway. Navigate to Gateway, click on the deployment and click delete.
 
     ![](images/delete-deployment.png "delete-deployment")
 
 ## **Task 2**: Run the Destroy Script
 
-1. Run the following command to delete the resources created in your tenancy. It will delete everything except the compartment, and may take several minutes to run.
+1. Run the following command to delete the resources created in your tenancy. It will delete everything except the compartment and may take several minutes to run.
 
     ```
     <copy>
@@ -54,7 +54,7 @@ The resources in this task weren't created during the setup script, so we must d
     vi ~/.bashrc
     </copy>
     ```
-2. Once you're inside ~/.bashrc, delete this line 
+2. Once you're inside ~/.bashrc, delete this line
 
     ```echo source $(pwd)/env.sh >> ~/.bashrc```
 
@@ -63,7 +63,7 @@ The resources in this task weren't created during the setup script, so we must d
 1. In the Oracle Cloud Console, navigate to the **compartments** screen in the **Identity** section. Select the compartment that was created for the workshop (if you didn't provide one) and delete it
 
 
-Congratulations! You have completed the workshop
+    **Congratulations! You have completed the workshop**
 
 ## Acknowledgements
 

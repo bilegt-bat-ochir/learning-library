@@ -20,7 +20,6 @@ Case-sensitive password files provide more security than older password files th
 * An Oracle Cloud Account - Please view this workshop's landing page to see which environments are supported
 * Working knowledge of vi
 
-> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## About Oracle Database 21c
 

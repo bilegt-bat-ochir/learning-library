@@ -179,7 +179,7 @@ The setup script already creates an API gateway, but you still need to create th
 
       ![](images/route-1-new.png "route-1-new")
 
-  - /todolist/{id} for the remaining three APIs: (GET, PUT and DELETE)
+  - /todolist/{id} for the remaining three APIs: (GET, PUT and DELETE). Format should be: http://public_ip/${request.path[id]}
 
       ![](images/route-2-new.png "route-2-new")
 

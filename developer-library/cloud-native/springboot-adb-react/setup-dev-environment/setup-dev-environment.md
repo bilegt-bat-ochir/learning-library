@@ -17,7 +17,7 @@ Estimated time: 25 minutes
     * 1 OCI Registry
     * 1 Virtual Cloud Network
 
-Watch this video for a quick walkthrough of this lab
+Watch this video for a quick walk-through of this lab
 
 Mac:
 [](youtube:Zo7r8Ahdhsc)

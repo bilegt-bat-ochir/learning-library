@@ -18,6 +18,7 @@ This lab assumes you have:
 
 2.  Save the **omlvm-mkplc-freetier.zip** file in your machine and note the folder location.
 
+
 The stack contains a terraform script that would provision a Compute instance in OCI along with an Autonomous database to use in this hands on lab.
 
 ## Task 2: Setup Compute   
